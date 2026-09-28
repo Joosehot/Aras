@@ -158,4 +158,4 @@ Run `ARAS_BLESS=1 cargo test` to accept intended output changes.
 
 ## License
 
-MIT, see [LICENSE](LICENSE). Patterns that Aras generates belong to whoever ran it.
+PolyForm Noncommercial 1.0.0, see [LICENSE](LICENSE). Free for personal, hobby, research, educational and other noncommercial use; commercial use needs a separate licence from the author. Patterns that Aras generates belong to whoever ran it.

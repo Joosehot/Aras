@@ -3,7 +3,7 @@ name = "aras"
 version = "0.1.0"
 edition = "2021"
 description = "Deterministic natural-language-to-sewing-pattern engine: lexicon + drafting rules + beam search"
-license = "MIT"
+license = "PolyForm-Noncommercial-1.0.0"
 publish = false
 
 [lib]
