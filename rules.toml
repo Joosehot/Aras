@@ -1,0 +1,517 @@
+# Aras drafting rules and tradeoffs. Every number the engine uses lives here;
+# rule code only names keys. All lengths are millimetres.
+#
+# Every construction choice is scored on three axes:
+#   finish     - how well it wears and how professional it looks
+#   simplicity - fewer pieces, fewer operations, easier for a beginner
+#   economy    - less fabric, no second fabric
+# A choice scores  weight * (axes . profile). The profile starts at
+# [profile] and the sentence's modifiers shift it ("neatly", "simply",
+# "cheaply"). This is FeelRight's tension curve and Senne's safety/brevity/
+# perf profile: the words say which tradeoff to spend.
+
+[search]
+beam = 16
+
+[profile]
+finish = 1.0
+simplicity = 0.6
+economy = 0.4
+
+[modifiers.neatly]
+finish = 1.0
+simplicity = -0.2
+
+[modifiers.simply]
+finish = -0.3
+simplicity = 1.5
+
+[modifiers.cheaply]
+economy = 1.5
+
+# ---- Body measurements ------------------------------------------------------
+# Unisex standard-proportion chart. Circumferences are full girths; `shoulder`
+# is one shoulder, neck point to shoulder point; `back_width` is across the
+# back; `scye_depth` is nape to underarm level; `hip_depth` is waist to seat.
+
+[sizes.S]
+chest = 920
+waist = 780
+seat = 960
+neck = 370
+nape_to_waist = 440
+shoulder = 150
+back_width = 360
+scye_depth = 210
+arm = 610
+upper_arm = 300
+wrist = 165
+hand = 210
+head = 560
+hip_depth = 190
+body_rise = 265
+inside_leg = 790
+knee = 380
+heel_instep = 310
+
+[sizes.M]
+chest = 1000
+waist = 860
+seat = 1040
+neck = 390
+nape_to_waist = 450
+shoulder = 155
+back_width = 380
+scye_depth = 220
+arm = 630
+upper_arm = 320
+wrist = 170
+hand = 220
+head = 575
+hip_depth = 200
+body_rise = 275
+inside_leg = 810
+knee = 400
+heel_instep = 330
+
+[sizes.L]
+chest = 1080
+waist = 940
+seat = 1120
+neck = 410
+nape_to_waist = 460
+shoulder = 160
+back_width = 400
+scye_depth = 230
+arm = 645
+upper_arm = 340
+wrist = 175
+hand = 230
+head = 590
+hip_depth = 205
+body_rise = 285
+inside_leg = 820
+knee = 420
+heel_instep = 345
+
+[sizes.XL]
+chest = 1160
+waist = 1020
+seat = 1200
+neck = 430
+nape_to_waist = 470
+shoulder = 165
+back_width = 420
+scye_depth = 240
+arm = 655
+upper_arm = 360
+wrist = 180
+hand = 240
+head = 600
+hip_depth = 210
+body_rise = 295
+inside_leg = 830
+knee = 440
+heel_instep = 360
+
+# ---- Fabrics ----------------------------------------------------------------
+# stretch: how far a finished edge can be pulled (1.0 = not at all).
+# cap_ease_*: how much longer the sleeve cap may be than the armhole.
+
+[fabrics.jersey]
+stretch = 1.4
+seam = 10
+hem = 20
+cap_ease_min = 0
+cap_ease_max = 10
+width = 1500
+
+[fabrics.fleece]
+stretch = 1.3
+seam = 10
+hem = 25
+cap_ease_min = 0
+cap_ease_max = 10
+width = 1500
+
+[fabrics.shirting]
+stretch = 1.0
+seam = 15
+hem = 10
+cap_ease_min = 10
+cap_ease_max = 30
+width = 1500
+
+[fabrics.twill]
+stretch = 1.0
+seam = 15
+hem = 40
+cap_ease_min = 10
+cap_ease_max = 30
+width = 1500
+
+[fabrics.stretch_twill]
+stretch = 1.2
+seam = 15
+hem = 40
+cap_ease_min = 5
+cap_ease_max = 20
+width = 1500
+
+[fabrics.rib]
+stretch = 1.8
+seam = 10
+hem = 10
+cap_ease_min = 0
+cap_ease_max = 0
+width = 700
+
+# ---- Garments -----------------------------------------------------------------
+# Tops: ease values are added to the body measurement (full girth).
+# length = nape_to_waist + below_waist, measured from the neck point.
+
+[garments.tshirt]
+fabric = "jersey"
+sleeves = "short"
+chest_ease = 100
+below_waist = 250
+neck_width_add = 15
+back_neck_depth = 20
+front_neck_depth = 95
+shoulder_add = 10
+shoulder_drop = 40
+armhole_drop = 5
+bicep_ease = 60
+short_sleeve = 210
+long_sleeve_add = 0
+wrist_ease = 70
+hem_flare = 10
+button_ext = 0
+
+[garments.hoodie]
+fabric = "fleece"
+sleeves = "long"
+hood = true
+pocket = true
+chest_ease = 160
+below_waist = 230
+neck_width_add = 25
+back_neck_depth = 25
+front_neck_depth = 105
+shoulder_add = 25
+shoulder_drop = 40
+armhole_drop = 25
+bicep_ease = 90
+short_sleeve = 230
+long_sleeve_add = 20
+wrist_ease = 80
+hem_flare = 0
+button_ext = 0
+
+[garments.sweatshirt]
+fabric = "fleece"
+sleeves = "long"
+chest_ease = 140
+below_waist = 230
+neck_width_add = 15
+back_neck_depth = 20
+front_neck_depth = 95
+shoulder_add = 20
+shoulder_drop = 40
+armhole_drop = 20
+bicep_ease = 80
+short_sleeve = 230
+long_sleeve_add = 20
+wrist_ease = 80
+hem_flare = 0
+button_ext = 0
+
+[garments.shirt]
+fabric = "shirting"
+sleeves = "long"
+chest_ease = 140
+below_waist = 300
+neck_width_add = -8
+back_neck_depth = 20
+front_neck_depth = 80
+shoulder_add = 10
+shoulder_drop = 45
+armhole_drop = 20
+bicep_ease = 90
+short_sleeve = 230
+long_sleeve_add = 30
+wrist_ease = 60
+hem_flare = 0
+button_ext = 15
+
+# Pants: knee and hem are full leg girths. hem = knee + knee_ease + hem_vs_knee.
+[garments.pants]
+fabric = "twill"
+waist_ease = 10
+seat_ease = 60
+rise_ease = 15
+knee_ease = 120
+hem_vs_knee = -40
+
+# ---- Fits (added to the garment's numbers; `fabric` replaces it) -----------
+
+[fits.top.fitted]
+chest_ease = -50
+bicep_ease = -25
+shoulder_add = -5
+
+[fits.top.regular]
+
+[fits.top.loose]
+chest_ease = 100
+bicep_ease = 40
+shoulder_add = 30
+armhole_drop = 20
+
+[fits.top.oversized]
+chest_ease = 200
+bicep_ease = 70
+shoulder_add = 60
+armhole_drop = 40
+below_waist = 40
+
+[fits.pants.tight]
+fabric = "stretch_twill"
+seat_ease = -90
+knee_ease = -110
+hem_vs_knee = -40
+
+[fits.pants.regular]
+
+[fits.pants.baggy]
+seat_ease = 140
+knee_ease = 200
+hem_vs_knee = 40
+rise_ease = 15
+
+# ---- Drafting proportions -----------------------------------------------------
+
+[drafting]
+back_width_ease = 0.25     # share of chest ease that goes across the back
+front_width_less = 10      # front across is narrower than back across
+width_point = 0.55         # across-back level, share of shoulder-to-underarm
+short_hem_ratio = 0.92     # short sleeve hem vs bicep
+cap_min = 20               # flattest sleeve cap tried before deepening the armhole
+cap_max = 260
+armhole_step = 10          # armhole deepening per try when the cap won't fit
+armhole_tries = 10
+front_fork = 0.0625        # crotch extension, share of seat girth
+back_fork = 0.1
+leg_balance = 20           # back leg is wider than front by this (each of knee, hem)
+cf_in = 10                 # centre front leans in at the waist
+cb_in = 30                 # centre back leans in at the waist
+cb_rise = 30               # centre back rises above the waist line
+max_side_shape = 50        # waist suppression the side seam can take; the rest is a pleat
+back_dart = 20
+back_dart_length = 110
+
+# ---- Parts (bands, cuffs, collars, hoods, pockets, waistbands) -------------
+
+[parts]
+neckband_width = 15
+binding_width = 8
+rib_cuff_height = 60
+hem_band_height = 60
+barrel_cuff_height = 60
+barrel_cuff_ease = 50
+cuff_overlap = 20
+cuff_pleats_max = 80
+placket_length = 130
+placket_strip_width = 30
+hemmed_wide_ease = 40
+collar_height = 75
+stand_height = 30
+stand_rise = 12
+collar_point = 25
+hood_height = 0.62         # share of head girth
+hood_depth = 0.46          # share of head girth
+hood_ease = 20
+hood_neck_rise = 30
+hood_center_width = 100
+hood_center_nape = 60
+hood_face_hem = 30
+pocket_width = 0.7         # kangaroo pocket, share of the front's half width
+pocket_height = 210
+pocket_opening = 110
+pocket_above_hem = 20
+waistband_height = 40
+waistband_ext = 35
+fly_depth = 190
+fly_width = 35
+elastic_width = 30
+placket_facing = 30
+shirttail_rise = 60
+
+[bands]                    # band length / edge length it is sewn to
+neck_rib = 0.80
+neck_self = 0.88
+binding = 0.92
+cuff_rib = 0.75
+hem_rib = 0.85
+elastic = 0.9                # elastic length / body waist
+
+# ---- Default amounts for edits that don't say how much ---------------------
+
+[edits]
+sleeve_length = 50
+sleeve_width = 30
+neck_width = 20
+neck_depth = 20
+body_length = 50
+crop = 80
+chest_width = 40
+seat_width = 40
+leg_length = 50
+leg_width = 40
+rise = 20
+
+# ---- Construction checks (hard: a pattern that fails one is not output) ----
+
+[checks]
+seam_tolerance = 2
+min_shoulder = 60
+inseam_ease = 5
+max_extend = 300
+
+[layout]
+gap = 6
+sheet_width = 900
+margin = 20
+
+# ---- Rules: one decision each, one file each in src/rules/ -----------------
+
+[rules.sleeve_length]      # lengthen/shorten the sleeves
+weight = 1.0
+variants.extend_hem = { finish = 0.6, simplicity = 0.9, economy = 0.5 }
+variants.keep_hem_width = { finish = 0.8, simplicity = 0.7, economy = 0.5 }
+
+[rules.sleeve_width]       # widen/narrow the sleeves
+weight = 1.0
+variants.parallel = { finish = 0.6, simplicity = 0.9, economy = 0.4 }
+variants.bicep_only = { finish = 0.8, simplicity = 0.7, economy = 0.6 }
+
+[rules.neck_width]
+weight = 1.0
+variants.at_shoulder = { finish = 0.8, simplicity = 0.8, economy = 0.5 }
+
+[rules.neck_depth]
+weight = 1.0
+variants.front_only = { finish = 0.8, simplicity = 0.8, economy = 0.5 }
+
+[rules.body_length]
+weight = 1.0
+variants.at_hem = { finish = 0.8, simplicity = 0.9, economy = 0.5 }
+
+[rules.chest_width]
+weight = 1.0
+variants.at_side = { finish = 0.8, simplicity = 0.9, economy = 0.5 }
+
+[rules.seat_width]
+weight = 1.0
+variants.at_side = { finish = 0.8, simplicity = 0.9, economy = 0.5 }
+
+[rules.leg_length]
+weight = 1.0
+variants.extend_hem = { finish = 0.6, simplicity = 0.9, economy = 0.5 }
+variants.keep_hem_width = { finish = 0.8, simplicity = 0.7, economy = 0.5 }
+
+[rules.leg_width]
+weight = 1.0
+variants.straight = { finish = 0.8, simplicity = 0.8, economy = 0.4 }
+variants.flare = { finish = 0.6, simplicity = 0.8, economy = 0.6 }
+
+[rules.rise]
+weight = 1.0
+variants.at_waist = { finish = 0.8, simplicity = 0.9, economy = 0.5 }
+
+[rules.neck_finish]        # knit necklines without a hood
+weight = 1.0
+variants.rib_band = { finish = 1.0, simplicity = 0.6, economy = 0.6 }
+variants.self_band = { finish = 0.8, simplicity = 0.7, economy = 0.9 }
+variants.binding = { finish = 0.6, simplicity = 0.5, economy = 1.0 }
+
+[rules.collar]             # shirts
+weight = 1.0
+variants.one_piece = { finish = 0.6, simplicity = 0.9, economy = 0.8 }
+variants.with_stand = { finish = 1.0, simplicity = 0.4, economy = 0.7 }
+
+[rules.hood]
+weight = 1.0
+variants.two_piece = { finish = 0.6, simplicity = 0.9, economy = 0.8 }
+variants.three_piece = { finish = 1.0, simplicity = 0.6, economy = 0.7 }
+
+[rules.hood_lining]
+weight = 1.0
+variants.single = { finish = 0.5, simplicity = 0.9, economy = 1.0 }
+variants.lined = { finish = 1.0, simplicity = 0.5, economy = 0.3 }
+
+[rules.sleeve_finish]
+weight = 1.0
+variants.hemmed = { finish = 0.6, simplicity = 1.0, economy = 0.9 }
+variants.rib_cuff = { finish = 1.0, simplicity = 0.6, economy = 0.6 }
+variants.barrel_cuff = { finish = 1.0, simplicity = 0.3, economy = 0.7 }
+variants.hemmed_wide = { finish = 0.3, simplicity = 1.0, economy = 0.9 }
+
+[rules.body_hem]
+weight = 1.0
+variants.hemmed = { finish = 0.6, simplicity = 1.0, economy = 0.9 }
+variants.rib_band = { finish = 1.0, simplicity = 0.6, economy = 0.6 }
+variants.shirttail = { finish = 1.0, simplicity = 0.6, economy = 0.8 }
+variants.straight = { finish = 0.6, simplicity = 0.9, economy = 0.9 }
+
+[rules.pocket]
+weight = 1.0
+variants.kangaroo = { finish = 0.8, simplicity = 0.8, economy = 0.6 }
+
+[rules.waist]              # pants
+weight = 1.0
+variants.zip_fly = { finish = 1.0, simplicity = 0.3, economy = 0.7 }
+variants.elastic = { finish = 0.5, simplicity = 1.0, economy = 0.8 }
+
+# ---- Judges: score across the whole garment -----------------------------
+
+# Rib at some edges and plain hems at others looks unplanned.
+[judges.consistent_finish]
+weight = 0.5
+axes = { finish = 1.0 }
+
+# A second fabric has to be bought once; every further rib part is free.
+[judges.rib_fabric]
+weight = 0.4
+axes = { economy = 1.0, simplicity = 0.3 }
+
+# Fabric used by the cutting layout, per square metre.
+[judges.fabric_use]
+weight = 0.5
+axes = { economy = 1.0 }
+
+# ---- Design: colours and prints --------------------------------------------
+
+[design]
+stripe_repeat = 24         # one stripe pair, mm
+pinstripe_repeat = 14
+gingham_repeat = 12
+plaid_repeat = 90
+dot_repeat = 26
+camo_repeat = 180
+thin = 0.5                 # "thin/fine" scales the repeat
+thick = 2.0                # "thick/bold/wide"
+shade = 0.35               # "light"/"dark" mixes toward white/black
+button_shade = 0.25        # tonal buttons, darker than the body
+thread_shade = 0.2         # tonal thread
+min_print_contrast = 1.3   # below this a print's colours barely read
+drawstring_tail = 250      # each end hangs this far past the hood
+flat_long_sleeve = 62      # flats: long sleeves hang this many degrees below horizontal
+flat_short_sleeve = 30
+
+[design_defaults]          # colour when the sentence names none
+tshirt = "white"
+hoodie = "heather grey"
+sweatshirt = "heather grey"
+shirt = "sky blue"
+pants = "khaki"

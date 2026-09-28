@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="420.0mm" height="485.0mm" viewBox="0 0 420.0 485.0">
+<style>
+  text { font-family: Helvetica, Arial, sans-serif; fill: #1d1d1d; }
+  .title { font-size: 11px; font-weight: bold; letter-spacing: 0.2px; }
+  .sub { font-size: 3.6px; fill: #555; }
+  .quote { font-size: 3.4px; fill: #555; font-style: italic; }
+  .h { font-size: 3.4px; font-weight: bold; letter-spacing: 0.6px; fill: #1d1d1d; }
+  .b { font-size: 3.2px; }
+  .bb { font-size: 3.2px; font-weight: bold; }
+  .s { font-size: 2.6px; fill: #6b6b6b; }
+  .ok { font-size: 3.2px; fill: #2e7d4f; font-weight: bold; }
+  .warn { font-size: 3.0px; fill: #a15c00; }
+  .cap { font-size: 3.2px; font-weight: bold; text-anchor: middle; letter-spacing: 0.8px; fill: #555; }
+  .rule { stroke: #d6d6d6; stroke-width: 0.3; }
+  .sw { stroke: #1d1d1d; stroke-width: 0.8; }
+  .fl { stroke: #232323; stroke-width: 1.8; stroke-linejoin: round; }
+  .fs { fill: none; stroke-width: 1.1; stroke-dasharray: 6 4; }
+  .rb { fill: none; stroke-width: 0.9; }
+  .ds { fill: none; stroke-width: 6; stroke-linecap: round; }
+  .fabric { fill: #f1f4f8; stroke: #8a9bb0; stroke-width: 2; }
+  .rib { fill: #f6f1f8; }
+  .cut { fill: #fffdf7; stroke: #1d1d1d; stroke-width: 1.4; }
+  .stitch { display: none; }
+  .mark, .dash, .centre, .fold, .grain, .label, .lbg { display: none; }
+  .sheet .sub { display: none; }
+</style>
+<defs>
+<pattern id="p0" patternUnits="userSpaceOnUse" width="12.0" height="12.0" patternTransform="translate(293.4 166.6) rotate(-28.0) translate(-3.0 -3.0)"><rect x="0.0" y="0.0" width="12.0" height="12.0" fill="#f0ece1"/><rect x="0.0" y="0.0" width="6.0" height="12.0" fill="#c1272d" fill-opacity="0.5"/><rect x="0.0" y="0.0" width="12.0" height="6.0" fill="#c1272d" fill-opacity="0.5"/></pattern>
+<pattern id="p1" patternUnits="userSpaceOnUse" width="12.0" height="12.0" patternTransform="translate(501.3 568.3) rotate(-28.0) translate(-3.0 -3.0)"><rect x="0.0" y="0.0" width="12.0" height="12.0" fill="#f0ece1"/><rect x="0.0" y="0.0" width="6.0" height="12.0" fill="#c1272d" fill-opacity="0.5"/><rect x="0.0" y="0.0" width="12.0" height="6.0" fill="#c1272d" fill-opacity="0.5"/></pattern>
+<pattern id="p2" patternUnits="userSpaceOnUse" width="12.0" height="12.0" patternTransform="translate(-293.4 166.6) rotate(28.0) translate(-3.0 -3.0)"><rect x="0.0" y="0.0" width="12.0" height="12.0" fill="#f0ece1"/><rect x="0.0" y="0.0" width="6.0" height="12.0" fill="#c1272d" fill-opacity="0.5"/><rect x="0.0" y="0.0" width="12.0" height="6.0" fill="#c1272d" fill-opacity="0.5"/></pattern>
+<pattern id="p3" patternUnits="userSpaceOnUse" width="12.0" height="12.0" patternTransform="translate(-501.3 568.3) rotate(28.0) translate(-3.0 -3.0)"><rect x="0.0" y="0.0" width="12.0" height="12.0" fill="#f0ece1"/><rect x="0.0" y="0.0" width="6.0" height="12.0" fill="#c1272d" fill-opacity="0.5"/><rect x="0.0" y="0.0" width="12.0" height="6.0" fill="#c1272d" fill-opacity="0.5"/></pattern>
+<pattern id="p4" patternUnits="userSpaceOnUse" width="12.0" height="12.0" patternTransform="translate(0.0 260.0) rotate(0.0) translate(-3.0 -3.0)"><rect x="0.0" y="0.0" width="12.0" height="12.0" fill="#f0ece1"/><rect x="0.0" y="0.0" width="6.0" height="12.0" fill="#c1272d" fill-opacity="0.5"/><rect x="0.0" y="0.0" width="12.0" height="6.0" fill="#c1272d" fill-opacity="0.5"/></pattern>
+<pattern id="p5" patternUnits="userSpaceOnUse" width="12.0" height="12.0" patternTransform="translate(0.0 0.0) rotate(0.0) translate(-3.0 -3.0)"><rect x="0.0" y="0.0" width="12.0" height="12.0" fill="#f0ece1"/><rect x="0.0" y="0.0" width="6.0" height="12.0" fill="#c1272d" fill-opacity="0.5"/><rect x="0.0" y="0.0" width="12.0" height="6.0" fill="#c1272d" fill-opacity="0.5"/></pattern>
+<pattern id="p6" patternUnits="userSpaceOnUse" width="12.0" height="12.0" patternTransform="translate(293.4 166.6) rotate(-28.0) translate(-3.0 -3.0)"><rect x="0.0" y="0.0" width="12.0" height="12.0" fill="#f0ece1"/><rect x="0.0" y="0.0" width="6.0" height="12.0" fill="#c1272d" fill-opacity="0.5"/><rect x="0.0" y="0.0" width="12.0" height="6.0" fill="#c1272d" fill-opacity="0.5"/></pattern>
+<pattern id="p7" patternUnits="userSpaceOnUse" width="12.0" height="12.0" patternTransform="translate(501.3 568.3) rotate(-28.0) translate(-3.0 -3.0)"><rect x="0.0" y="0.0" width="12.0" height="12.0" fill="#f0ece1"/><rect x="0.0" y="0.0" width="6.0" height="12.0" fill="#c1272d" fill-opacity="0.5"/><rect x="0.0" y="0.0" width="12.0" height="6.0" fill="#c1272d" fill-opacity="0.5"/></pattern>
+<pattern id="p8" patternUnits="userSpaceOnUse" width="12.0" height="12.0" patternTransform="translate(-293.4 166.6) rotate(28.0) translate(-3.0 -3.0)"><rect x="0.0" y="0.0" width="12.0" height="12.0" fill="#f0ece1"/><rect x="0.0" y="0.0" width="6.0" height="12.0" fill="#c1272d" fill-opacity="0.5"/><rect x="0.0" y="0.0" width="12.0" height="6.0" fill="#c1272d" fill-opacity="0.5"/></pattern>
+<pattern id="p9" patternUnits="userSpaceOnUse" width="12.0" height="12.0" patternTransform="translate(-501.3 568.3) rotate(28.0) translate(-3.0 -3.0)"><rect x="0.0" y="0.0" width="12.0" height="12.0" fill="#f0ece1"/><rect x="0.0" y="0.0" width="6.0" height="12.0" fill="#c1272d" fill-opacity="0.5"/><rect x="0.0" y="0.0" width="12.0" height="6.0" fill="#c1272d" fill-opacity="0.5"/></pattern>
+<pattern id="p10" patternUnits="userSpaceOnUse" width="12.0" height="12.0" patternTransform="translate(0.0 260.0) rotate(0.0) translate(-3.0 -3.0)"><rect x="0.0" y="0.0" width="12.0" height="12.0" fill="#f0ece1"/><rect x="0.0" y="0.0" width="6.0" height="12.0" fill="#c1272d" fill-opacity="0.5"/><rect x="0.0" y="0.0" width="12.0" height="6.0" fill="#c1272d" fill-opacity="0.5"/></pattern>
+<pattern id="p11" patternUnits="userSpaceOnUse" width="12.0" height="12.0" patternTransform="translate(0.0 0.0) rotate(0.0) translate(-3.0 -3.0)"><rect x="0.0" y="0.0" width="12.0" height="12.0" fill="#f0ece1"/><rect x="0.0" y="0.0" width="6.0" height="12.0" fill="#c1272d" fill-opacity="0.5"/><rect x="0.0" y="0.0" width="12.0" height="6.0" fill="#c1272d" fill-opacity="0.5"/></pattern>
+<pattern id="p12" patternUnits="userSpaceOnUse" width="12.0" height="12.0" patternTransform="translate(0.0 0.0) rotate(0.0) translate(-3.0 -3.0)"><rect x="0.0" y="0.0" width="12.0" height="12.0" fill="#f0ece1"/><rect x="0.0" y="0.0" width="6.0" height="12.0" fill="#c1272d" fill-opacity="0.5"/><rect x="0.0" y="0.0" width="12.0" height="6.0" fill="#c1272d" fill-opacity="0.5"/></pattern>
+<pattern id="p13" patternUnits="userSpaceOnUse" width="12.0" height="12.0" patternTransform="translate(0.0 0.0) rotate(0.0) translate(-3.0 -3.0)"><rect x="0.0" y="0.0" width="12.0" height="12.0" fill="#f0ece1"/><rect x="0.0" y="0.0" width="6.0" height="12.0" fill="#c1272d" fill-opacity="0.5"/><rect x="0.0" y="0.0" width="12.0" height="6.0" fill="#c1272d" fill-opacity="0.5"/></pattern>
+<pattern id="p14" patternUnits="userSpaceOnUse" width="12.0" height="12.0" patternTransform="translate(0.0 0.0) rotate(0.0) translate(-3.0 -3.0)"><rect x="0.0" y="0.0" width="12.0" height="12.0" fill="#f0ece1"/><rect x="0.0" y="0.0" width="6.0" height="12.0" fill="#c1272d" fill-opacity="0.5"/><rect x="0.0" y="0.0" width="12.0" height="6.0" fill="#c1272d" fill-opacity="0.5"/></pattern>
+<pattern id="p15" patternUnits="userSpaceOnUse" width="12.0" height="12.0" patternTransform="translate(0.0 0.0) rotate(0.0) translate(-3.0 -3.0)"><rect x="0.0" y="0.0" width="12.0" height="12.0" fill="#f0ece1"/><rect x="0.0" y="0.0" width="6.0" height="12.0" fill="#c1272d" fill-opacity="0.5"/><rect x="0.0" y="0.0" width="12.0" height="6.0" fill="#c1272d" fill-opacity="0.5"/></pattern>
+<pattern id="p16" patternUnits="userSpaceOnUse" width="12.0" height="12.0" patternTransform="translate(1002.0 276.9) rotate(0.0) translate(-3.0 -3.0)"><rect x="0.0" y="0.0" width="12.0" height="12.0" fill="#f0ece1"/><rect x="0.0" y="0.0" width="6.0" height="12.0" fill="#c1272d" fill-opacity="0.5"/><rect x="0.0" y="0.0" width="12.0" height="6.0" fill="#c1272d" fill-opacity="0.5"/></pattern>
+<pattern id="p17" patternUnits="userSpaceOnUse" width="12.0" height="12.0" patternTransform="translate(45.0 279.7) rotate(0.0) translate(-3.0 -3.0)"><rect x="0.0" y="0.0" width="12.0" height="12.0" fill="#f0ece1"/><rect x="0.0" y="0.0" width="6.0" height="12.0" fill="#c1272d" fill-opacity="0.5"/><rect x="0.0" y="0.0" width="12.0" height="6.0" fill="#c1272d" fill-opacity="0.5"/></pattern>
+<pattern id="p18" patternUnits="userSpaceOnUse" width="12.0" height="12.0" patternTransform="translate(651.0 279.7) rotate(0.0) translate(-3.0 -3.0)"><rect x="0.0" y="0.0" width="12.0" height="12.0" fill="#f0ece1"/><rect x="0.0" y="0.0" width="6.0" height="12.0" fill="#c1272d" fill-opacity="0.5"/><rect x="0.0" y="0.0" width="12.0" height="6.0" fill="#c1272d" fill-opacity="0.5"/></pattern>
+<pattern id="p19" patternUnits="userSpaceOnUse" width="12.0" height="12.0" patternTransform="translate(924.5 935.7) rotate(0.0) translate(-3.0 -3.0)"><rect x="0.0" y="0.0" width="12.0" height="12.0" fill="#f0ece1"/><rect x="0.0" y="0.0" width="6.0" height="12.0" fill="#c1272d" fill-opacity="0.5"/><rect x="0.0" y="0.0" width="12.0" height="6.0" fill="#c1272d" fill-opacity="0.5"/></pattern>
+<pattern id="p20" patternUnits="userSpaceOnUse" width="12.0" height="12.0" patternTransform="translate(222.5 938.4) rotate(0.0) translate(-3.0 -3.0)"><rect x="0.0" y="0.0" width="12.0" height="12.0" fill="#f0ece1"/><rect x="0.0" y="0.0" width="6.0" height="12.0" fill="#c1272d" fill-opacity="0.5"/><rect x="0.0" y="0.0" width="12.0" height="6.0" fill="#c1272d" fill-opacity="0.5"/></pattern>
+<pattern id="p21" patternUnits="userSpaceOnUse" width="12.0" height="12.0" patternTransform="translate(1168.0 797.9) rotate(0.0) translate(-3.0 -3.0)"><rect x="0.0" y="0.0" width="12.0" height="12.0" fill="#f0ece1"/><rect x="0.0" y="0.0" width="6.0" height="12.0" fill="#c1272d" fill-opacity="0.5"/><rect x="0.0" y="0.0" width="12.0" height="6.0" fill="#c1272d" fill-opacity="0.5"/></pattern>
+<pattern id="p22" patternUnits="userSpaceOnUse" width="12.0" height="12.0" patternTransform="translate(1408.0 953.9) rotate(0.0) translate(-3.0 -3.0)"><rect x="0.0" y="0.0" width="12.0" height="12.0" fill="#f0ece1"/><rect x="0.0" y="0.0" width="6.0" height="12.0" fill="#c1272d" fill-opacity="0.5"/><rect x="0.0" y="0.0" width="12.0" height="6.0" fill="#c1272d" fill-opacity="0.5"/></pattern>
+<pattern id="p23" patternUnits="userSpaceOnUse" width="12.0" height="12.0" patternTransform="translate(1061.4 1501.2) rotate(0.0) translate(-3.0 -3.0)"><rect x="0.0" y="0.0" width="12.0" height="12.0" fill="#f0ece1"/><rect x="0.0" y="0.0" width="6.0" height="12.0" fill="#c1272d" fill-opacity="0.5"/><rect x="0.0" y="0.0" width="12.0" height="6.0" fill="#c1272d" fill-opacity="0.5"/></pattern>
+<pattern id="p24" patternUnits="userSpaceOnUse" width="12.0" height="12.0" patternTransform="translate(1321.4 1567.2) rotate(0.0) translate(-3.0 -3.0)"><rect x="0.0" y="0.0" width="12.0" height="12.0" fill="#f0ece1"/><rect x="0.0" y="0.0" width="6.0" height="12.0" fill="#c1272d" fill-opacity="0.5"/><rect x="0.0" y="0.0" width="12.0" height="6.0" fill="#c1272d" fill-opacity="0.5"/></pattern>
+<pattern id="p25" patternUnits="userSpaceOnUse" width="12.0" height="12.0" patternTransform="translate(673.4 1435.2) rotate(0.0) translate(-3.0 -3.0)"><rect x="0.0" y="0.0" width="12.0" height="12.0" fill="#f0ece1"/><rect x="0.0" y="0.0" width="6.0" height="12.0" fill="#c1272d" fill-opacity="0.5"/><rect x="0.0" y="0.0" width="12.0" height="6.0" fill="#c1272d" fill-opacity="0.5"/></pattern>
+<pattern id="p26" patternUnits="userSpaceOnUse" width="12.0" height="12.0" patternTransform="translate(1124.2 1435.2) rotate(0.0) translate(-3.0 -3.0)"><rect x="0.0" y="0.0" width="12.0" height="12.0" fill="#f0ece1"/><rect x="0.0" y="0.0" width="6.0" height="12.0" fill="#c1272d" fill-opacity="0.5"/><rect x="0.0" y="0.0" width="12.0" height="6.0" fill="#c1272d" fill-opacity="0.5"/></pattern>
+<pattern id="p27" patternUnits="userSpaceOnUse" width="12.0" height="12.0" patternTransform="translate(258.6 1501.2) rotate(0.0) translate(-3.0 -3.0)"><rect x="0.0" y="0.0" width="12.0" height="12.0" fill="#f0ece1"/><rect x="0.0" y="0.0" width="6.0" height="12.0" fill="#c1272d" fill-opacity="0.5"/><rect x="0.0" y="0.0" width="12.0" height="6.0" fill="#c1272d" fill-opacity="0.5"/></pattern>
+<pattern id="p28" patternUnits="userSpaceOnUse" width="12.0" height="12.0" patternTransform="translate(781.8 1501.2) rotate(0.0) translate(-3.0 -3.0)"><rect x="0.0" y="0.0" width="12.0" height="12.0" fill="#f0ece1"/><rect x="0.0" y="0.0" width="6.0" height="12.0" fill="#c1272d" fill-opacity="0.5"/><rect x="0.0" y="0.0" width="12.0" height="6.0" fill="#c1272d" fill-opacity="0.5"/></pattern>
+</defs>
+<!-- Aras: "make a red gingham shirt" -->
+<rect x="0" y="0" width="420.0" height="485.0" fill="#ffffff"/>
+<text class="title" x="15.0" y="24.0">Red &amp; Off White Gingham Button Shirt</text>
+<text class="sub" x="15.0" y="31.0">ARS-SH-E9F4   ·   size M   ·   regular fit   ·   shirting</text>
+<text class="quote" x="15.0" y="37.0">“make a red gingham shirt”</text>
+<path class="rule" d="M15.0 42.0 L405.0 42.0"/>
+<g transform="translate(79.0 138.3) scale(0.1209)">
+<path class="fl" fill="url(#p0)" d="M228.7 45.0 L505.7 565.9 L391.0 627.0 L109.5 257.4 L285.0 260.0 L279.8 259.8 L274.8 259.0 L269.9 257.8 L265.2 256.2 L260.7 254.1 L256.3 251.7 L252.2 248.9 L248.2 245.7 L244.4 242.1 L240.8 238.3 L237.4 234.2 L234.2 229.8 L231.3 225.1 L228.6 220.2 L226.1 215.1 L223.8 209.8 L221.8 204.4 L220.0 198.8 L218.5 193.0 L217.3 187.2 L216.3 181.3 L215.6 175.3 L215.1 169.3 L215.0 163.2 L215.0 158.3 L215.1 153.3 L215.1 148.3 L215.3 143.4 L215.4 138.4 L215.6 133.4 L215.9 128.4 L216.2 123.4 L216.5 118.5 L216.9 113.5 L217.3 108.5 L217.8 103.6 L218.4 98.6 L219.0 93.7 L219.6 88.7 L220.4 83.8 L221.2 78.9 L222.0 74.0 L223.0 69.1 L224.0 64.3 L225.0 59.4 L226.2 54.6 L227.4 49.8 L228.7 45.0 Z"/>
+<path class="fl" fill="url(#p1)" d="M501.3 568.3 L529.5 621.3 L423.5 677.6 L395.4 624.6 Z"/>
+<circle class="fl" cx="506.6" cy="599.5" r="5" fill="#f0ece1"/>
+<path class="fl" fill="url(#p2)" d="M-228.7 45.0 L-505.7 565.9 L-391.0 627.0 L-109.5 257.4 L-285.0 260.0 L-279.8 259.8 L-274.8 259.0 L-269.9 257.8 L-265.2 256.2 L-260.7 254.1 L-256.3 251.7 L-252.2 248.9 L-248.2 245.7 L-244.4 242.1 L-240.8 238.3 L-237.4 234.2 L-234.2 229.8 L-231.3 225.1 L-228.6 220.2 L-226.1 215.1 L-223.8 209.8 L-221.8 204.4 L-220.0 198.8 L-218.5 193.0 L-217.3 187.2 L-216.3 181.3 L-215.6 175.3 L-215.1 169.3 L-215.0 163.2 L-215.0 158.3 L-215.1 153.3 L-215.1 148.3 L-215.3 143.4 L-215.4 138.4 L-215.6 133.4 L-215.9 128.4 L-216.2 123.4 L-216.5 118.5 L-216.9 113.5 L-217.3 108.5 L-217.8 103.6 L-218.4 98.6 L-219.0 93.7 L-219.6 88.7 L-220.4 83.8 L-221.2 78.9 L-222.0 74.0 L-223.0 69.1 L-224.0 64.3 L-225.0 59.4 L-226.2 54.6 L-227.4 49.8 L-228.7 45.0 Z"/>
+<path class="fl" fill="url(#p3)" d="M-501.3 568.3 L-529.5 621.3 L-423.5 677.6 L-395.4 624.6 Z"/>
+<circle class="fl" cx="-506.6" cy="599.5" r="5" fill="#f0ece1"/>
+<path class="fl" fill="url(#p4)" d="M15.0 80.0 L0.0 80.0 L-4.8 79.8 L-9.5 79.3 L-14.1 78.4 L-18.6 77.1 L-23.0 75.6 L-27.2 73.7 L-31.4 71.5 L-35.3 69.1 L-39.1 66.3 L-42.8 63.3 L-46.2 60.1 L-49.5 56.6 L-52.6 52.8 L-55.4 48.9 L-58.0 44.7 L-60.4 40.4 L-62.6 35.8 L-64.5 31.1 L-66.1 26.3 L-67.5 21.3 L-68.6 16.1 L-69.4 10.9 L-69.8 5.5 L-70.0 0.0 L-228.7 45.0 L-227.4 49.8 L-226.2 54.6 L-225.0 59.4 L-224.0 64.3 L-223.0 69.1 L-222.0 74.0 L-221.2 78.9 L-220.4 83.8 L-219.6 88.7 L-219.0 93.7 L-218.4 98.6 L-217.8 103.6 L-217.3 108.5 L-216.9 113.5 L-216.5 118.5 L-216.2 123.4 L-215.9 128.4 L-215.6 133.4 L-215.4 138.4 L-215.3 143.4 L-215.1 148.3 L-215.1 153.3 L-215.0 158.3 L-215.0 163.2 L-215.1 169.3 L-215.6 175.3 L-216.3 181.3 L-217.3 187.2 L-218.5 193.0 L-220.0 198.8 L-221.8 204.4 L-223.8 209.8 L-226.1 215.1 L-228.6 220.2 L-231.3 225.1 L-234.2 229.8 L-237.4 234.2 L-240.8 238.3 L-244.4 242.1 L-248.2 245.7 L-252.2 248.9 L-256.3 251.7 L-260.7 254.1 L-265.2 256.2 L-269.9 257.8 L-274.8 259.0 L-279.8 259.8 L-285.0 260.0 L-285.0 690.0 L-284.3 694.4 L-282.4 698.7 L-279.2 702.9 L-274.8 706.9 L-269.2 710.8 L-262.5 714.6 L-254.7 718.1 L-245.9 721.6 L-236.2 724.8 L-225.4 727.9 L-213.8 730.8 L-201.3 733.5 L-188.0 736.0 L-173.9 738.4 L-159.1 740.5 L-143.6 742.4 L-127.4 744.2 L-110.7 745.7 L-93.4 747.0 L-75.5 748.1 L-57.3 748.9 L-38.5 749.5 L-19.4 749.9 L0.0 750.0 L15.0 750.0 Z"/>
+<path class="fl" fill="url(#p4)" d="M-15.0 80.0 L0.0 80.0 L4.8 79.8 L9.5 79.3 L14.1 78.4 L18.6 77.1 L23.0 75.6 L27.2 73.7 L31.4 71.5 L35.3 69.1 L39.1 66.3 L42.8 63.3 L46.2 60.1 L49.5 56.6 L52.6 52.8 L55.4 48.9 L58.0 44.7 L60.4 40.4 L62.6 35.8 L64.5 31.1 L66.1 26.3 L67.5 21.3 L68.6 16.1 L69.4 10.9 L69.8 5.5 L70.0 0.0 L228.7 45.0 L227.4 49.8 L226.2 54.6 L225.0 59.4 L224.0 64.3 L223.0 69.1 L222.0 74.0 L221.2 78.9 L220.4 83.8 L219.6 88.7 L219.0 93.7 L218.4 98.6 L217.8 103.6 L217.3 108.5 L216.9 113.5 L216.5 118.5 L216.2 123.4 L215.9 128.4 L215.6 133.4 L215.4 138.4 L215.3 143.4 L215.1 148.3 L215.1 153.3 L215.0 158.3 L215.0 163.2 L215.1 169.3 L215.6 175.3 L216.3 181.3 L217.3 187.2 L218.5 193.0 L220.0 198.8 L221.8 204.4 L223.8 209.8 L226.1 215.1 L228.6 220.2 L231.3 225.1 L234.2 229.8 L237.4 234.2 L240.8 238.3 L244.4 242.1 L248.2 245.7 L252.2 248.9 L256.3 251.7 L260.7 254.1 L265.2 256.2 L269.9 257.8 L274.8 259.0 L279.8 259.8 L285.0 260.0 L285.0 690.0 L284.3 694.4 L282.4 698.7 L279.2 702.9 L274.8 706.9 L269.2 710.8 L262.5 714.6 L254.7 718.1 L245.9 721.6 L236.2 724.8 L225.4 727.9 L213.8 730.8 L201.3 733.5 L188.0 736.0 L173.9 738.4 L159.1 740.5 L143.6 742.4 L127.4 744.2 L110.7 745.7 L93.4 747.0 L75.5 748.1 L57.3 748.9 L38.5 749.5 L19.4 749.9 L0.0 750.0 L-15.0 750.0 Z"/>
+<path class="fs" stroke="#9a1f24" d="M-19.3 735.9 L-38.2 735.5 L-56.7 734.9 L-74.8 734.1 L-92.4 733.0 L-109.5 731.7 L-126.0 730.2 L-141.9 728.5 L-157.2 726.6 L-171.7 724.5 L-185.5 722.2 L-198.5 719.8 L-210.6 717.1 L-221.8 714.4 L-232.0 711.4 L-241.2 708.4 L-249.3 705.2 L-256.2 702.1 L-261.8 698.9 L-266.1 696.0 L-268.9 693.4 L-270.4 691.5 L-270.9 690.4 L-271.2 687.9 L271.2 687.9 L270.9 690.4 L270.4 691.5 L268.9 693.4 L266.1 696.0 L261.8 698.9 L256.2 702.1 L249.3 705.2 L241.2 708.4 L232.0 711.4 L221.8 714.4 L210.6 717.1 L198.5 719.8 L185.5 722.2 L171.7 724.5 L157.2 726.6 L141.9 728.5 L126.0 730.2 L109.5 731.7 L92.4 733.0 L74.8 734.1 L56.7 734.9 L38.2 735.5 L19.3 735.9"/>
+<path class="fs" stroke="#9a1f24" d="M-12.0 84.0 L-12.0 744.0"/>
+<path class="fs" stroke="#9a1f24" d="M12.0 84.0 L12.0 744.0"/>
+<circle class="fl" cx="0" cy="102.5" r="5.5" fill="#f0ece1"/>
+<circle class="fl" cx="0" cy="195.0" r="5.5" fill="#f0ece1"/>
+<circle class="fl" cx="0" cy="287.5" r="5.5" fill="#f0ece1"/>
+<circle class="fl" cx="0" cy="380.0" r="5.5" fill="#f0ece1"/>
+<circle class="fl" cx="0" cy="472.5" r="5.5" fill="#f0ece1"/>
+<circle class="fl" cx="0" cy="565.0" r="5.5" fill="#f0ece1"/>
+<circle class="fl" cx="0" cy="657.5" r="5.5" fill="#f0ece1"/>
+<path class="fl" fill="url(#p5)" d="M-74.0 -2.0 L74.0 -2.0 L72.0 -26.0 L-72.0 -26.0 Z"/>
+<path class="fl" fill="url(#p5)" d="M-76.0 -6.0 L-86.0 36.0 L-22.0 110.0 L-2.0 86.0 L-38.5 6.0 Z"/>
+<path class="fl" fill="url(#p5)" d="M76.0 -6.0 L86.0 36.0 L22.0 110.0 L2.0 86.0 L38.5 6.0 Z"/>
+</g>
+<text class="cap" x="79.0" y="236.0">FRONT</text>
+<g transform="translate(215.0 138.3) scale(0.1209)">
+<path class="fl" fill="url(#p6)" d="M228.7 45.0 L505.7 565.9 L391.0 627.0 L109.5 257.4 L285.0 260.0 L280.5 259.8 L276.1 259.0 L271.8 257.8 L267.7 256.2 L263.7 254.1 L259.9 251.7 L256.3 248.9 L252.8 245.7 L249.5 242.1 L246.3 238.3 L243.4 234.2 L240.6 229.8 L238.0 225.1 L235.6 220.2 L233.4 215.1 L231.5 209.8 L229.7 204.4 L228.1 198.8 L226.8 193.0 L225.7 187.2 L224.9 181.3 L224.2 175.3 L223.9 169.3 L223.7 163.2 L223.7 158.3 L223.6 153.4 L223.5 148.4 L223.4 143.4 L223.2 138.5 L223.0 133.5 L222.8 128.5 L222.7 123.5 L222.5 118.5 L222.4 113.5 L222.3 108.5 L222.2 103.6 L222.2 98.6 L222.3 93.6 L222.4 88.7 L222.7 83.8 L223.0 78.8 L223.4 73.9 L224.0 69.1 L224.6 64.2 L225.4 59.4 L226.4 54.5 L227.5 49.8 L228.7 45.0 Z"/>
+<path class="fl" fill="url(#p7)" d="M501.3 568.3 L529.5 621.3 L423.5 677.6 L395.4 624.6 Z"/>
+<circle class="fl" cx="506.6" cy="599.5" r="5" fill="#f0ece1"/>
+<path class="fl" fill="url(#p8)" d="M-228.7 45.0 L-505.7 565.9 L-391.0 627.0 L-109.5 257.4 L-285.0 260.0 L-280.5 259.8 L-276.1 259.0 L-271.8 257.8 L-267.7 256.2 L-263.7 254.1 L-259.9 251.7 L-256.3 248.9 L-252.8 245.7 L-249.5 242.1 L-246.3 238.3 L-243.4 234.2 L-240.6 229.8 L-238.0 225.1 L-235.6 220.2 L-233.4 215.1 L-231.5 209.8 L-229.7 204.4 L-228.1 198.8 L-226.8 193.0 L-225.7 187.2 L-224.9 181.3 L-224.2 175.3 L-223.9 169.3 L-223.7 163.2 L-223.7 158.3 L-223.6 153.4 L-223.5 148.4 L-223.4 143.4 L-223.2 138.5 L-223.0 133.5 L-222.8 128.5 L-222.7 123.5 L-222.5 118.5 L-222.4 113.5 L-222.3 108.5 L-222.2 103.6 L-222.2 98.6 L-222.3 93.6 L-222.4 88.7 L-222.7 83.8 L-223.0 78.8 L-223.4 73.9 L-224.0 69.1 L-224.6 64.2 L-225.4 59.4 L-226.4 54.5 L-227.5 49.8 L-228.7 45.0 Z"/>
+<path class="fl" fill="url(#p9)" d="M-501.3 568.3 L-529.5 621.3 L-423.5 677.6 L-395.4 624.6 Z"/>
+<circle class="fl" cx="-506.6" cy="599.5" r="5" fill="#f0ece1"/>
+<path class="fl" fill="url(#p10)" d="M0.0 20.0 L4.3 20.0 L8.5 19.9 L12.5 19.8 L16.4 19.6 L20.1 19.4 L23.7 19.1 L27.2 18.8 L30.6 18.4 L33.8 17.9 L37.0 17.3 L40.0 16.7 L42.9 16.0 L45.7 15.2 L48.3 14.3 L50.9 13.4 L53.4 12.3 L55.8 11.1 L58.1 9.9 L60.3 8.5 L62.4 7.0 L64.4 5.5 L66.4 3.8 L68.2 1.9 L70.0 0.0 L228.7 45.0 L227.5 49.8 L226.4 54.5 L225.4 59.4 L224.6 64.2 L224.0 69.1 L223.4 73.9 L223.0 78.8 L222.7 83.8 L222.4 88.7 L222.3 93.6 L222.2 98.6 L222.2 103.6 L222.3 108.5 L222.4 113.5 L222.5 118.5 L222.7 123.5 L222.8 128.5 L223.0 133.5 L223.2 138.5 L223.4 143.4 L223.5 148.4 L223.6 153.4 L223.7 158.3 L223.7 163.2 L223.9 169.3 L224.2 175.3 L224.9 181.3 L225.7 187.2 L226.8 193.0 L228.1 198.8 L229.7 204.4 L231.5 209.8 L233.4 215.1 L235.6 220.2 L238.0 225.1 L240.6 229.8 L243.4 234.2 L246.3 238.3 L249.5 242.1 L252.8 245.7 L256.3 248.9 L259.9 251.7 L263.7 254.1 L267.7 256.2 L271.8 257.8 L276.1 259.0 L280.5 259.8 L285.0 260.0 L285.0 690.0 L284.3 694.4 L282.4 698.7 L279.2 702.9 L274.8 706.9 L269.2 710.8 L262.5 714.6 L254.7 718.1 L245.9 721.6 L236.2 724.8 L225.4 727.9 L213.8 730.8 L201.3 733.5 L188.0 736.0 L173.9 738.4 L159.1 740.5 L143.6 742.4 L127.4 744.2 L110.7 745.7 L93.4 747.0 L75.5 748.1 L57.3 748.9 L38.5 749.5 L19.4 749.9 L0.0 750.0 L-19.4 749.9 L-38.5 749.5 L-57.3 748.9 L-75.5 748.1 L-93.4 747.0 L-110.7 745.7 L-127.4 744.2 L-143.6 742.4 L-159.1 740.5 L-173.9 738.4 L-188.0 736.0 L-201.3 733.5 L-213.8 730.8 L-225.4 727.9 L-236.2 724.8 L-245.9 721.6 L-254.7 718.1 L-262.5 714.6 L-269.2 710.8 L-274.8 706.9 L-279.2 702.9 L-282.4 698.7 L-284.3 694.4 L-285.0 690.0 L-285.0 260.0 L-280.5 259.8 L-276.1 259.0 L-271.8 257.8 L-267.7 256.2 L-263.7 254.1 L-259.9 251.7 L-256.3 248.9 L-252.8 245.7 L-249.5 242.1 L-246.3 238.3 L-243.4 234.2 L-240.6 229.8 L-238.0 225.1 L-235.6 220.2 L-233.4 215.1 L-231.5 209.8 L-229.7 204.4 L-228.1 198.8 L-226.8 193.0 L-225.7 187.2 L-224.9 181.3 L-224.2 175.3 L-223.9 169.3 L-223.7 163.2 L-223.7 158.3 L-223.6 153.4 L-223.5 148.4 L-223.4 143.4 L-223.2 138.5 L-223.0 133.5 L-222.8 128.5 L-222.7 123.5 L-222.5 118.5 L-222.4 113.5 L-222.3 108.5 L-222.2 103.6 L-222.2 98.6 L-222.3 93.6 L-222.4 88.7 L-222.7 83.8 L-223.0 78.8 L-223.4 73.9 L-224.0 69.1 L-224.6 64.2 L-225.4 59.4 L-226.4 54.5 L-227.5 49.8 L-228.7 45.0 L-70.0 0.0 L-68.2 1.9 L-66.4 3.8 L-64.4 5.5 L-62.4 7.0 L-60.3 8.5 L-58.1 9.9 L-55.8 11.1 L-53.4 12.3 L-50.9 13.4 L-48.3 14.3 L-45.7 15.2 L-42.9 16.0 L-40.0 16.7 L-37.0 17.3 L-33.8 17.9 L-30.6 18.4 L-27.2 18.8 L-23.7 19.1 L-20.1 19.4 L-16.4 19.6 L-12.5 19.8 L-8.5 19.9 L-4.3 20.0 Z"/>
+<path class="fs" stroke="#9a1f24" d="M-19.3 735.9 L-38.2 735.5 L-56.7 734.9 L-74.8 734.1 L-92.4 733.0 L-109.5 731.7 L-126.0 730.2 L-141.9 728.5 L-157.2 726.6 L-171.7 724.5 L-185.5 722.2 L-198.5 719.8 L-210.6 717.1 L-221.8 714.4 L-232.0 711.4 L-241.2 708.4 L-249.3 705.2 L-256.2 702.1 L-261.8 698.9 L-266.1 696.0 L-268.9 693.4 L-270.4 691.5 L-270.9 690.4 L-271.2 687.9 L271.2 687.9 L270.9 690.4 L270.4 691.5 L268.9 693.4 L266.1 696.0 L261.8 698.9 L256.2 702.1 L249.3 705.2 L241.2 708.4 L232.0 711.4 L221.8 714.4 L210.6 717.1 L198.5 719.8 L185.5 722.2 L171.7 724.5 L157.2 726.6 L141.9 728.5 L126.0 730.2 L109.5 731.7 L92.4 733.0 L74.8 734.1 L56.7 734.9 L38.2 735.5 L19.3 735.9"/>
+<path class="fl" fill="url(#p11)" d="M-72.0 -24.0 L72.0 -24.0 L76.0 4.0 L70.7 4.7 L65.2 5.4 L59.4 6.0 L53.4 6.5 L47.1 7.0 L40.7 7.4 L34.2 7.7 L27.5 8.0 L20.7 8.2 L13.8 8.4 L6.9 8.5 L0.0 8.5 L-6.9 8.5 L-13.8 8.4 L-20.7 8.2 L-27.5 8.0 L-34.2 7.7 L-40.7 7.4 L-47.1 7.0 L-53.4 6.5 L-59.4 6.0 L-65.2 5.4 L-70.7 4.7 L-76.0 4.0 Z"/>
+</g>
+<text class="cap" x="215.0" y="236.0">BACK</text>
+<text class="h" x="293.0" y="51.0">COLOURWAY</text>
+<g transform="translate(293.0 56.0) scale(0.4)"><rect class="sw" x="0" y="0" width="35.0" height="22.5" rx="2" fill="url(#p12)"/></g>
+<text class="bb" x="310.0" y="59.2">BODY</text>
+<text class="b" x="310.0" y="62.6">Red / Off White gingham</text>
+<text class="s" x="310.0" y="65.6">&quot;make a red gingham shirt&quot;</text>
+<g transform="translate(293.0 69.0) scale(0.4)"><rect class="sw" x="0" y="0" width="35.0" height="22.5" rx="2" fill="url(#p13)"/></g>
+<text class="bb" x="310.0" y="72.2">SLEEVES</text>
+<text class="b" x="310.0" y="75.6">Red / Off White gingham</text>
+<text class="s" x="310.0" y="78.6">same as the body</text>
+<g transform="translate(293.0 82.0) scale(0.4)"><rect class="sw" x="0" y="0" width="35.0" height="22.5" rx="2" fill="url(#p14)"/></g>
+<text class="bb" x="310.0" y="85.2">COLLAR</text>
+<text class="b" x="310.0" y="88.6">Red / Off White gingham</text>
+<text class="s" x="310.0" y="91.6">same as the body</text>
+<g transform="translate(293.0 95.0) scale(0.4)"><rect class="sw" x="0" y="0" width="35.0" height="22.5" rx="2" fill="url(#p15)"/></g>
+<text class="bb" x="310.0" y="98.2">CUFFS</text>
+<text class="b" x="310.0" y="101.6">Red / Off White gingham</text>
+<text class="s" x="310.0" y="104.6">same as the sleeves</text>
+<g transform="translate(293.0 108.0) scale(0.4)"><rect class="sw" x="0" y="0" width="35.0" height="22.5" rx="2" fill="#f0ece1"/></g>
+<text class="bb" x="310.0" y="111.2">BUTTONS</text>
+<text class="b" x="310.0" y="114.6">Off White</text>
+<text class="s" x="310.0" y="117.6">tonal buttons</text>
+<g transform="translate(293.0 121.0) scale(0.4)"><rect class="sw" x="0" y="0" width="35.0" height="22.5" rx="2" fill="#9a1f24"/></g>
+<text class="bb" x="310.0" y="124.2">THREAD</text>
+<text class="b" x="310.0" y="127.6">Dark Red</text>
+<text class="s" x="310.0" y="130.6">tonal thread</text>
+<text class="h" x="293.0" y="138.0">CONSTRUCTION</text>
+<text class="b" x="293.0" y="143.5">body hem: shirttail</text>
+<text class="s" x="293.0" y="146.7">← “make a red gingham shirt”</text>
+<text class="b" x="293.0" y="150.9">sleeve finish: barrel cuff</text>
+<text class="s" x="293.0" y="154.1">← “make a red gingham shirt”</text>
+<text class="b" x="293.0" y="158.3">collar: with stand</text>
+<text class="s" x="293.0" y="161.5">← “make a red gingham shirt”</text>
+<text class="ok" x="293.0" y="166.7">✓ 9/9 construction checks passed</text>
+<text class="h" x="15.0" y="245.0">BILL OF MATERIALS</text>
+<text class="bb" x="15.0" y="250.5">1.61 m</text>
+<text class="b" x="37.0" y="250.5">shirting · Red / Off White gingham, 150 cm wide</text>
+<text class="bb" x="15.0" y="255.3">12</text>
+<text class="b" x="37.0" y="255.3">buttons, 11 mm, Off White (incl. 2 spare)</text>
+<text class="bb" x="15.0" y="260.1">—</text>
+<text class="b" x="37.0" y="260.1">fusible interfacing for cuff, collar stand, collar</text>
+<text class="bb" x="15.0" y="264.9">1 spool</text>
+<text class="b" x="37.0" y="264.9">polyester thread, Dark Red</text>
+<text class="s" x="15.0" y="270.7">seam allowance 15 mm and hems 10 mm included in every piece</text>
+<path class="rule" d="M15.0 278.7 L405.0 278.7"/>
+<text class="h" x="15.0" y="283.7">CUTTING LAYOUT</text>
+<g class="sheet" transform="translate(15.0 291.7) scale(0.11)">
+<rect class="fabric" x="0.0" y="0.0" width="1500.0" height="1612.2"/>
+<!-- back  [block/button shirt]  "make a red gingham shirt" -->
+<g>
+<path class="cut" style="fill:url(#p16)" d="M1002.0 21.9 L1006.1 21.9 L1010.1 21.9 L1013.9 21.8 L1017.6 21.6 L1021.1 21.4 L1024.4 21.1 L1027.6 20.8 L1030.6 20.4 L1033.4 20.0 L1036.1 19.6 L1038.7 19.0 L1041.0 18.4 L1043.3 17.8 L1045.4 17.1 L1047.3 16.4 L1049.2 15.6 L1050.9 14.8 L1052.5 13.9 L1054.0 12.9 L1055.5 11.9 L1056.8 10.8 L1058.2 9.7 L1059.5 8.4 L1067.2 0.0 L1249.0 51.5 L1244.0 70.3 L1243.1 74.6 L1242.2 79.0 L1241.5 83.4 L1240.9 87.9 L1240.4 92.4 L1239.9 96.9 L1239.6 101.6 L1239.4 106.2 L1239.3 110.9 L1239.2 115.7 L1239.2 120.4 L1239.3 125.3 L1239.4 130.1 L1239.5 135.0 L1239.6 139.9 L1239.8 144.9 L1240.0 149.9 L1240.2 154.9 L1240.4 159.9 L1240.5 164.9 L1240.6 170.0 L1240.7 175.1 L1240.7 180.0 L1240.9 185.6 L1241.2 191.0 L1241.8 196.4 L1242.5 201.7 L1243.5 206.9 L1244.7 212.0 L1246.1 217.0 L1247.6 221.8 L1249.4 226.5 L1251.3 230.9 L1253.3 235.1 L1255.5 239.1 L1257.8 242.7 L1260.2 246.1 L1262.7 249.2 L1265.3 251.9 L1267.9 254.3 L1270.6 256.4 L1273.3 258.1 L1275.9 259.5 L1278.6 260.5 L1281.3 261.3 L1284.1 261.8 L1302.0 262.7 L1302.0 674.1 L1296.0 714.2 L1293.0 720.9 L1288.6 726.6 L1283.0 731.7 L1276.5 736.3 L1269.0 740.4 L1260.6 744.3 L1251.3 747.9 L1241.1 751.3 L1230.0 754.5 L1218.1 757.5 L1205.3 760.2 L1191.7 762.8 L1177.4 765.2 L1162.4 767.4 L1146.7 769.3 L1130.4 771.1 L1113.5 772.6 L1096.0 773.9 L1078.1 775.0 L1059.6 775.8 L1040.8 776.4 L1021.6 776.8 L1002.0 776.9 L982.4 776.8 L963.2 776.4 L944.4 775.8 L925.9 775.0 L908.0 773.9 L890.5 772.6 L873.6 771.1 L857.3 769.3 L841.6 767.4 L826.6 765.2 L812.3 762.8 L798.7 760.2 L785.9 757.5 L774.0 754.5 L762.9 751.3 L752.7 747.9 L743.4 744.3 L735.0 740.4 L727.5 736.3 L721.0 731.7 L715.4 726.6 L711.0 720.9 L708.0 714.2 L702.0 674.1 L702.0 262.7 L719.9 261.8 L722.7 261.3 L725.4 260.5 L728.1 259.5 L730.7 258.1 L733.4 256.4 L736.1 254.3 L738.7 251.9 L741.3 249.2 L743.8 246.1 L746.2 242.7 L748.5 239.1 L750.7 235.1 L752.7 230.9 L754.6 226.5 L756.4 221.8 L757.9 217.0 L759.3 212.0 L760.5 206.9 L761.5 201.7 L762.2 196.4 L762.8 191.0 L763.1 185.6 L763.3 180.0 L763.3 175.1 L763.4 170.0 L763.5 164.9 L763.6 159.9 L763.8 154.9 L764.0 149.9 L764.2 144.9 L764.4 139.9 L764.5 135.0 L764.6 130.1 L764.7 125.3 L764.8 120.4 L764.8 115.7 L764.7 110.9 L764.6 106.2 L764.4 101.6 L764.1 96.9 L763.6 92.4 L763.1 87.9 L762.5 83.4 L761.8 79.0 L760.9 74.6 L760.0 70.3 L755.0 51.5 L936.8 0.0 L944.5 8.4 L945.8 9.7 L947.2 10.8 L948.5 11.9 L950.0 12.9 L951.5 13.9 L953.1 14.8 L954.8 15.6 L956.7 16.4 L958.6 17.1 L960.7 17.8 L963.0 18.4 L965.3 19.0 L967.9 19.6 L970.6 20.0 L973.4 20.4 L976.4 20.8 L979.6 21.1 L982.9 21.4 L986.4 21.6 L990.1 21.8 L993.9 21.9 L997.9 21.9 Z"/>
+<path class="stitch" d="M1002.0 36.9 L1006.3 36.9 L1010.5 36.9 L1014.5 36.7 L1018.4 36.6 L1022.1 36.4 L1025.7 36.1 L1029.2 35.7 L1032.6 35.3 L1035.8 34.8 L1039.0 34.3 L1042.0 33.7 L1044.9 32.9 L1047.7 32.2 L1050.3 31.3 L1052.9 30.3 L1055.4 29.2 L1057.8 28.1 L1060.1 26.8 L1062.3 25.5 L1064.4 24.0 L1066.4 22.4 L1068.4 20.7 L1070.2 18.9 L1072.0 16.9 L1230.7 61.9 L1229.5 66.7 L1228.4 71.5 L1227.4 76.3 L1226.6 81.1 L1226.0 86.0 L1225.4 90.9 L1225.0 95.8 L1224.7 100.7 L1224.4 105.6 L1224.3 110.6 L1224.2 115.5 L1224.2 120.5 L1224.3 125.5 L1224.4 130.5 L1224.5 135.5 L1224.7 140.4 L1224.8 145.4 L1225.0 150.4 L1225.2 155.4 L1225.4 160.4 L1225.5 165.3 L1225.6 170.3 L1225.7 175.3 L1225.7 180.2 L1225.9 186.2 L1226.2 192.3 L1226.9 198.2 L1227.7 204.2 L1228.8 210.0 L1230.1 215.7 L1231.7 221.3 L1233.5 226.8 L1235.4 232.1 L1237.6 237.2 L1240.0 242.1 L1242.6 246.7 L1245.4 251.1 L1248.3 255.2 L1251.5 259.1 L1254.8 262.6 L1258.3 265.8 L1261.9 268.6 L1265.7 271.1 L1269.7 273.1 L1273.8 274.8 L1278.1 276.0 L1282.5 276.7 L1287.0 276.9 L1287.0 706.9 L1286.3 711.4 L1284.4 715.7 L1281.2 719.9 L1276.8 723.9 L1271.2 727.8 L1264.5 731.5 L1256.7 735.1 L1247.9 738.5 L1238.2 741.8 L1227.4 744.8 L1215.8 747.7 L1203.3 750.4 L1190.0 753.0 L1175.9 755.3 L1161.1 757.5 L1145.6 759.4 L1129.4 761.1 L1112.7 762.6 L1095.4 763.9 L1077.5 765.0 L1059.3 765.8 L1040.5 766.5 L1021.4 766.8 L1002.0 766.9 L982.6 766.8 L963.5 766.5 L944.7 765.8 L926.5 765.0 L908.6 763.9 L891.3 762.6 L874.6 761.1 L858.4 759.4 L842.9 757.5 L828.1 755.3 L814.0 753.0 L800.7 750.4 L788.2 747.7 L776.6 744.8 L765.8 741.8 L756.1 738.5 L747.3 735.1 L739.5 731.5 L732.8 727.8 L727.2 723.9 L722.8 719.9 L719.6 715.7 L717.7 711.4 L717.0 706.9 L717.0 276.9 L721.5 276.7 L725.9 276.0 L730.2 274.8 L734.3 273.1 L738.3 271.1 L742.1 268.6 L745.7 265.8 L749.2 262.6 L752.5 259.1 L755.7 255.2 L758.6 251.1 L761.4 246.7 L764.0 242.1 L766.4 237.2 L768.6 232.1 L770.5 226.8 L772.3 221.3 L773.9 215.7 L775.2 210.0 L776.3 204.2 L777.1 198.2 L777.8 192.3 L778.1 186.2 L778.3 180.2 L778.3 175.3 L778.4 170.3 L778.5 165.3 L778.6 160.4 L778.8 155.4 L779.0 150.4 L779.2 145.4 L779.3 140.4 L779.5 135.5 L779.6 130.5 L779.7 125.5 L779.8 120.5 L779.8 115.5 L779.7 110.6 L779.6 105.6 L779.3 100.7 L779.0 95.8 L778.6 90.9 L778.0 86.0 L777.4 81.1 L776.6 76.3 L775.6 71.5 L774.5 66.7 L773.3 61.9 L932.0 16.9 L933.8 18.9 L935.6 20.7 L937.6 22.4 L939.6 24.0 L941.7 25.5 L943.9 26.8 L946.2 28.1 L948.6 29.2 L951.1 30.3 L953.7 31.3 L956.3 32.2 L959.1 32.9 L962.0 33.7 L965.0 34.3 L968.2 34.8 L971.4 35.3 L974.8 35.7 L978.3 36.1 L981.9 36.4 L985.6 36.6 L989.5 36.7 L993.5 36.9 L997.7 36.9 Z"/>
+<path class="mark" d="M1225.7 178.7 L1240.7 178.4"/>
+<path class="mark" d="M1225.8 181.7 L1240.8 181.4"/>
+<path class="mark" d="M778.3 178.7 L763.3 178.4"/>
+<path class="mark" d="M778.2 181.7 L763.2 181.4"/>
+<path class="centre" d="M1002.0 766.9 L1002.0 36.9"/>
+<path class="grain" d="M852.0 116.5 L852.0 660.4 M850.0 120.5 L852.0 116.5 L854.0 120.5 M850.0 656.4 L852.0 660.4 L854.0 656.4"/>
+<rect class="lbg" x="958.4" y="379.5" width="87.2" height="25" rx="2"/>
+<text class="label" x="1002.0" y="388.5">BACK</text>
+<text class="sub" x="1002.0" y="395.5">Cut 1 (unfolded) · shirting</text>
+<text class="sub" x="1002.0" y="401.5">size M · block/button shirt</text>
+</g>
+<!-- front  [block/button shirt]  "make a red gingham shirt" -->
+<g>
+<path class="cut" style="fill:url(#p17)" d="M0.0 84.7 L44.7 84.7 L48.6 84.5 L52.2 84.1 L55.7 83.4 L59.1 82.5 L62.5 81.3 L65.7 79.9 L68.9 78.2 L72.0 76.3 L75.0 74.1 L77.8 71.8 L80.6 69.2 L83.2 66.4 L85.7 63.4 L88.0 60.2 L90.1 56.8 L92.1 53.2 L93.9 49.5 L95.4 45.6 L96.8 41.6 L97.9 37.4 L98.8 33.2 L99.5 28.8 L99.9 24.3 L100.6 0.0 L292.1 54.3 L286.9 73.3 L285.8 77.9 L284.7 82.5 L283.6 87.1 L282.7 91.7 L281.8 96.4 L281.0 101.1 L280.2 105.8 L279.5 110.5 L278.8 115.3 L278.3 120.0 L277.7 124.8 L277.3 129.6 L276.8 134.4 L276.5 139.2 L276.1 144.1 L275.8 148.9 L275.6 153.7 L275.4 158.6 L275.3 163.5 L275.1 168.3 L275.1 173.2 L275.0 178.1 L275.0 182.8 L275.1 188.3 L275.5 193.6 L276.1 198.9 L277.0 204.1 L278.1 209.2 L279.4 214.3 L281.0 219.2 L282.8 224.0 L284.7 228.6 L286.9 232.9 L289.2 237.1 L291.7 241.0 L294.3 244.7 L297.1 248.1 L300.0 251.2 L303.0 254.0 L306.1 256.5 L309.2 258.6 L312.5 260.4 L315.8 261.9 L319.2 263.1 L322.7 264.0 L326.3 264.5 L345.0 265.4 L345.0 676.8 L339.0 717.0 L336.0 723.6 L331.6 729.4 L326.0 734.5 L319.5 739.0 L312.0 743.2 L303.6 747.0 L294.3 750.6 L284.1 754.0 L273.0 757.2 L261.1 760.2 L248.3 763.0 L234.7 765.6 L220.4 767.9 L205.4 770.1 L189.7 772.1 L173.4 773.8 L156.5 775.3 L139.0 776.6 L121.1 777.7 L102.6 778.6 L83.8 779.2 L64.6 779.6 L45.0 779.7 L0.0 779.7 Z"/>
+<path class="stitch" d="M30.0 99.7 L45.0 99.7 L49.8 99.5 L54.5 99.0 L59.1 98.1 L63.6 96.8 L68.0 95.3 L72.2 93.4 L76.4 91.2 L80.3 88.8 L84.1 86.0 L87.8 83.0 L91.2 79.8 L94.5 76.2 L97.6 72.5 L100.4 68.6 L103.0 64.4 L105.4 60.1 L107.6 55.5 L109.5 50.8 L111.1 46.0 L112.5 40.9 L113.6 35.8 L114.4 30.5 L114.8 25.2 L115.0 19.7 L273.7 64.7 L272.4 69.5 L271.2 74.3 L270.0 79.1 L269.0 83.9 L268.0 88.8 L267.0 93.7 L266.2 98.6 L265.4 103.5 L264.6 108.4 L264.0 113.3 L263.4 118.3 L262.8 123.2 L262.3 128.2 L261.9 133.2 L261.5 138.1 L261.2 143.1 L260.9 148.1 L260.6 153.1 L260.4 158.1 L260.3 163.0 L260.1 168.0 L260.1 173.0 L260.0 178.0 L260.0 182.9 L260.1 189.0 L260.6 195.0 L261.3 201.0 L262.3 206.9 L263.5 212.7 L265.0 218.5 L266.8 224.1 L268.8 229.5 L271.1 234.8 L273.6 239.9 L276.3 244.8 L279.2 249.4 L282.4 253.9 L285.8 258.0 L289.4 261.8 L293.2 265.3 L297.2 268.5 L301.3 271.4 L305.7 273.8 L310.2 275.9 L314.9 277.5 L319.8 278.7 L324.8 279.4 L330.0 279.7 L330.0 709.7 L329.3 714.1 L327.4 718.4 L324.2 722.6 L319.8 726.6 L314.2 730.5 L307.5 734.2 L299.7 737.8 L290.9 741.2 L281.2 744.5 L270.4 747.6 L258.8 750.5 L246.3 753.2 L233.0 755.7 L218.9 758.0 L204.1 760.2 L188.6 762.1 L172.4 763.9 L155.7 765.4 L138.4 766.7 L120.5 767.7 L102.3 768.6 L83.5 769.2 L64.4 769.6 L45.0 769.7 L30.0 769.7 Z"/>
+<path class="mark" d="M260.0 182.9 L275.0 183.0"/>
+<path class="dash" d="M45.0 99.7 L45.0 769.7"/>
+<path class="mark" d="M45.0 114.7 L45.0 129.7"/>
+<path class="mark" d="M45.0 207.2 L45.0 222.2"/>
+<path class="mark" d="M45.0 299.7 L45.0 314.7"/>
+<path class="mark" d="M45.0 392.2 L45.0 407.2"/>
+<path class="mark" d="M45.0 484.7 L45.0 499.7"/>
+<path class="mark" d="M45.0 577.2 L45.0 592.2"/>
+<path class="mark" d="M45.0 669.7 L45.0 684.7"/>
+<path class="grain" d="M172.5 117.0 L172.5 662.7 M170.5 121.0 L172.5 117.0 L174.5 121.0 M170.5 658.7 L172.5 662.7 L174.5 658.7"/>
+<rect class="lbg" x="144.8" y="380.8" width="55.3" height="25" rx="2"/>
+<text class="label" x="172.5" y="389.8">FRONT</text>
+<text class="sub" x="172.5" y="396.8">Cut 2 · shirting</text>
+<text class="sub" x="172.5" y="402.8">size M · block/button shirt</text>
+</g>
+<!-- front  [block/button shirt]  "make a red gingham shirt" -->
+<g>
+<path class="cut" style="fill:url(#p18)" d="M696.0 84.7 L651.3 84.7 L647.4 84.5 L643.8 84.1 L640.3 83.4 L636.9 82.5 L633.5 81.3 L630.3 79.9 L627.1 78.2 L624.0 76.3 L621.0 74.1 L618.2 71.8 L615.4 69.2 L612.8 66.4 L610.3 63.4 L608.0 60.2 L605.9 56.8 L603.9 53.2 L602.1 49.5 L600.6 45.6 L599.2 41.6 L598.1 37.4 L597.2 33.2 L596.5 28.8 L596.1 24.3 L595.4 0.0 L403.9 54.3 L409.1 73.3 L410.2 77.9 L411.3 82.5 L412.4 87.1 L413.3 91.7 L414.2 96.4 L415.0 101.1 L415.8 105.8 L416.5 110.5 L417.2 115.3 L417.7 120.0 L418.3 124.8 L418.7 129.6 L419.2 134.4 L419.5 139.2 L419.9 144.1 L420.2 148.9 L420.4 153.7 L420.6 158.6 L420.7 163.5 L420.9 168.3 L420.9 173.2 L421.0 178.1 L421.0 182.8 L420.9 188.3 L420.5 193.6 L419.9 198.9 L419.0 204.1 L417.9 209.2 L416.6 214.3 L415.0 219.2 L413.2 224.0 L411.3 228.6 L409.1 232.9 L406.8 237.1 L404.3 241.0 L401.7 244.7 L398.9 248.1 L396.0 251.2 L393.0 254.0 L389.9 256.5 L386.8 258.6 L383.5 260.4 L380.2 261.9 L376.8 263.1 L373.3 264.0 L369.7 264.5 L351.0 265.4 L351.0 676.8 L357.0 717.0 L360.0 723.6 L364.4 729.4 L370.0 734.5 L376.5 739.0 L384.0 743.2 L392.4 747.0 L401.7 750.6 L411.9 754.0 L423.0 757.2 L434.9 760.2 L447.7 763.0 L461.3 765.6 L475.6 767.9 L490.6 770.1 L506.3 772.1 L522.6 773.8 L539.5 775.3 L557.0 776.6 L574.9 777.7 L593.4 778.6 L612.2 779.2 L631.4 779.6 L651.0 779.7 L696.0 779.7 Z"/>
+<path class="stitch" d="M666.0 99.7 L651.0 99.7 L646.2 99.5 L641.5 99.0 L636.9 98.1 L632.4 96.8 L628.0 95.3 L623.8 93.4 L619.6 91.2 L615.7 88.8 L611.9 86.0 L608.2 83.0 L604.8 79.8 L601.5 76.2 L598.4 72.5 L595.6 68.6 L593.0 64.4 L590.6 60.1 L588.4 55.5 L586.5 50.8 L584.9 46.0 L583.5 40.9 L582.4 35.8 L581.6 30.5 L581.2 25.2 L581.0 19.7 L422.3 64.7 L423.6 69.5 L424.8 74.3 L426.0 79.1 L427.0 83.9 L428.0 88.8 L429.0 93.7 L429.8 98.6 L430.6 103.5 L431.4 108.4 L432.0 113.3 L432.6 118.3 L433.2 123.2 L433.7 128.2 L434.1 133.2 L434.5 138.1 L434.8 143.1 L435.1 148.1 L435.4 153.1 L435.6 158.1 L435.7 163.0 L435.9 168.0 L435.9 173.0 L436.0 178.0 L436.0 182.9 L435.9 189.0 L435.4 195.0 L434.7 201.0 L433.7 206.9 L432.5 212.7 L431.0 218.5 L429.2 224.1 L427.2 229.5 L424.9 234.8 L422.4 239.9 L419.7 244.8 L416.8 249.4 L413.6 253.9 L410.2 258.0 L406.6 261.8 L402.8 265.3 L398.8 268.5 L394.7 271.4 L390.3 273.8 L385.8 275.9 L381.1 277.5 L376.2 278.7 L371.2 279.4 L366.0 279.7 L366.0 709.7 L366.7 714.1 L368.6 718.4 L371.8 722.6 L376.2 726.6 L381.8 730.5 L388.5 734.2 L396.3 737.8 L405.1 741.2 L414.8 744.5 L425.6 747.6 L437.2 750.5 L449.7 753.2 L463.0 755.7 L477.1 758.0 L491.9 760.2 L507.4 762.1 L523.6 763.9 L540.3 765.4 L557.6 766.7 L575.5 767.7 L593.7 768.6 L612.5 769.2 L631.6 769.6 L651.0 769.7 L666.0 769.7 Z"/>
+<path class="mark" d="M436.0 182.9 L421.0 183.0"/>
+<path class="dash" d="M651.0 99.7 L651.0 769.7"/>
+<path class="mark" d="M651.0 114.7 L651.0 129.7"/>
+<path class="mark" d="M651.0 207.2 L651.0 222.2"/>
+<path class="mark" d="M651.0 299.7 L651.0 314.7"/>
+<path class="mark" d="M651.0 392.2 L651.0 407.2"/>
+<path class="mark" d="M651.0 484.7 L651.0 499.7"/>
+<path class="mark" d="M651.0 577.2 L651.0 592.2"/>
+<path class="mark" d="M651.0 669.7 L651.0 684.7"/>
+<path class="grain" d="M523.5 117.0 L523.5 662.7 M521.5 121.0 L523.5 117.0 L525.5 121.0 M521.5 658.7 L523.5 662.7 L525.5 658.7"/>
+<rect class="lbg" x="495.9" y="380.8" width="55.3" height="25" rx="2"/>
+<text class="label" x="523.5" y="389.8">FRONT</text>
+<text class="sub" x="523.5" y="396.8">Cut 2 · shirting</text>
+<text class="sub" x="523.5" y="402.8">size M · block/button shirt</text>
+</g>
+<!-- sleeve  [block/button shirt]  "make a red gingham shirt" -->
+<g>
+<path class="cut" style="fill:url(#p19)" d="M702.0 921.6 L731.3 920.1 L741.8 918.4 L751.0 915.7 L759.3 912.1 L766.8 907.7 L773.8 902.6 L780.3 896.7 L786.5 890.1 L792.4 882.9 L798.2 875.1 L803.9 867.0 L809.6 858.5 L815.5 849.8 L821.6 841.0 L828.0 832.3 L835.1 823.8 L842.8 815.6 L851.3 807.9 L860.8 800.9 L871.3 794.8 L882.9 789.7 L895.6 786.0 L909.5 783.7 L924.6 782.9 L937.6 783.8 L950.1 786.1 L961.8 789.8 L972.9 794.8 L983.2 800.7 L993.0 807.5 L1002.1 814.9 L1010.8 822.8 L1019.1 831.1 L1027.1 839.7 L1034.8 848.4 L1042.3 857.1 L1049.6 865.6 L1056.8 874.0 L1064.0 882.0 L1071.1 889.4 L1078.2 896.3 L1085.3 902.5 L1092.5 907.9 L1099.6 912.4 L1106.8 916.0 L1114.1 918.5 L1121.6 920.1 L1147.0 921.9 L1068.1 1398.0 L781.0 1398.0 Z"/>
+<path class="stitch" d="M719.5 935.7 L733.0 935.0 L745.1 933.0 L756.1 929.8 L766.0 925.5 L775.1 920.3 L783.3 914.2 L790.8 907.4 L797.7 900.0 L804.2 892.1 L810.4 883.9 L816.3 875.4 L822.0 866.8 L827.8 858.3 L833.7 849.8 L839.9 841.6 L846.3 833.7 L853.3 826.3 L860.8 819.5 L869.0 813.4 L878.0 808.2 L888.0 803.9 L899.0 800.7 L911.1 798.7 L924.5 798.0 L935.8 798.7 L946.4 800.7 L956.5 803.9 L966.1 808.2 L975.2 813.4 L984.0 819.5 L992.4 826.3 L1000.5 833.7 L1008.3 841.6 L1016.0 849.8 L1023.5 858.3 L1030.9 866.8 L1038.2 875.4 L1045.6 883.9 L1053.0 892.1 L1060.5 900.0 L1068.1 907.4 L1075.9 914.2 L1083.9 920.3 L1092.3 925.5 L1101.0 929.8 L1110.0 933.0 L1119.6 935.0 L1129.5 935.7 L1054.5 1388.0 L794.5 1388.0 Z"/>
+<path class="mark" d="M818.7 871.8 L806.3 863.4"/>
+<path class="mark" d="M820.4 869.3 L808.0 860.9"/>
+<path class="mark" d="M1026.1 861.2 L1037.4 851.4"/>
+<path class="mark" d="M924.5 798.0 L925.5 783.0"/>
+<path class="mark" d="M859.5 1388.0 L859.5 1258.0"/>
+<path class="grain" d="M924.5 875.2 L924.5 1305.7 M922.5 879.2 L924.5 875.2 L926.5 879.2 M922.5 1301.7 L924.5 1305.7 L926.5 1301.7"/>
+<rect class="lbg" x="896.9" y="1081.5" width="55.3" height="25" rx="2"/>
+<text class="label" x="924.5" y="1090.5">SLEEVE</text>
+<text class="sub" x="924.5" y="1097.5">Cut 2 · shirting</text>
+<text class="sub" x="924.5" y="1103.5">size M · block/button shirt</text>
+</g>
+<!-- sleeve  [block/button shirt]  "make a red gingham shirt" -->
+<g>
+<path class="cut" style="fill:url(#p20)" d="M445.0 924.3 L415.7 922.8 L405.3 921.1 L396.0 918.4 L387.7 914.8 L380.2 910.5 L373.3 905.3 L366.7 899.4 L360.6 892.8 L354.6 885.6 L348.9 877.9 L343.2 869.7 L337.4 861.2 L331.6 852.5 L325.5 843.7 L319.0 835.0 L312.0 826.5 L304.3 818.3 L295.8 810.6 L286.3 803.6 L275.8 797.5 L264.1 792.5 L251.4 788.8 L237.5 786.5 L222.4 785.7 L209.4 786.5 L197.0 788.8 L185.2 792.6 L174.2 797.5 L163.8 803.5 L154.1 810.2 L144.9 817.6 L136.2 825.6 L127.9 833.9 L120.0 842.4 L112.3 851.1 L104.8 859.8 L97.4 868.4 L90.2 876.7 L83.1 884.7 L75.9 892.2 L68.8 899.1 L61.7 905.3 L54.6 910.6 L47.4 915.1 L40.2 918.7 L32.9 921.3 L25.4 922.9 L0.0 924.6 L78.9 1400.7 L366.0 1400.7 Z"/>
+<path class="stitch" d="M427.5 938.4 L414.1 937.8 L401.9 935.7 L390.9 932.5 L381.0 928.2 L372.0 923.0 L363.8 916.9 L356.2 910.1 L349.3 902.7 L342.8 894.9 L336.7 886.6 L330.8 878.2 L325.0 869.6 L319.2 861.0 L313.3 852.5 L307.2 844.3 L300.7 836.4 L293.8 829.0 L286.2 822.2 L278.0 816.1 L269.0 810.9 L259.1 806.6 L248.1 803.4 L235.9 801.4 L222.5 800.7 L211.3 801.4 L200.6 803.4 L190.6 806.6 L181.0 810.9 L171.8 816.1 L163.1 822.2 L154.7 829.0 L146.6 836.4 L138.7 844.3 L131.1 852.5 L123.6 861.0 L116.2 869.6 L108.8 878.2 L101.5 886.6 L94.1 894.9 L86.6 902.7 L79.0 910.1 L71.1 916.9 L63.1 923.0 L54.7 928.2 L46.1 932.5 L37.0 935.7 L27.5 937.8 L17.5 938.4 L92.5 1390.7 L352.5 1390.7 Z"/>
+<path class="mark" d="M328.3 874.5 L340.7 866.1"/>
+<path class="mark" d="M326.6 872.0 L339.1 863.6"/>
+<path class="mark" d="M121.0 864.0 L109.6 854.2"/>
+<path class="mark" d="M222.5 800.7 L221.6 785.7"/>
+<path class="mark" d="M287.5 1390.7 L287.5 1260.7"/>
+<path class="grain" d="M222.5 877.9 L222.5 1308.5 M220.5 881.9 L222.5 877.9 L224.5 881.9 M220.5 1304.5 L222.5 1308.5 L224.5 1304.5"/>
+<rect class="lbg" x="194.9" y="1084.2" width="55.3" height="25" rx="2"/>
+<text class="label" x="222.5" y="1093.2">SLEEVE</text>
+<text class="sub" x="222.5" y="1100.2">Cut 2 · shirting</text>
+<text class="sub" x="222.5" y="1106.2">size M · block/button shirt</text>
+</g>
+<!-- cuff  [sleeve_finish/barrel_cuff]  "make a red gingham shirt" -->
+<g>
+<path class="cut" style="fill:url(#p21)" d="M1153.0 782.9 L1423.0 782.9 L1423.0 932.9 L1153.0 932.9 Z"/>
+<path class="stitch" d="M1168.0 797.9 L1408.0 797.9 L1408.0 917.9 L1168.0 917.9 Z"/>
+<path class="dash" d="M1168.0 857.9 L1408.0 857.9"/>
+<path class="grain" d="M1288.0 805.4 L1288.0 910.4 M1286.0 809.4 L1288.0 805.4 L1290.0 809.4 M1286.0 906.4 L1288.0 910.4 L1290.0 906.4"/>
+<rect class="lbg" x="1260.4" y="848.9" width="55.3" height="25" rx="2"/>
+<text class="label" x="1288.0" y="857.9">CUFF</text>
+<text class="sub" x="1288.0" y="864.9">Cut 2 · shirting</text>
+<text class="sub" x="1288.0" y="870.9">size M · sleeve_finish/barrel_cuff</text>
+</g>
+<!-- cuff  [sleeve_finish/barrel_cuff]  "make a red gingham shirt" -->
+<g>
+<path class="cut" style="fill:url(#p22)" d="M1423.0 938.9 L1153.0 938.9 L1153.0 1088.9 L1423.0 1088.9 Z"/>
+<path class="stitch" d="M1408.0 953.9 L1168.0 953.9 L1168.0 1073.9 L1408.0 1073.9 Z"/>
+<path class="dash" d="M1408.0 1013.9 L1168.0 1013.9"/>
+<path class="grain" d="M1288.0 961.4 L1288.0 1066.4 M1286.0 965.4 L1288.0 961.4 L1290.0 965.4 M1286.0 1062.4 L1288.0 1066.4 L1290.0 1062.4"/>
+<rect class="lbg" x="1260.4" y="1004.9" width="55.3" height="25" rx="2"/>
+<text class="label" x="1288.0" y="1013.9">CUFF</text>
+<text class="sub" x="1288.0" y="1020.9">Cut 2 · shirting</text>
+<text class="sub" x="1288.0" y="1026.9">size M · sleeve_finish/barrel_cuff</text>
+</g>
+<!-- sleeve placket  [sleeve_finish/barrel_cuff]  "make a red gingham shirt" -->
+<g>
+<path class="cut" style="fill:url(#p23)" d="M1046.4 1486.2 L1336.4 1486.2 L1336.4 1546.2 L1046.4 1546.2 Z"/>
+<path class="stitch" d="M1061.4 1501.2 L1321.4 1501.2 L1321.4 1531.2 L1061.4 1531.2 Z"/>
+<path class="grain" d="M1191.4 1495.2 L1191.4 1537.2 M1189.4 1499.2 L1191.4 1495.2 L1193.4 1499.2 M1189.4 1533.2 L1191.4 1537.2 L1193.4 1533.2"/>
+<rect class="lbg" x="1145.0" y="1507.2" width="92.8" height="25" rx="2"/>
+<text class="label" x="1191.4" y="1516.2">SLEEVE PLACKET</text>
+<text class="sub" x="1191.4" y="1523.2">Cut 2 · shirting</text>
+<text class="sub" x="1191.4" y="1529.2">size M · sleeve_finish/barrel_cuff</text>
+</g>
+<!-- sleeve placket  [sleeve_finish/barrel_cuff]  "make a red gingham shirt" -->
+<g>
+<path class="cut" style="fill:url(#p24)" d="M1336.4 1552.2 L1046.4 1552.2 L1046.4 1612.2 L1336.4 1612.2 Z"/>
+<path class="stitch" d="M1321.4 1567.2 L1061.4 1567.2 L1061.4 1597.2 L1321.4 1597.2 Z"/>
+<path class="grain" d="M1191.4 1561.2 L1191.4 1603.2 M1189.4 1565.2 L1191.4 1561.2 L1193.4 1565.2 M1189.4 1599.2 L1191.4 1603.2 L1193.4 1599.2"/>
+<rect class="lbg" x="1145.0" y="1573.2" width="92.8" height="25" rx="2"/>
+<text class="label" x="1191.4" y="1582.2">SLEEVE PLACKET</text>
+<text class="sub" x="1191.4" y="1589.2">Cut 2 · shirting</text>
+<text class="sub" x="1191.4" y="1595.2">size M · sleeve_finish/barrel_cuff</text>
+</g>
+<!-- collar stand  [collar/with_stand]  "make a red gingham shirt" -->
+<g>
+<path class="cut" style="fill:url(#p25)" d="M673.4 1420.2 L686.2 1420.2 L698.6 1420.1 L710.7 1420.0 L722.4 1419.9 L733.8 1419.7 L744.9 1419.5 L755.6 1419.2 L765.9 1418.9 L775.9 1418.6 L785.5 1418.2 L794.7 1417.8 L803.5 1417.4 L812.0 1416.8 L820.0 1416.3 L827.7 1415.7 L834.9 1415.1 L841.7 1414.4 L848.1 1413.7 L854.1 1412.9 L859.6 1412.2 L864.7 1411.3 L869.2 1410.5 L873.3 1409.6 L895.8 1404.0 L895.8 1464.9 L880.1 1468.8 L875.2 1469.9 L869.8 1470.9 L864.1 1471.8 L858.1 1472.7 L851.7 1473.5 L844.9 1474.3 L837.7 1475.0 L830.1 1475.6 L822.2 1476.2 L813.9 1476.8 L805.2 1477.3 L796.1 1477.8 L786.7 1478.2 L777.0 1478.6 L766.8 1478.9 L756.4 1479.2 L745.5 1479.5 L734.4 1479.7 L722.8 1479.9 L711.0 1480.0 L698.8 1480.1 L686.3 1480.2 L673.4 1480.2 L660.6 1480.2 L648.1 1480.1 L635.9 1480.0 L624.0 1479.9 L612.5 1479.7 L601.3 1479.5 L590.5 1479.2 L580.0 1478.9 L569.9 1478.6 L560.1 1478.2 L550.7 1477.8 L541.7 1477.3 L533.0 1476.8 L524.7 1476.2 L516.8 1475.6 L509.2 1475.0 L502.0 1474.3 L495.2 1473.5 L488.8 1472.7 L482.7 1471.8 L477.0 1470.9 L471.7 1469.9 L466.7 1468.8 L451.0 1464.9 L451.0 1404.0 L473.5 1409.6 L477.6 1410.5 L482.2 1411.3 L487.3 1412.2 L492.8 1412.9 L498.8 1413.7 L505.2 1414.4 L512.0 1415.1 L519.2 1415.7 L526.9 1416.3 L534.9 1416.8 L543.4 1417.4 L552.2 1417.8 L561.4 1418.2 L571.0 1418.6 L581.0 1418.9 L591.3 1419.2 L602.0 1419.5 L613.0 1419.7 L624.4 1419.9 L636.2 1420.0 L648.3 1420.1 L660.7 1420.2 Z"/>
+<path class="stitch" d="M673.4 1435.2 L686.2 1435.2 L698.7 1435.1 L710.8 1435.0 L722.6 1434.9 L734.1 1434.7 L745.2 1434.5 L756.0 1434.2 L766.4 1433.9 L776.4 1433.6 L786.1 1433.2 L795.4 1432.8 L804.4 1432.3 L812.9 1431.8 L821.1 1431.3 L828.9 1430.7 L836.3 1430.0 L843.3 1429.3 L849.9 1428.6 L856.1 1427.8 L861.9 1427.0 L867.2 1426.1 L872.2 1425.2 L876.7 1424.2 L880.8 1423.2 L880.8 1453.2 L876.7 1454.2 L872.2 1455.2 L867.2 1456.1 L861.9 1457.0 L856.1 1457.8 L849.9 1458.6 L843.3 1459.3 L836.3 1460.0 L828.9 1460.7 L821.1 1461.3 L812.9 1461.8 L804.4 1462.3 L795.4 1462.8 L786.1 1463.2 L776.4 1463.6 L766.4 1463.9 L756.0 1464.2 L745.2 1464.5 L734.1 1464.7 L722.6 1464.9 L710.8 1465.0 L698.7 1465.1 L686.2 1465.2 L673.4 1465.2 L660.6 1465.2 L648.2 1465.1 L636.0 1465.0 L624.2 1464.9 L612.8 1464.7 L601.7 1464.5 L590.9 1464.2 L580.5 1463.9 L570.4 1463.6 L560.8 1463.2 L551.5 1462.8 L542.5 1462.3 L534.0 1461.8 L525.8 1461.3 L518.0 1460.7 L510.6 1460.0 L503.6 1459.3 L497.0 1458.6 L490.8 1457.8 L485.0 1457.0 L479.6 1456.1 L474.7 1455.2 L470.1 1454.2 L466.0 1453.2 L466.0 1423.2 L470.1 1424.2 L474.7 1425.2 L479.6 1426.1 L485.0 1427.0 L490.8 1427.8 L497.0 1428.6 L503.6 1429.3 L510.6 1430.0 L518.0 1430.7 L525.8 1431.3 L534.0 1431.8 L542.5 1432.3 L551.5 1432.8 L560.8 1433.2 L570.4 1433.6 L580.5 1433.9 L590.9 1434.2 L601.7 1434.5 L612.8 1434.7 L624.2 1434.9 L636.0 1435.0 L648.2 1435.1 L660.6 1435.2 Z"/>
+<path class="centre" d="M673.4 1465.2 L673.4 1435.2"/>
+<path class="grain" d="M562.2 1415.4 L562.2 1468.7 M560.2 1419.4 L562.2 1415.4 L564.2 1419.4 M560.2 1464.7 L562.2 1468.7 L564.2 1464.7"/>
+<rect class="lbg" x="629.8" y="1433.1" width="87.2" height="25" rx="2"/>
+<text class="label" x="673.4" y="1442.1">COLLAR STAND</text>
+<text class="sub" x="673.4" y="1449.1">Cut 2 (unfolded) · shirting</text>
+<text class="sub" x="673.4" y="1455.1">size M · collar/with_stand</text>
+</g>
+<!-- collar stand  [collar/with_stand]  "make a red gingham shirt" -->
+<g>
+<path class="cut" style="fill:url(#p26)" d="M1124.2 1420.2 L1137.0 1420.2 L1149.4 1420.1 L1161.5 1420.0 L1173.2 1419.9 L1184.6 1419.7 L1195.7 1419.5 L1206.4 1419.2 L1216.7 1418.9 L1226.7 1418.6 L1236.3 1418.2 L1245.5 1417.8 L1254.3 1417.4 L1262.8 1416.8 L1270.8 1416.3 L1278.5 1415.7 L1285.7 1415.1 L1292.5 1414.4 L1298.9 1413.7 L1304.9 1412.9 L1310.4 1412.2 L1315.4 1411.3 L1320.0 1410.5 L1324.1 1409.6 L1346.6 1404.0 L1346.6 1464.9 L1330.9 1468.8 L1325.9 1469.9 L1320.6 1470.9 L1314.9 1471.8 L1308.9 1472.7 L1302.4 1473.5 L1295.6 1474.3 L1288.5 1475.0 L1280.9 1475.6 L1273.0 1476.2 L1264.7 1476.8 L1256.0 1477.3 L1246.9 1477.8 L1237.5 1478.2 L1227.8 1478.6 L1217.6 1478.9 L1207.2 1479.2 L1196.3 1479.5 L1185.2 1479.7 L1173.6 1479.9 L1161.8 1480.0 L1149.6 1480.1 L1137.1 1480.2 L1124.2 1480.2 L1111.4 1480.2 L1098.9 1480.1 L1086.7 1480.0 L1074.8 1479.9 L1063.3 1479.7 L1052.1 1479.5 L1041.3 1479.2 L1030.8 1478.9 L1020.7 1478.6 L1010.9 1478.2 L1001.5 1477.8 L992.5 1477.3 L983.8 1476.8 L975.5 1476.2 L967.6 1475.6 L960.0 1475.0 L952.8 1474.3 L946.0 1473.5 L939.6 1472.7 L933.5 1471.8 L927.8 1470.9 L922.5 1469.9 L917.5 1468.8 L901.8 1464.9 L901.8 1404.0 L924.3 1409.6 L928.4 1410.5 L933.0 1411.3 L938.1 1412.2 L943.6 1412.9 L949.6 1413.7 L955.9 1414.4 L962.8 1415.1 L970.0 1415.7 L977.7 1416.3 L985.7 1416.8 L994.1 1417.4 L1003.0 1417.8 L1012.2 1418.2 L1021.8 1418.6 L1031.8 1418.9 L1042.1 1419.2 L1052.8 1419.5 L1063.8 1419.7 L1075.2 1419.9 L1087.0 1420.0 L1099.1 1420.1 L1111.5 1420.2 Z"/>
+<path class="stitch" d="M1124.2 1435.2 L1137.0 1435.2 L1149.5 1435.1 L1161.6 1435.0 L1173.4 1434.9 L1184.9 1434.7 L1196.0 1434.5 L1206.8 1434.2 L1217.2 1433.9 L1227.2 1433.6 L1236.9 1433.2 L1246.2 1432.8 L1255.1 1432.3 L1263.7 1431.8 L1271.9 1431.3 L1279.7 1430.7 L1287.1 1430.0 L1294.1 1429.3 L1300.7 1428.6 L1306.9 1427.8 L1312.7 1427.0 L1318.0 1426.1 L1323.0 1425.2 L1327.5 1424.2 L1331.6 1423.2 L1331.6 1453.2 L1327.5 1454.2 L1323.0 1455.2 L1318.0 1456.1 L1312.7 1457.0 L1306.9 1457.8 L1300.7 1458.6 L1294.1 1459.3 L1287.1 1460.0 L1279.7 1460.7 L1271.9 1461.3 L1263.7 1461.8 L1255.1 1462.3 L1246.2 1462.8 L1236.9 1463.2 L1227.2 1463.6 L1217.2 1463.9 L1206.8 1464.2 L1196.0 1464.5 L1184.9 1464.7 L1173.4 1464.9 L1161.6 1465.0 L1149.5 1465.1 L1137.0 1465.2 L1124.2 1465.2 L1111.4 1465.2 L1099.0 1465.1 L1086.8 1465.0 L1075.0 1464.9 L1063.6 1464.7 L1052.5 1464.5 L1041.7 1464.2 L1031.3 1463.9 L1021.2 1463.6 L1011.6 1463.2 L1002.2 1462.8 L993.3 1462.3 L984.8 1461.8 L976.6 1461.3 L968.8 1460.7 L961.4 1460.0 L954.4 1459.3 L947.8 1458.6 L941.6 1457.8 L935.8 1457.0 L930.4 1456.1 L925.5 1455.2 L920.9 1454.2 L916.8 1453.2 L916.8 1423.2 L920.9 1424.2 L925.5 1425.2 L930.4 1426.1 L935.8 1427.0 L941.6 1427.8 L947.8 1428.6 L954.4 1429.3 L961.4 1430.0 L968.8 1430.7 L976.6 1431.3 L984.8 1431.8 L993.3 1432.3 L1002.2 1432.8 L1011.6 1433.2 L1021.2 1433.6 L1031.3 1433.9 L1041.7 1434.2 L1052.5 1434.5 L1063.6 1434.7 L1075.0 1434.9 L1086.8 1435.0 L1099.0 1435.1 L1111.4 1435.2 Z"/>
+<path class="centre" d="M1124.2 1465.2 L1124.2 1435.2"/>
+<path class="grain" d="M1013.0 1415.4 L1013.0 1468.7 M1011.0 1419.4 L1013.0 1415.4 L1015.0 1419.4 M1011.0 1464.7 L1013.0 1468.7 L1015.0 1464.7"/>
+<rect class="lbg" x="1080.6" y="1433.1" width="87.2" height="25" rx="2"/>
+<text class="label" x="1124.2" y="1442.1">COLLAR STAND</text>
+<text class="sub" x="1124.2" y="1449.1">Cut 2 (unfolded) · shirting</text>
+<text class="sub" x="1124.2" y="1455.1">size M · collar/with_stand</text>
+</g>
+<!-- collar  [collar/with_stand]  "make a red gingham shirt" -->
+<g>
+<path class="cut" style="fill:url(#p27)" d="M258.6 1486.2 L517.2 1486.2 L475.5 1561.2 L258.6 1561.2 L41.7 1561.2 L0.0 1486.2 Z"/>
+<path class="stitch" d="M258.6 1501.2 L491.7 1501.2 L466.7 1546.2 L258.6 1546.2 L50.5 1546.2 L25.5 1501.2 Z"/>
+<path class="centre" d="M258.6 1546.2 L258.6 1501.2"/>
+<path class="grain" d="M129.3 1497.4 L129.3 1549.9 M127.3 1501.4 L129.3 1497.4 L131.3 1501.4 M127.3 1545.9 L129.3 1549.9 L131.3 1545.9"/>
+<rect class="lbg" x="215.0" y="1514.7" width="87.2" height="25" rx="2"/>
+<text class="label" x="258.6" y="1523.7">COLLAR</text>
+<text class="sub" x="258.6" y="1530.7">Cut 2 (unfolded) · shirting</text>
+<text class="sub" x="258.6" y="1536.7">size M · collar/with_stand</text>
+</g>
+<!-- collar  [collar/with_stand]  "make a red gingham shirt" -->
+<g>
+<path class="cut" style="fill:url(#p28)" d="M781.8 1486.2 L1040.4 1486.2 L998.7 1561.2 L781.8 1561.2 L564.8 1561.2 L523.2 1486.2 Z"/>
+<path class="stitch" d="M781.8 1501.2 L1014.9 1501.2 L989.9 1546.2 L781.8 1546.2 L573.7 1546.2 L548.7 1501.2 Z"/>
+<path class="centre" d="M781.8 1546.2 L781.8 1501.2"/>
+<path class="grain" d="M652.5 1497.4 L652.5 1549.9 M650.5 1501.4 L652.5 1497.4 L654.5 1501.4 M650.5 1545.9 L652.5 1549.9 L654.5 1545.9"/>
+<rect class="lbg" x="738.2" y="1514.7" width="87.2" height="25" rx="2"/>
+<text class="label" x="781.8" y="1523.7">COLLAR</text>
+<text class="sub" x="781.8" y="1530.7">Cut 2 (unfolded) · shirting</text>
+<text class="sub" x="781.8" y="1536.7">size M · collar/with_stand</text>
+</g>
+</g>
+<text class="s" x="15.0" y="290.3">shirting · Red / Off White gingham · 1.61 m</text>
+<text class="s" x="15.0" y="479.0">Aras · drafted from body measurements by hand-written rules · same sentence, same rules.toml, same sheet</text>
+</svg>

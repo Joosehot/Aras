@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="420.0mm" height="567.3mm" viewBox="0 0 420.0 567.3">
+<style>
+  text { font-family: Helvetica, Arial, sans-serif; fill: #1d1d1d; }
+  .title { font-size: 11px; font-weight: bold; letter-spacing: 0.2px; }
+  .sub { font-size: 3.6px; fill: #555; }
+  .quote { font-size: 3.4px; fill: #555; font-style: italic; }
+  .h { font-size: 3.4px; font-weight: bold; letter-spacing: 0.6px; fill: #1d1d1d; }
+  .b { font-size: 3.2px; }
+  .bb { font-size: 3.2px; font-weight: bold; }
+  .s { font-size: 2.6px; fill: #6b6b6b; }
+  .ok { font-size: 3.2px; fill: #2e7d4f; font-weight: bold; }
+  .warn { font-size: 3.0px; fill: #a15c00; }
+  .cap { font-size: 3.2px; font-weight: bold; text-anchor: middle; letter-spacing: 0.8px; fill: #555; }
+  .rule { stroke: #d6d6d6; stroke-width: 0.3; }
+  .sw { stroke: #1d1d1d; stroke-width: 0.8; }
+  .fl { stroke: #232323; stroke-width: 1.8; stroke-linejoin: round; }
+  .fs { fill: none; stroke-width: 1.1; stroke-dasharray: 6 4; }
+  .rb { fill: none; stroke-width: 0.9; }
+  .ds { fill: none; stroke-width: 6; stroke-linecap: round; }
+  .fabric { fill: #f1f4f8; stroke: #8a9bb0; stroke-width: 2; }
+  .rib { fill: #f6f1f8; }
+  .cut { fill: #fffdf7; stroke: #1d1d1d; stroke-width: 1.4; }
+  .stitch { display: none; }
+  .mark, .dash, .centre, .fold, .grain, .label, .lbg { display: none; }
+  .sheet .sub { display: none; }
+</style>
+<defs>
+<pattern id="p0" patternUnits="userSpaceOnUse" width="14.0" height="14.0" patternTransform="translate(0.0 290.0) rotate(0.0) translate(-0.7 0.0)"><rect x="0.0" y="0.0" width="14.0" height="14.0" fill="#646566"/><rect x="0.0" y="0.0" width="1.4" height="14.0" fill="#f0ece1"/></pattern>
+<pattern id="p1" patternUnits="userSpaceOnUse" width="14.0" height="14.0" patternTransform="translate(0.0 0.0) rotate(0.0) translate(-0.7 0.0)"><rect x="0.0" y="0.0" width="14.0" height="14.0" fill="#646566"/><rect x="0.0" y="0.0" width="1.4" height="14.0" fill="#f0ece1"/></pattern>
+<pattern id="p2" patternUnits="userSpaceOnUse" width="14.0" height="14.0" patternTransform="translate(0.0 290.0) rotate(0.0) translate(-0.7 0.0)"><rect x="0.0" y="0.0" width="14.0" height="14.0" fill="#646566"/><rect x="0.0" y="0.0" width="1.4" height="14.0" fill="#f0ece1"/></pattern>
+<pattern id="p3" patternUnits="userSpaceOnUse" width="14.0" height="14.0" patternTransform="translate(0.0 0.0) rotate(0.0) translate(-0.7 0.0)"><rect x="0.0" y="0.0" width="14.0" height="14.0" fill="#646566"/><rect x="0.0" y="0.0" width="1.4" height="14.0" fill="#f0ece1"/></pattern>
+<pattern id="p4" patternUnits="userSpaceOnUse" width="14.0" height="14.0" patternTransform="translate(0.0 0.0) rotate(0.0) translate(-0.7 0.0)"><rect x="0.0" y="0.0" width="14.0" height="14.0" fill="#646566"/><rect x="0.0" y="0.0" width="1.4" height="14.0" fill="#f0ece1"/></pattern>
+<pattern id="p5" patternUnits="userSpaceOnUse" width="14.0" height="14.0" patternTransform="translate(0.0 0.0) rotate(0.0) translate(-0.7 0.0)"><rect x="0.0" y="0.0" width="14.0" height="14.0" fill="#646566"/><rect x="0.0" y="0.0" width="1.4" height="14.0" fill="#f0ece1"/></pattern>
+<pattern id="p6" patternUnits="userSpaceOnUse" width="14.0" height="14.0" patternTransform="translate(1046.9 305.0) rotate(0.0) translate(-0.7 0.0)"><rect x="0.0" y="0.0" width="14.0" height="14.0" fill="#646566"/><rect x="0.0" y="0.0" width="1.4" height="14.0" fill="#f0ece1"/></pattern>
+<pattern id="p7" patternUnits="userSpaceOnUse" width="14.0" height="14.0" patternTransform="translate(1047.9 1466.0) rotate(0.0) translate(-0.7 0.0)"><rect x="0.0" y="0.0" width="14.0" height="14.0" fill="#646566"/><rect x="0.0" y="0.0" width="1.4" height="14.0" fill="#f0ece1"/></pattern>
+<pattern id="p8" patternUnits="userSpaceOnUse" width="14.0" height="14.0" patternTransform="translate(202.5 336.3) rotate(0.0) translate(-0.7 0.0)"><rect x="0.0" y="0.0" width="14.0" height="14.0" fill="#646566"/><rect x="0.0" y="0.0" width="1.4" height="14.0" fill="#f0ece1"/></pattern>
+<pattern id="p9" patternUnits="userSpaceOnUse" width="14.0" height="14.0" patternTransform="translate(656.5 336.3) rotate(0.0) translate(-0.7 0.0)"><rect x="0.0" y="0.0" width="14.0" height="14.0" fill="#646566"/><rect x="0.0" y="0.0" width="1.4" height="14.0" fill="#f0ece1"/></pattern>
+<pattern id="p10" patternUnits="userSpaceOnUse" width="14.0" height="14.0" patternTransform="translate(15.0 1207.3) rotate(0.0) translate(-0.7 0.0)"><rect x="0.0" y="0.0" width="14.0" height="14.0" fill="#646566"/><rect x="0.0" y="0.0" width="1.4" height="14.0" fill="#f0ece1"/></pattern>
+<pattern id="p11" patternUnits="userSpaceOnUse" width="14.0" height="14.0" patternTransform="translate(485.0 1323.3) rotate(0.0) translate(-0.7 0.0)"><rect x="0.0" y="0.0" width="14.0" height="14.0" fill="#646566"/><rect x="0.0" y="0.0" width="1.4" height="14.0" fill="#f0ece1"/></pattern>
+<pattern id="p12" patternUnits="userSpaceOnUse" width="14.0" height="14.0" patternTransform="translate(1250.8 15.0) rotate(0.0) translate(-0.7 0.0)"><rect x="0.0" y="0.0" width="14.0" height="14.0" fill="#646566"/><rect x="0.0" y="0.0" width="1.4" height="14.0" fill="#f0ece1"/></pattern>
+</defs>
+<!-- Aras: "make dark grey pinstriped pants" -->
+<rect x="0" y="0" width="420.0" height="567.3" fill="#ffffff"/>
+<text class="title" x="15.0" y="24.0">Dark Grey &amp; Off White Pinstriped Pants</text>
+<text class="sub" x="15.0" y="31.0">ARS-PT-28C4   ·   size M   ·   regular fit   ·   twill</text>
+<text class="quote" x="15.0" y="37.0">“make dark grey pinstriped pants”</text>
+<path class="rule" d="M15.0 42.0 L405.0 42.0"/>
+<g transform="translate(79.0 55.8) scale(0.1575)">
+<path class="fl" fill="url(#p0)" d="M0.0 0.0 L-217.5 0.0 L-275.0 200.0 L-277.0 645.0 L-267.0 1100.0 L-27.0 1100.0 L-17.0 645.0 L-5.0 290.0 L0.0 260.0 Z"/>
+<path class="fl" fill="url(#p0)" d="M0.0 0.0 L217.5 0.0 L275.0 200.0 L277.0 645.0 L267.0 1100.0 L27.0 1100.0 L17.0 645.0 L5.0 290.0 L0.0 260.0 Z"/>
+<path class="fs" stroke="#505152" d="M-30.0 1070.0 L-264.0 1070.0"/>
+<path class="fs" stroke="#505152" d="M30.0 1070.0 L264.0 1070.0"/>
+<path class="fl" fill="url(#p1)" d="M-217.5 0.0 L217.5 0.0 L217.5 -40.0 L-217.5 -40.0 Z"/>
+<path class="fl" fill="url(#p1)" d="M-189.9 -43.0 L-179.9 -43.0 L-179.9 6.0 L-189.9 6.0 Z"/>
+<path class="fl" fill="url(#p1)" d="M-102.9 -43.0 L-92.9 -43.0 L-92.9 6.0 L-102.9 6.0 Z"/>
+<path class="fl" fill="url(#p1)" d="M92.9 -43.0 L102.9 -43.0 L102.9 6.0 L92.9 6.0 Z"/>
+<path class="fl" fill="url(#p1)" d="M179.9 -43.0 L189.9 -43.0 L189.9 6.0 L179.9 6.0 Z"/>
+<circle class="fl" cx="-12" cy="-20.0" r="7" fill="#f0ece1"/>
+<path class="fs" stroke="#505152" d="M-32.0 4.0 L-32.0 160.0 L-31.9 163.0 L-31.6 165.8 L-31.0 168.5 L-30.3 170.9 L-29.4 173.2 L-28.4 175.2 L-27.2 177.1 L-25.9 178.9 L-24.5 180.5 L-23.0 181.9 L-21.4 183.2 L-19.8 184.4 L-18.0 185.4 L-16.3 186.3 L-14.5 187.1 L-12.7 187.8 L-11.0 188.4 L-9.2 188.8 L-7.5 189.2 L-5.8 189.5 L-4.2 189.7 L-2.7 189.9 L-1.3 190.0 L0.0 190.0"/>
+</g>
+<text class="cap" x="79.0" y="236.0">FRONT</text>
+<g transform="translate(215.0 55.8) scale(0.1575)">
+<path class="fl" fill="url(#p2)" d="M0.0 0.0 L-217.5 0.0 L-275.0 200.0 L-277.0 645.0 L-267.0 1100.0 L-27.0 1100.0 L-17.0 645.0 L-5.0 290.0 L0.0 260.0 Z"/>
+<path class="fl" fill="url(#p2)" d="M0.0 0.0 L217.5 0.0 L275.0 200.0 L277.0 645.0 L267.0 1100.0 L27.0 1100.0 L17.0 645.0 L5.0 290.0 L0.0 260.0 Z"/>
+<path class="fs" stroke="#505152" d="M-30.0 1070.0 L-264.0 1070.0"/>
+<path class="fs" stroke="#505152" d="M30.0 1070.0 L264.0 1070.0"/>
+<path class="fl" fill="url(#p3)" d="M-217.5 0.0 L217.5 0.0 L217.5 -40.0 L-217.5 -40.0 Z"/>
+<path class="fl" fill="url(#p3)" d="M-179.0 -43.0 L-169.0 -43.0 L-169.0 6.0 L-179.0 6.0 Z"/>
+<path class="fl" fill="url(#p3)" d="M-81.1 -43.0 L-71.1 -43.0 L-71.1 6.0 L-81.1 6.0 Z"/>
+<path class="fl" fill="url(#p3)" d="M-5.0 -43.0 L5.0 -43.0 L5.0 6.0 L-5.0 6.0 Z"/>
+<path class="fl" fill="url(#p3)" d="M71.1 -43.0 L81.1 -43.0 L81.1 6.0 L71.1 6.0 Z"/>
+<path class="fl" fill="url(#p3)" d="M169.0 -43.0 L179.0 -43.0 L179.0 6.0 L169.0 6.0 Z"/>
+<path class="fl" fill="none" d="M-117.8 1.0 L-108.8 110.0 L-99.8 1.0"/>
+<path class="fl" fill="none" d="M99.8 1.0 L108.8 110.0 L117.8 1.0"/>
+<path class="fl" fill="none" d="M0.0 -40.0 L0.0 260.0"/>
+</g>
+<text class="cap" x="215.0" y="236.0">BACK</text>
+<text class="h" x="293.0" y="51.0">COLOURWAY</text>
+<g transform="translate(293.0 56.0) scale(0.4)"><rect class="sw" x="0" y="0" width="35.0" height="22.5" rx="2" fill="url(#p4)"/></g>
+<text class="bb" x="310.0" y="59.2">BODY</text>
+<text class="b" x="310.0" y="62.6">Dark Grey / Off White pinstripes</text>
+<text class="s" x="310.0" y="65.6">&quot;make dark grey pinstriped pants&quot;</text>
+<g transform="translate(293.0 69.0) scale(0.4)"><rect class="sw" x="0" y="0" width="35.0" height="22.5" rx="2" fill="url(#p5)"/></g>
+<text class="bb" x="310.0" y="72.2">WAISTBAND</text>
+<text class="b" x="310.0" y="75.6">Dark Grey / Off White pinstripes</text>
+<text class="s" x="310.0" y="78.6">same as the body</text>
+<g transform="translate(293.0 82.0) scale(0.4)"><rect class="sw" x="0" y="0" width="35.0" height="22.5" rx="2" fill="#f0ece1"/></g>
+<text class="bb" x="310.0" y="85.2">BUTTONS</text>
+<text class="b" x="310.0" y="88.6">Off White</text>
+<text class="s" x="310.0" y="91.6">tonal buttons</text>
+<g transform="translate(293.0 95.0) scale(0.4)"><rect class="sw" x="0" y="0" width="35.0" height="22.5" rx="2" fill="#505152"/></g>
+<text class="bb" x="310.0" y="98.2">THREAD</text>
+<text class="b" x="310.0" y="101.6">Dark Dark Grey</text>
+<text class="s" x="310.0" y="104.6">tonal thread</text>
+<text class="h" x="293.0" y="112.0">CONSTRUCTION</text>
+<text class="b" x="293.0" y="117.5">waist: zip fly</text>
+<text class="s" x="293.0" y="120.7">← “make dark grey pinstriped pants”</text>
+<text class="ok" x="293.0" y="125.9">✓ 6/6 construction checks passed</text>
+<text class="h" x="15.0" y="245.0">BILL OF MATERIALS</text>
+<text class="bb" x="15.0" y="250.5">2.32 m</text>
+<text class="b" x="37.0" y="250.5">twill · Dark Grey / Off White pinstripes, 150 cm wide</text>
+<text class="bb" x="15.0" y="255.3">1</text>
+<text class="b" x="37.0" y="255.3">trouser zip, 18 cm, Dark Grey</text>
+<text class="bb" x="15.0" y="260.1">1</text>
+<text class="b" x="37.0" y="260.1">waistband button, 17 mm, Off White</text>
+<text class="bb" x="15.0" y="264.9">—</text>
+<text class="b" x="37.0" y="264.9">fusible interfacing for waistband, fly shield</text>
+<text class="bb" x="15.0" y="269.7">1 spool</text>
+<text class="b" x="37.0" y="269.7">polyester thread, Dark Dark Grey</text>
+<text class="s" x="15.0" y="275.5">seam allowance 15 mm and hems 40 mm included in every piece</text>
+<path class="rule" d="M15.0 283.5 L405.0 283.5"/>
+<text class="h" x="15.0" y="288.5">CUTTING LAYOUT</text>
+<g class="sheet" transform="translate(15.0 296.5) scale(0.11)">
+<rect class="fabric" x="0.0" y="0.0" width="1500.0" height="2316.0"/>
+<!-- front  [block/pants]  "make dark grey pinstriped pants" -->
+<g>
+<path class="cut" style="fill:url(#p6)" d="M1160.0 214.5 L1160.1 220.4 L1160.5 225.8 L1161.1 231.0 L1162.0 236.0 L1163.0 240.9 L1164.3 245.6 L1165.8 250.2 L1167.5 254.5 L1169.4 258.6 L1171.4 262.6 L1173.6 266.2 L1176.0 269.7 L1178.5 272.8 L1181.1 275.7 L1183.9 278.4 L1186.7 280.8 L1189.7 282.9 L1192.8 284.7 L1196.0 286.3 L1199.3 287.6 L1202.7 288.6 L1206.2 289.4 L1209.9 289.8 L1229.8 290.6 L1227.7 321.6 L1226.3 337.1 L1224.7 352.5 L1222.9 367.7 L1220.9 382.8 L1218.7 397.7 L1216.3 412.5 L1213.9 427.2 L1211.3 441.8 L1208.7 456.3 L1206.1 470.8 L1203.5 485.2 L1200.9 499.6 L1198.3 514.0 L1195.9 528.3 L1193.5 542.7 L1191.3 557.1 L1189.2 571.6 L1187.4 586.1 L1185.7 600.7 L1184.3 615.5 L1183.2 630.3 L1182.4 645.2 L1181.9 660.4 L1171.0 1155.0 L922.8 1155.0 L911.9 660.4 L911.3 641.3 L910.3 622.4 L908.9 603.8 L907.3 585.2 L905.4 566.8 L903.2 548.5 L900.9 530.3 L898.4 512.2 L895.7 494.0 L893.0 476.0 L890.2 457.9 L887.3 439.8 L884.5 421.7 L881.8 403.5 L879.1 385.3 L876.5 367.0 L874.1 348.6 L871.9 330.0 L870.0 311.3 L868.3 292.4 L866.9 273.4 L865.9 254.2 L865.2 234.7 L865.0 215.0 L865.2 204.6 L865.7 194.4 L866.5 184.4 L867.7 174.6 L869.1 165.1 L870.7 155.7 L872.5 146.5 L874.6 137.5 L876.8 128.6 L879.1 119.9 L881.5 111.4 L884.1 103.1 L886.7 94.8 L889.3 86.7 L892.0 78.8 L894.7 70.9 L897.3 63.2 L899.8 55.6 L902.3 48.0 L904.7 40.6 L907.0 33.2 L909.1 25.9 L911.1 18.7 L915.8 0.0 L1135.0 0.0 L1184.3 0.0 L1193.3 180.1 L1193.0 183.8 L1192.3 187.4 L1191.2 190.8 L1189.8 194.0 L1188.1 196.9 L1186.2 199.5 L1184.2 201.8 L1182.1 204.0 L1179.9 206.0 L1177.6 207.8 L1175.3 209.4 L1172.9 210.9 L1170.6 212.3 L1168.2 213.6 L1165.8 214.7 L1163.4 215.7 L1161.0 216.7 L1160.1 217.0 Z"/>
+<path class="stitch" d="M927.5 15.0 L1135.0 15.0 L1170.0 15.0 L1178.3 180.0 L1178.1 181.8 L1177.8 183.6 L1177.2 185.4 L1176.5 187.1 L1175.5 188.7 L1174.4 190.2 L1173.1 191.7 L1171.7 193.1 L1170.2 194.5 L1168.6 195.8 L1166.9 197.0 L1165.1 198.1 L1163.3 199.2 L1161.5 200.2 L1159.6 201.0 L1157.7 201.9 L1155.8 202.6 L1154.0 203.2 L1152.2 203.7 L1150.5 204.2 L1148.8 204.5 L1147.3 204.8 L1145.8 204.9 L1144.5 205.0 L1145.0 215.0 L1145.2 221.1 L1145.6 227.2 L1146.3 233.1 L1147.2 238.9 L1148.5 244.5 L1150.0 249.9 L1151.7 255.2 L1153.7 260.3 L1155.9 265.2 L1158.3 269.9 L1161.0 274.4 L1163.9 278.6 L1167.0 282.5 L1170.4 286.2 L1173.9 289.6 L1177.6 292.7 L1181.5 295.4 L1185.6 297.9 L1189.9 300.0 L1194.3 301.8 L1199.0 303.2 L1203.7 304.2 L1208.7 304.8 L1213.8 305.0 L1212.7 320.4 L1211.4 335.7 L1209.8 350.8 L1208.0 365.8 L1206.0 380.7 L1203.9 395.4 L1201.5 410.1 L1199.1 424.7 L1196.6 439.2 L1194.0 453.6 L1191.3 468.1 L1188.7 482.5 L1186.1 496.9 L1183.5 511.4 L1181.1 525.8 L1178.7 540.4 L1176.4 554.9 L1174.4 569.6 L1172.5 584.3 L1170.8 599.2 L1169.4 614.2 L1168.2 629.3 L1167.4 644.6 L1166.9 660.0 L1156.9 1115.0 L936.9 1115.0 L926.9 660.0 L926.3 640.6 L925.2 621.5 L923.9 602.6 L922.2 583.8 L920.3 565.2 L918.1 546.7 L915.7 528.3 L913.2 510.0 L910.5 491.8 L907.8 473.7 L905.0 455.6 L902.2 437.5 L899.4 419.4 L896.6 401.3 L893.9 383.2 L891.4 365.0 L889.0 346.7 L886.9 328.3 L884.9 309.9 L883.2 291.2 L881.9 272.5 L880.9 253.5 L880.2 234.4 L880.0 215.0 L880.2 205.1 L880.7 195.4 L881.5 185.9 L882.5 176.6 L883.9 167.4 L885.4 158.4 L887.2 149.6 L889.2 140.9 L891.3 132.4 L893.5 124.0 L895.9 115.7 L898.4 107.5 L901.0 99.4 L903.6 91.4 L906.2 83.6 L908.9 75.7 L911.5 68.0 L914.1 60.3 L916.6 52.7 L919.0 45.1 L921.4 37.5 L923.6 30.0 L925.6 22.5 Z"/>
+<path class="mark" d="M1166.9 659.8 L1181.9 660.3"/>
+<path class="mark" d="M926.9 660.0 L911.9 660.3"/>
+<path class="grain" d="M1047.4 173.2 L1047.4 981.8 M1045.4 177.2 L1047.4 173.2 L1049.4 177.2 M1045.4 977.8 L1047.4 981.8 L1049.4 977.8"/>
+<rect class="lbg" x="1024.1" y="568.5" width="46.6" height="25" rx="2"/>
+<text class="label" x="1047.4" y="577.5">FRONT</text>
+<text class="sub" x="1047.4" y="584.5">Cut 2 · twill</text>
+<text class="sub" x="1047.4" y="590.5">size M · block/pants</text>
+</g>
+<!-- front  [block/pants]  "make dark grey pinstriped pants" -->
+<g>
+<path class="cut" style="fill:url(#p7)" d="M934.8 1375.5 L934.6 1381.4 L934.2 1386.8 L933.6 1392.0 L932.8 1397.0 L931.7 1401.9 L930.4 1406.6 L928.9 1411.2 L927.3 1415.5 L925.4 1419.6 L923.3 1423.6 L921.1 1427.2 L918.8 1430.7 L916.3 1433.8 L913.6 1436.7 L910.9 1439.4 L908.0 1441.8 L905.0 1443.9 L902.0 1445.7 L898.8 1447.3 L895.5 1448.6 L892.1 1449.6 L888.5 1450.4 L884.8 1450.8 L865.0 1451.6 L867.1 1482.6 L868.4 1498.1 L870.0 1513.5 L871.8 1528.7 L873.9 1543.8 L876.1 1558.7 L878.4 1573.5 L880.9 1588.2 L883.4 1602.8 L886.0 1617.3 L888.7 1631.8 L891.3 1646.2 L893.9 1660.6 L896.4 1675.0 L898.9 1689.3 L901.3 1703.7 L903.5 1718.1 L905.5 1732.6 L907.4 1747.1 L909.0 1761.7 L910.4 1776.5 L911.5 1791.3 L912.4 1806.2 L912.9 1821.4 L923.8 2316.0 L1172.0 2316.0 L1182.9 1821.4 L1183.5 1802.3 L1184.5 1783.4 L1185.8 1764.8 L1187.5 1746.2 L1189.4 1727.8 L1191.5 1709.5 L1193.9 1691.3 L1196.4 1673.2 L1199.0 1655.0 L1201.8 1637.0 L1204.6 1618.9 L1207.4 1600.8 L1210.2 1582.7 L1213.0 1564.5 L1215.7 1546.3 L1218.2 1528.0 L1220.6 1509.6 L1222.8 1491.0 L1224.8 1472.3 L1226.5 1453.4 L1227.8 1434.4 L1228.9 1415.2 L1229.5 1395.7 L1229.8 1376.0 L1229.6 1365.6 L1229.1 1355.4 L1228.2 1345.4 L1227.1 1335.6 L1225.7 1326.1 L1224.1 1316.7 L1222.2 1307.5 L1220.2 1298.5 L1218.0 1289.6 L1215.7 1280.9 L1213.2 1272.4 L1210.7 1264.1 L1208.1 1255.8 L1205.4 1247.7 L1202.8 1239.8 L1200.1 1231.9 L1197.5 1224.2 L1194.9 1216.6 L1192.4 1209.0 L1190.0 1201.6 L1187.7 1194.2 L1185.6 1186.9 L1183.6 1179.7 L1179.0 1161.0 L959.7 1161.0 L910.5 1161.0 L901.5 1341.1 L901.7 1344.8 L902.4 1348.4 L903.5 1351.8 L905.0 1355.0 L906.7 1357.9 L908.5 1360.5 L910.5 1362.8 L912.7 1365.0 L914.9 1367.0 L917.1 1368.8 L919.5 1370.4 L921.8 1371.9 L924.2 1373.3 L926.6 1374.6 L929.0 1375.7 L931.4 1376.7 L933.8 1377.7 L934.6 1378.0 Z"/>
+<path class="stitch" d="M1167.2 1176.0 L959.7 1176.0 L924.7 1176.0 L916.5 1341.0 L916.6 1342.8 L917.0 1344.6 L917.5 1346.4 L918.3 1348.1 L919.3 1349.7 L920.4 1351.2 L921.6 1352.7 L923.0 1354.1 L924.5 1355.5 L926.2 1356.8 L927.9 1358.0 L929.6 1359.1 L931.4 1360.2 L933.3 1361.2 L935.2 1362.0 L937.1 1362.9 L938.9 1363.6 L940.8 1364.2 L942.5 1364.7 L944.3 1365.2 L945.9 1365.5 L947.5 1365.8 L948.9 1365.9 L950.2 1366.0 L949.7 1376.0 L949.6 1382.1 L949.2 1388.2 L948.5 1394.1 L947.5 1399.9 L946.3 1405.5 L944.8 1410.9 L943.1 1416.2 L941.1 1421.3 L938.9 1426.2 L936.4 1430.9 L933.7 1435.4 L930.8 1439.6 L927.7 1443.5 L924.4 1447.2 L920.9 1450.6 L917.2 1453.7 L913.2 1456.4 L909.1 1458.9 L904.9 1461.0 L900.4 1462.8 L895.8 1464.2 L891.0 1465.2 L886.1 1465.8 L881.0 1466.0 L882.0 1481.4 L883.3 1496.7 L884.9 1511.8 L886.7 1526.8 L888.7 1541.7 L890.9 1556.4 L893.2 1571.1 L895.7 1585.7 L898.2 1600.2 L900.8 1614.6 L903.4 1629.1 L906.0 1643.5 L908.7 1657.9 L911.2 1672.4 L913.7 1686.8 L916.1 1701.4 L918.3 1715.9 L920.4 1730.6 L922.3 1745.3 L923.9 1760.2 L925.4 1775.2 L926.5 1790.3 L927.4 1805.6 L927.9 1821.0 L937.9 2276.0 L1157.9 2276.0 L1167.9 1821.0 L1168.5 1801.6 L1169.5 1782.5 L1170.9 1763.6 L1172.5 1744.8 L1174.5 1726.2 L1176.6 1707.7 L1179.0 1689.3 L1181.5 1671.0 L1184.2 1652.8 L1187.0 1634.7 L1189.8 1616.6 L1192.6 1598.5 L1195.4 1580.4 L1198.2 1562.3 L1200.8 1544.2 L1203.4 1526.0 L1205.7 1507.7 L1207.9 1489.3 L1209.8 1470.9 L1211.5 1452.2 L1212.9 1433.5 L1213.9 1414.5 L1214.5 1395.4 L1214.7 1376.0 L1214.6 1366.1 L1214.1 1356.4 L1213.3 1346.9 L1212.2 1337.6 L1210.9 1328.4 L1209.3 1319.4 L1207.6 1310.6 L1205.6 1301.9 L1203.5 1293.4 L1201.2 1285.0 L1198.8 1276.7 L1196.3 1268.5 L1193.8 1260.4 L1191.2 1252.4 L1188.5 1244.6 L1185.9 1236.7 L1183.3 1229.0 L1180.7 1221.3 L1178.2 1213.7 L1175.7 1206.1 L1173.4 1198.5 L1171.2 1191.0 L1169.1 1183.5 Z"/>
+<path class="mark" d="M927.9 1820.8 L912.9 1821.3"/>
+<path class="mark" d="M1167.9 1821.0 L1182.9 1821.3"/>
+<path class="grain" d="M1047.4 1334.2 L1047.4 2142.8 M1045.4 1338.2 L1047.4 1334.2 L1049.4 1338.2 M1045.4 2138.8 L1047.4 2142.8 L1049.4 2138.8"/>
+<rect class="lbg" x="1024.1" y="1729.5" width="46.6" height="25" rx="2"/>
+<text class="label" x="1047.4" y="1738.5">FRONT</text>
+<text class="sub" x="1047.4" y="1745.5">Cut 2 · twill</text>
+<text class="sub" x="1047.4" y="1751.5">size M · block/pants</text>
+</g>
+<!-- back  [block/pants]  "make dark grey pinstriped pants" -->
+<g>
+<path class="cut" style="fill:url(#p8)" d="M9.2 26.4 L283.0 0.0 L314.8 244.2 L315.6 249.2 L316.7 254.1 L318.1 259.1 L319.7 264.1 L321.7 269.1 L323.9 274.1 L326.4 279.1 L329.2 284.0 L332.3 288.7 L335.7 293.3 L339.3 297.8 L343.2 302.1 L347.4 306.1 L351.8 309.9 L356.4 313.5 L361.3 316.7 L366.5 319.7 L371.9 322.3 L377.6 324.6 L383.5 326.5 L389.7 328.1 L396.2 329.2 L402.9 329.9 L426.5 330.8 L423.4 361.9 L421.4 377.3 L419.1 392.4 L416.4 407.3 L413.4 422.1 L410.2 436.7 L406.7 451.2 L403.1 465.6 L399.4 479.9 L395.6 494.0 L391.8 508.1 L387.9 522.2 L384.2 536.2 L380.5 550.2 L376.9 564.1 L373.5 578.1 L370.4 592.1 L367.5 606.1 L364.8 620.1 L362.6 634.2 L360.6 648.4 L359.1 662.7 L358.1 677.1 L357.5 691.8 L346.6 1186.3 L58.4 1186.3 L47.5 691.7 L46.9 672.6 L45.9 653.8 L44.5 635.1 L42.9 616.6 L40.9 598.2 L38.7 579.9 L36.4 561.7 L33.8 543.5 L31.1 525.4 L28.4 507.3 L25.5 489.3 L22.7 471.2 L19.8 453.1 L17.0 434.9 L14.3 416.7 L11.7 398.3 L9.3 379.9 L7.0 361.4 L5.0 342.7 L3.3 323.8 L1.9 304.7 L0.9 285.5 L0.2 266.0 L0.0 246.4 L0.0 236.3 L0.1 226.5 L0.3 216.8 L0.5 207.2 L0.7 197.8 L1.0 188.6 L1.3 179.4 L1.7 170.4 L2.1 161.6 L2.5 152.8 L2.9 144.1 L3.4 135.6 L3.8 127.2 L4.3 118.8 L4.8 110.6 L5.3 102.4 L5.8 94.3 L6.2 86.3 L6.7 78.4 L7.1 70.5 L7.6 62.7 L8.0 54.9 L8.3 47.2 Z"/>
+<path class="stitch" d="M23.6 40.1 L270.0 16.3 L300.0 246.3 L300.9 251.9 L302.1 257.6 L303.7 263.4 L305.6 269.1 L307.8 274.9 L310.4 280.6 L313.2 286.2 L316.4 291.8 L320.0 297.2 L323.8 302.5 L328.0 307.6 L332.4 312.5 L337.2 317.2 L342.3 321.6 L347.7 325.7 L353.4 329.5 L359.5 332.9 L365.8 336.0 L372.4 338.7 L379.3 341.0 L386.6 342.8 L394.1 344.1 L401.9 344.9 L410.0 345.2 L408.5 360.3 L406.6 375.1 L404.3 389.9 L401.7 404.5 L398.7 419.0 L395.6 433.4 L392.2 447.6 L388.6 461.9 L384.9 476.0 L381.1 490.1 L377.3 504.2 L373.5 518.3 L369.7 532.3 L365.9 546.4 L362.4 560.5 L358.9 574.7 L355.7 588.9 L352.7 603.2 L350.1 617.6 L347.7 632.0 L345.7 646.6 L344.2 661.4 L343.1 676.3 L342.5 691.3 L332.5 1146.3 L72.5 1146.3 L62.5 691.3 L61.9 672.0 L60.8 652.8 L59.5 633.9 L57.8 615.1 L55.8 596.5 L53.6 578.0 L51.2 559.6 L48.7 541.4 L46.0 523.2 L43.2 505.0 L40.3 486.9 L37.5 468.8 L34.6 450.8 L31.8 432.7 L29.1 414.5 L26.6 396.3 L24.1 378.0 L21.9 359.7 L20.0 341.2 L18.3 322.6 L16.9 303.8 L15.9 284.8 L15.2 265.7 L15.0 246.3 L15.0 236.4 L15.1 226.6 L15.3 217.0 L15.5 207.6 L15.7 198.2 L16.0 189.1 L16.3 180.0 L16.7 171.1 L17.1 162.2 L17.5 153.5 L17.9 144.9 L18.4 136.4 L18.8 128.0 L19.3 119.7 L19.8 111.5 L20.3 103.3 L20.7 95.2 L21.2 87.2 L21.7 79.2 L22.1 71.3 L22.5 63.5 L22.9 55.6 L23.3 47.9 Z"/>
+<path class="mark" d="M342.6 689.3 L357.6 689.9"/>
+<path class="mark" d="M342.5 692.3 L357.4 692.9"/>
+<path class="mark" d="M62.5 692.8 L47.5 693.2"/>
+<path class="mark" d="M62.5 689.8 L47.5 690.2"/>
+<path class="mark" d="M136.9 29.2 L157.4 137.7 L156.8 27.3"/>
+<path class="grain" d="M213.3 177.9 L213.3 1008.4 M211.3 181.9 L213.3 177.9 L215.3 181.9 M211.3 1004.4 L213.3 1008.4 L215.3 1004.4"/>
+<rect class="lbg" x="190.0" y="584.2" width="46.6" height="25" rx="2"/>
+<text class="label" x="213.3" y="593.2">BACK</text>
+<text class="sub" x="213.3" y="600.2">Cut 2 · twill</text>
+<text class="sub" x="213.3" y="606.2">size M · block/pants</text>
+</g>
+<!-- back  [block/pants]  "make dark grey pinstriped pants" -->
+<g>
+<path class="cut" style="fill:url(#p9)" d="M849.8 26.4 L576.0 0.0 L544.2 244.2 L543.4 249.2 L542.3 254.1 L540.9 259.1 L539.3 264.1 L537.3 269.1 L535.1 274.1 L532.6 279.1 L529.8 284.0 L526.7 288.7 L523.3 293.3 L519.7 297.8 L515.8 302.1 L511.6 306.1 L507.2 309.9 L502.6 313.5 L497.7 316.7 L492.5 319.7 L487.1 322.3 L481.4 324.6 L475.5 326.5 L469.3 328.1 L462.8 329.2 L456.1 329.9 L432.5 330.8 L435.6 361.9 L437.6 377.3 L439.9 392.4 L442.6 407.3 L445.6 422.1 L448.8 436.7 L452.3 451.2 L455.9 465.6 L459.6 479.9 L463.4 494.0 L467.3 508.1 L471.1 522.2 L474.9 536.2 L478.5 550.2 L482.1 564.1 L485.5 578.1 L488.6 592.1 L491.5 606.1 L494.2 620.1 L496.4 634.2 L498.4 648.4 L499.9 662.7 L500.9 677.1 L501.5 691.8 L512.4 1186.3 L800.6 1186.3 L811.5 691.7 L812.1 672.6 L813.1 653.8 L814.5 635.1 L816.1 616.6 L818.1 598.2 L820.3 579.9 L822.6 561.7 L825.2 543.5 L827.9 525.4 L830.7 507.3 L833.5 489.3 L836.4 471.2 L839.2 453.1 L842.0 434.9 L844.7 416.7 L847.3 398.3 L849.7 379.9 L852.0 361.4 L854.0 342.7 L855.7 323.8 L857.1 304.7 L858.1 285.5 L858.8 266.0 L859.0 246.4 L859.0 236.3 L858.9 226.5 L858.7 216.8 L858.5 207.2 L858.3 197.8 L858.0 188.6 L857.7 179.4 L857.3 170.4 L856.9 161.6 L856.5 152.8 L856.1 144.1 L855.6 135.6 L855.2 127.2 L854.7 118.8 L854.2 110.6 L853.7 102.4 L853.3 94.3 L852.8 86.3 L852.3 78.4 L851.9 70.5 L851.5 62.7 L851.1 54.9 L850.7 47.2 Z"/>
+<path class="stitch" d="M835.4 40.1 L589.0 16.3 L559.0 246.3 L558.1 251.9 L556.9 257.6 L555.3 263.4 L553.4 269.1 L551.2 274.9 L548.6 280.6 L545.8 286.2 L542.6 291.8 L539.0 297.2 L535.2 302.5 L531.0 307.6 L526.6 312.5 L521.8 317.2 L516.7 321.6 L511.3 325.7 L505.6 329.5 L499.5 332.9 L493.2 336.0 L486.6 338.7 L479.7 341.0 L472.4 342.8 L464.9 344.1 L457.1 344.9 L449.0 345.2 L450.5 360.3 L452.4 375.1 L454.7 389.9 L457.3 404.5 L460.3 419.0 L463.5 433.4 L466.8 447.6 L470.4 461.9 L474.1 476.0 L477.9 490.1 L481.7 504.2 L485.6 518.3 L489.3 532.3 L493.1 546.4 L496.6 560.5 L500.1 574.7 L503.3 588.9 L506.3 603.2 L508.9 617.6 L511.3 632.0 L513.3 646.6 L514.8 661.4 L515.9 676.3 L516.5 691.3 L526.5 1146.3 L786.5 1146.3 L796.5 691.3 L797.1 672.0 L798.2 652.8 L799.5 633.9 L801.2 615.1 L803.2 596.5 L805.4 578.0 L807.8 559.6 L810.3 541.4 L813.0 523.2 L815.8 505.0 L818.7 486.9 L821.5 468.8 L824.4 450.8 L827.2 432.7 L829.9 414.5 L832.5 396.3 L834.9 378.0 L837.1 359.7 L839.0 341.2 L840.7 322.6 L842.1 303.8 L843.1 284.8 L843.8 265.7 L844.0 246.3 L844.0 236.4 L843.9 226.6 L843.7 217.0 L843.5 207.6 L843.3 198.2 L843.0 189.1 L842.7 180.0 L842.3 171.1 L842.0 162.2 L841.5 153.5 L841.1 144.9 L840.7 136.4 L840.2 128.0 L839.7 119.7 L839.2 111.5 L838.8 103.3 L838.3 95.2 L837.8 87.2 L837.3 79.2 L836.9 71.3 L836.5 63.5 L836.1 55.6 L835.7 47.9 Z"/>
+<path class="mark" d="M516.4 689.3 L501.4 689.9"/>
+<path class="mark" d="M516.5 692.3 L501.6 692.9"/>
+<path class="mark" d="M796.5 692.8 L811.5 693.2"/>
+<path class="mark" d="M796.5 689.8 L811.5 690.2"/>
+<path class="mark" d="M722.1 29.2 L701.6 137.7 L702.2 27.3"/>
+<path class="grain" d="M645.8 177.9 L645.8 1008.4 M643.8 181.9 L645.8 177.9 L647.8 181.9 M643.8 1004.4 L645.8 1008.4 L647.8 1004.4"/>
+<rect class="lbg" x="622.5" y="584.2" width="46.6" height="25" rx="2"/>
+<text class="label" x="645.8" y="593.2">BACK</text>
+<text class="sub" x="645.8" y="600.2">Cut 2 · twill</text>
+<text class="sub" x="645.8" y="606.2">size M · block/pants</text>
+</g>
+<!-- waistband  [waist/zip_fly]  "make dark grey pinstriped pants" -->
+<g>
+<path class="cut" style="fill:url(#p10)" d="M0.0 1192.3 L500.0 1192.3 L500.0 1302.3 L0.0 1302.3 Z"/>
+<path class="stitch" d="M15.0 1207.3 L485.0 1207.3 L485.0 1287.3 L15.0 1287.3 Z"/>
+<path class="dash" d="M15.0 1247.3 L485.0 1247.3"/>
+<path class="grain" d="M250.0 1208.8 L250.0 1285.8 M248.0 1212.8 L250.0 1208.8 L252.0 1212.8 M248.0 1281.8 L250.0 1285.8 L252.0 1281.8"/>
+<rect class="lbg" x="219.1" y="1238.3" width="61.8" height="25" rx="2"/>
+<text class="label" x="250.0" y="1247.3">WAISTBAND</text>
+<text class="sub" x="250.0" y="1254.3">Cut 2 · twill</text>
+<text class="sub" x="250.0" y="1260.3">size M · waist/zip_fly</text>
+</g>
+<!-- waistband  [waist/zip_fly]  "make dark grey pinstriped pants" -->
+<g>
+<path class="cut" style="fill:url(#p11)" d="M500.0 1308.3 L0.0 1308.3 L0.0 1418.3 L500.0 1418.3 Z"/>
+<path class="stitch" d="M485.0 1323.3 L15.0 1323.3 L15.0 1403.3 L485.0 1403.3 Z"/>
+<path class="dash" d="M485.0 1363.3 L15.0 1363.3"/>
+<path class="grain" d="M250.0 1324.8 L250.0 1401.8 M248.0 1328.8 L250.0 1324.8 L252.0 1328.8 M248.0 1397.8 L250.0 1401.8 L252.0 1397.8"/>
+<rect class="lbg" x="219.1" y="1354.3" width="61.8" height="25" rx="2"/>
+<text class="label" x="250.0" y="1363.3">WAISTBAND</text>
+<text class="sub" x="250.0" y="1370.3">Cut 2 · twill</text>
+<text class="sub" x="250.0" y="1376.3">size M · waist/zip_fly</text>
+</g>
+<!-- fly shield  [waist/zip_fly]  "make dark grey pinstriped pants" -->
+<g>
+<path class="cut" style="fill:url(#p12)" d="M1235.8 0.0 L1335.8 0.0 L1335.8 220.0 L1235.8 220.0 Z"/>
+<path class="stitch" d="M1250.8 15.0 L1320.8 15.0 L1320.8 205.0 L1250.8 205.0 Z"/>
+<path class="dash" d="M1285.8 15.0 L1285.8 205.0"/>
+<path class="grain" d="M1285.8 33.0 L1285.8 187.0 M1283.8 37.0 L1285.8 33.0 L1287.8 37.0 M1283.8 183.0 L1285.8 187.0 L1287.8 183.0"/>
+<rect class="lbg" x="1251.8" y="101.0" width="68.0" height="25" rx="2"/>
+<text class="label" x="1285.8" y="110.0">FLY SHIELD</text>
+<text class="sub" x="1285.8" y="117.0">Cut 1 · twill</text>
+<text class="sub" x="1285.8" y="123.0">size M · waist/zip_fly</text>
+</g>
+</g>
+<text class="s" x="15.0" y="295.1">twill · Dark Grey / Off White pinstripes · 2.32 m</text>
+<text class="s" x="15.0" y="561.3">Aras · drafted from body measurements by hand-written rules · same sentence, same rules.toml, same sheet</text>
+</svg>

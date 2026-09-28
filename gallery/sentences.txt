@@ -1,0 +1,12 @@
+01_breton_tee|make a navy and white striped t-shirt with long sleeves
+02_boxy_sage_tee|make a boxy sage t-shirt with a cream collar
+03_colorblock_hoodie|make an oversized black hoodie with white sleeves, a grey hood and rib cuffs
+04_forest_hoodie|neatly make a forest green hoodie with a cream hood lining and cream drawstrings
+05_heather_sweatshirt|make a heather grey sweatshirt with navy rib trims
+06_gingham_shirt|make a red gingham shirt
+07_pinstripe_shirt|simply make a short sleeve shirt in thin sky blue pinstripes
+08_plaid_shirt|make a loose forest green plaid shirt
+09_tight_black_pants|make tight black pants
+10_charcoal_pinstripe_pants|make dark grey pinstriped pants
+11_blue_camo_pants|make baggy camo pants in dark blue and cream
+12_olive_baggy_pants|make baggy olive pants with an elastic waist

@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="420.0mm" height="480.3mm" viewBox="0 0 420.0 480.3">
+<style>
+  text { font-family: Helvetica, Arial, sans-serif; fill: #1d1d1d; }
+  .title { font-size: 11px; font-weight: bold; letter-spacing: 0.2px; }
+  .sub { font-size: 3.6px; fill: #555; }
+  .quote { font-size: 3.4px; fill: #555; font-style: italic; }
+  .h { font-size: 3.4px; font-weight: bold; letter-spacing: 0.6px; fill: #1d1d1d; }
+  .b { font-size: 3.2px; }
+  .bb { font-size: 3.2px; font-weight: bold; }
+  .s { font-size: 2.6px; fill: #6b6b6b; }
+  .ok { font-size: 3.2px; fill: #2e7d4f; font-weight: bold; }
+  .warn { font-size: 3.0px; fill: #a15c00; }
+  .cap { font-size: 3.2px; font-weight: bold; text-anchor: middle; letter-spacing: 0.8px; fill: #555; }
+  .rule { stroke: #d6d6d6; stroke-width: 0.3; }
+  .sw { stroke: #1d1d1d; stroke-width: 0.8; }
+  .fl { stroke: #232323; stroke-width: 1.8; stroke-linejoin: round; }
+  .fs { fill: none; stroke-width: 1.1; stroke-dasharray: 6 4; }
+  .rb { fill: none; stroke-width: 0.9; }
+  .ds { fill: none; stroke-width: 6; stroke-linecap: round; }
+  .fabric { fill: #f1f4f8; stroke: #8a9bb0; stroke-width: 2; }
+  .rib { fill: #f6f1f8; }
+  .cut { fill: #fffdf7; stroke: #1d1d1d; stroke-width: 1.4; }
+  .stitch { display: none; }
+  .mark, .dash, .centre, .fold, .grain, .label, .lbg { display: none; }
+  .sheet .sub { display: none; }
+</style>
+<defs>
+<pattern id="p0" patternUnits="userSpaceOnUse" width="180.0" height="180.0" patternTransform="translate(293.4 166.6) rotate(-28.0) translate(-45.0 -45.0)"><rect x="0.0" y="0.0" width="180.0" height="180.0" fill="#2b4a33"/><rect x="18.0" y="0.0" width="54.0" height="180.0" fill="#f0ece1" fill-opacity="0.5"/><rect x="0.0" y="18.0" width="180.0" height="54.0" fill="#f0ece1" fill-opacity="0.5"/><rect x="108.0" y="0.0" width="6.3" height="180.0" fill="#18291c" fill-opacity="0.8"/><rect x="0.0" y="108.0" width="180.0" height="6.3" fill="#18291c" fill-opacity="0.8"/><rect x="129.6" y="0.0" width="6.3" height="180.0" fill="#18291c" fill-opacity="0.8"/><rect x="0.0" y="129.6" width="180.0" height="6.3" fill="#18291c" fill-opacity="0.8"/></pattern>
+<pattern id="p1" patternUnits="userSpaceOnUse" width="180.0" height="180.0" patternTransform="translate(-293.4 166.6) rotate(28.0) translate(-45.0 -45.0)"><rect x="0.0" y="0.0" width="180.0" height="180.0" fill="#2b4a33"/><rect x="18.0" y="0.0" width="54.0" height="180.0" fill="#f0ece1" fill-opacity="0.5"/><rect x="0.0" y="18.0" width="180.0" height="54.0" fill="#f0ece1" fill-opacity="0.5"/><rect x="108.0" y="0.0" width="6.3" height="180.0" fill="#18291c" fill-opacity="0.8"/><rect x="0.0" y="108.0" width="180.0" height="6.3" fill="#18291c" fill-opacity="0.8"/><rect x="129.6" y="0.0" width="6.3" height="180.0" fill="#18291c" fill-opacity="0.8"/><rect x="0.0" y="129.6" width="180.0" height="6.3" fill="#18291c" fill-opacity="0.8"/></pattern>
+<pattern id="p2" patternUnits="userSpaceOnUse" width="180.0" height="180.0" patternTransform="translate(0.0 260.0) rotate(0.0) translate(-45.0 -45.0)"><rect x="0.0" y="0.0" width="180.0" height="180.0" fill="#2b4a33"/><rect x="18.0" y="0.0" width="54.0" height="180.0" fill="#f0ece1" fill-opacity="0.5"/><rect x="0.0" y="18.0" width="180.0" height="54.0" fill="#f0ece1" fill-opacity="0.5"/><rect x="108.0" y="0.0" width="6.3" height="180.0" fill="#18291c" fill-opacity="0.8"/><rect x="0.0" y="108.0" width="180.0" height="6.3" fill="#18291c" fill-opacity="0.8"/><rect x="129.6" y="0.0" width="6.3" height="180.0" fill="#18291c" fill-opacity="0.8"/><rect x="0.0" y="129.6" width="180.0" height="6.3" fill="#18291c" fill-opacity="0.8"/></pattern>
+<pattern id="p3" patternUnits="userSpaceOnUse" width="180.0" height="180.0" patternTransform="translate(0.0 0.0) rotate(0.0) translate(-45.0 -45.0)"><rect x="0.0" y="0.0" width="180.0" height="180.0" fill="#2b4a33"/><rect x="18.0" y="0.0" width="54.0" height="180.0" fill="#f0ece1" fill-opacity="0.5"/><rect x="0.0" y="18.0" width="180.0" height="54.0" fill="#f0ece1" fill-opacity="0.5"/><rect x="108.0" y="0.0" width="6.3" height="180.0" fill="#18291c" fill-opacity="0.8"/><rect x="0.0" y="108.0" width="180.0" height="6.3" fill="#18291c" fill-opacity="0.8"/><rect x="129.6" y="0.0" width="6.3" height="180.0" fill="#18291c" fill-opacity="0.8"/><rect x="0.0" y="129.6" width="180.0" height="6.3" fill="#18291c" fill-opacity="0.8"/></pattern>
+<pattern id="p4" patternUnits="userSpaceOnUse" width="180.0" height="180.0" patternTransform="translate(293.4 166.6) rotate(-28.0) translate(-45.0 -45.0)"><rect x="0.0" y="0.0" width="180.0" height="180.0" fill="#2b4a33"/><rect x="18.0" y="0.0" width="54.0" height="180.0" fill="#f0ece1" fill-opacity="0.5"/><rect x="0.0" y="18.0" width="180.0" height="54.0" fill="#f0ece1" fill-opacity="0.5"/><rect x="108.0" y="0.0" width="6.3" height="180.0" fill="#18291c" fill-opacity="0.8"/><rect x="0.0" y="108.0" width="180.0" height="6.3" fill="#18291c" fill-opacity="0.8"/><rect x="129.6" y="0.0" width="6.3" height="180.0" fill="#18291c" fill-opacity="0.8"/><rect x="0.0" y="129.6" width="180.0" height="6.3" fill="#18291c" fill-opacity="0.8"/></pattern>
+<pattern id="p5" patternUnits="userSpaceOnUse" width="180.0" height="180.0" patternTransform="translate(-293.4 166.6) rotate(28.0) translate(-45.0 -45.0)"><rect x="0.0" y="0.0" width="180.0" height="180.0" fill="#2b4a33"/><rect x="18.0" y="0.0" width="54.0" height="180.0" fill="#f0ece1" fill-opacity="0.5"/><rect x="0.0" y="18.0" width="180.0" height="54.0" fill="#f0ece1" fill-opacity="0.5"/><rect x="108.0" y="0.0" width="6.3" height="180.0" fill="#18291c" fill-opacity="0.8"/><rect x="0.0" y="108.0" width="180.0" height="6.3" fill="#18291c" fill-opacity="0.8"/><rect x="129.6" y="0.0" width="6.3" height="180.0" fill="#18291c" fill-opacity="0.8"/><rect x="0.0" y="129.6" width="180.0" height="6.3" fill="#18291c" fill-opacity="0.8"/></pattern>
+<pattern id="p6" patternUnits="userSpaceOnUse" width="180.0" height="180.0" patternTransform="translate(0.0 260.0) rotate(0.0) translate(-45.0 -45.0)"><rect x="0.0" y="0.0" width="180.0" height="180.0" fill="#2b4a33"/><rect x="18.0" y="0.0" width="54.0" height="180.0" fill="#f0ece1" fill-opacity="0.5"/><rect x="0.0" y="18.0" width="180.0" height="54.0" fill="#f0ece1" fill-opacity="0.5"/><rect x="108.0" y="0.0" width="6.3" height="180.0" fill="#18291c" fill-opacity="0.8"/><rect x="0.0" y="108.0" width="180.0" height="6.3" fill="#18291c" fill-opacity="0.8"/><rect x="129.6" y="0.0" width="6.3" height="180.0" fill="#18291c" fill-opacity="0.8"/><rect x="0.0" y="129.6" width="180.0" height="6.3" fill="#18291c" fill-opacity="0.8"/></pattern>
+<pattern id="p7" patternUnits="userSpaceOnUse" width="180.0" height="180.0" patternTransform="translate(0.0 0.0) rotate(0.0) translate(-45.0 -45.0)"><rect x="0.0" y="0.0" width="180.0" height="180.0" fill="#2b4a33"/><rect x="18.0" y="0.0" width="54.0" height="180.0" fill="#f0ece1" fill-opacity="0.5"/><rect x="0.0" y="18.0" width="180.0" height="54.0" fill="#f0ece1" fill-opacity="0.5"/><rect x="108.0" y="0.0" width="6.3" height="180.0" fill="#18291c" fill-opacity="0.8"/><rect x="0.0" y="108.0" width="180.0" height="6.3" fill="#18291c" fill-opacity="0.8"/><rect x="129.6" y="0.0" width="6.3" height="180.0" fill="#18291c" fill-opacity="0.8"/><rect x="0.0" y="129.6" width="180.0" height="6.3" fill="#18291c" fill-opacity="0.8"/></pattern>
+<pattern id="p8" patternUnits="userSpaceOnUse" width="180.0" height="180.0" patternTransform="translate(0.0 0.0) rotate(0.0) translate(-45.0 -45.0)"><rect x="0.0" y="0.0" width="180.0" height="180.0" fill="#2b4a33"/><rect x="18.0" y="0.0" width="54.0" height="180.0" fill="#f0ece1" fill-opacity="0.5"/><rect x="0.0" y="18.0" width="180.0" height="54.0" fill="#f0ece1" fill-opacity="0.5"/><rect x="108.0" y="0.0" width="6.3" height="180.0" fill="#18291c" fill-opacity="0.8"/><rect x="0.0" y="108.0" width="180.0" height="6.3" fill="#18291c" fill-opacity="0.8"/><rect x="129.6" y="0.0" width="6.3" height="180.0" fill="#18291c" fill-opacity="0.8"/><rect x="0.0" y="129.6" width="180.0" height="6.3" fill="#18291c" fill-opacity="0.8"/></pattern>
+<pattern id="p9" patternUnits="userSpaceOnUse" width="180.0" height="180.0" patternTransform="translate(0.0 0.0) rotate(0.0) translate(-45.0 -45.0)"><rect x="0.0" y="0.0" width="180.0" height="180.0" fill="#2b4a33"/><rect x="18.0" y="0.0" width="54.0" height="180.0" fill="#f0ece1" fill-opacity="0.5"/><rect x="0.0" y="18.0" width="180.0" height="54.0" fill="#f0ece1" fill-opacity="0.5"/><rect x="108.0" y="0.0" width="6.3" height="180.0" fill="#18291c" fill-opacity="0.8"/><rect x="0.0" y="108.0" width="180.0" height="6.3" fill="#18291c" fill-opacity="0.8"/><rect x="129.6" y="0.0" width="6.3" height="180.0" fill="#18291c" fill-opacity="0.8"/><rect x="0.0" y="129.6" width="180.0" height="6.3" fill="#18291c" fill-opacity="0.8"/></pattern>
+<pattern id="p10" patternUnits="userSpaceOnUse" width="180.0" height="180.0" patternTransform="translate(0.0 0.0) rotate(0.0) translate(-45.0 -45.0)"><rect x="0.0" y="0.0" width="180.0" height="180.0" fill="#2b4a33"/><rect x="18.0" y="0.0" width="54.0" height="180.0" fill="#f0ece1" fill-opacity="0.5"/><rect x="0.0" y="18.0" width="180.0" height="54.0" fill="#f0ece1" fill-opacity="0.5"/><rect x="108.0" y="0.0" width="6.3" height="180.0" fill="#18291c" fill-opacity="0.8"/><rect x="0.0" y="108.0" width="180.0" height="6.3" fill="#18291c" fill-opacity="0.8"/><rect x="129.6" y="0.0" width="6.3" height="180.0" fill="#18291c" fill-opacity="0.8"/><rect x="0.0" y="129.6" width="180.0" height="6.3" fill="#18291c" fill-opacity="0.8"/></pattern>
+<pattern id="p11" patternUnits="userSpaceOnUse" width="180.0" height="180.0" patternTransform="translate(1002.0 276.9) rotate(0.0) translate(-45.0 -45.0)"><rect x="0.0" y="0.0" width="180.0" height="180.0" fill="#2b4a33"/><rect x="18.0" y="0.0" width="54.0" height="180.0" fill="#f0ece1" fill-opacity="0.5"/><rect x="0.0" y="18.0" width="180.0" height="54.0" fill="#f0ece1" fill-opacity="0.5"/><rect x="108.0" y="0.0" width="6.3" height="180.0" fill="#18291c" fill-opacity="0.8"/><rect x="0.0" y="108.0" width="180.0" height="6.3" fill="#18291c" fill-opacity="0.8"/><rect x="129.6" y="0.0" width="6.3" height="180.0" fill="#18291c" fill-opacity="0.8"/><rect x="0.0" y="129.6" width="180.0" height="6.3" fill="#18291c" fill-opacity="0.8"/></pattern>
+<pattern id="p12" patternUnits="userSpaceOnUse" width="180.0" height="180.0" patternTransform="translate(45.0 279.7) rotate(0.0) translate(-45.0 -45.0)"><rect x="0.0" y="0.0" width="180.0" height="180.0" fill="#2b4a33"/><rect x="18.0" y="0.0" width="54.0" height="180.0" fill="#f0ece1" fill-opacity="0.5"/><rect x="0.0" y="18.0" width="180.0" height="54.0" fill="#f0ece1" fill-opacity="0.5"/><rect x="108.0" y="0.0" width="6.3" height="180.0" fill="#18291c" fill-opacity="0.8"/><rect x="0.0" y="108.0" width="180.0" height="6.3" fill="#18291c" fill-opacity="0.8"/><rect x="129.6" y="0.0" width="6.3" height="180.0" fill="#18291c" fill-opacity="0.8"/><rect x="0.0" y="129.6" width="180.0" height="6.3" fill="#18291c" fill-opacity="0.8"/></pattern>
+<pattern id="p13" patternUnits="userSpaceOnUse" width="180.0" height="180.0" patternTransform="translate(651.0 279.7) rotate(0.0) translate(-45.0 -45.0)"><rect x="0.0" y="0.0" width="180.0" height="180.0" fill="#2b4a33"/><rect x="18.0" y="0.0" width="54.0" height="180.0" fill="#f0ece1" fill-opacity="0.5"/><rect x="0.0" y="18.0" width="180.0" height="54.0" fill="#f0ece1" fill-opacity="0.5"/><rect x="108.0" y="0.0" width="6.3" height="180.0" fill="#18291c" fill-opacity="0.8"/><rect x="0.0" y="108.0" width="180.0" height="6.3" fill="#18291c" fill-opacity="0.8"/><rect x="129.6" y="0.0" width="6.3" height="180.0" fill="#18291c" fill-opacity="0.8"/><rect x="0.0" y="129.6" width="180.0" height="6.3" fill="#18291c" fill-opacity="0.8"/></pattern>
+<pattern id="p14" patternUnits="userSpaceOnUse" width="180.0" height="180.0" patternTransform="translate(924.2 935.7) rotate(0.0) translate(-45.0 -45.0)"><rect x="0.0" y="0.0" width="180.0" height="180.0" fill="#2b4a33"/><rect x="18.0" y="0.0" width="54.0" height="180.0" fill="#f0ece1" fill-opacity="0.5"/><rect x="0.0" y="18.0" width="180.0" height="54.0" fill="#f0ece1" fill-opacity="0.5"/><rect x="108.0" y="0.0" width="6.3" height="180.0" fill="#18291c" fill-opacity="0.8"/><rect x="0.0" y="108.0" width="180.0" height="6.3" fill="#18291c" fill-opacity="0.8"/><rect x="129.6" y="0.0" width="6.3" height="180.0" fill="#18291c" fill-opacity="0.8"/><rect x="0.0" y="129.6" width="180.0" height="6.3" fill="#18291c" fill-opacity="0.8"/></pattern>
+<pattern id="p15" patternUnits="userSpaceOnUse" width="180.0" height="180.0" patternTransform="translate(222.2 938.4) rotate(0.0) translate(-45.0 -45.0)"><rect x="0.0" y="0.0" width="180.0" height="180.0" fill="#2b4a33"/><rect x="18.0" y="0.0" width="54.0" height="180.0" fill="#f0ece1" fill-opacity="0.5"/><rect x="0.0" y="18.0" width="180.0" height="54.0" fill="#f0ece1" fill-opacity="0.5"/><rect x="108.0" y="0.0" width="6.3" height="180.0" fill="#18291c" fill-opacity="0.8"/><rect x="0.0" y="108.0" width="180.0" height="6.3" fill="#18291c" fill-opacity="0.8"/><rect x="129.6" y="0.0" width="6.3" height="180.0" fill="#18291c" fill-opacity="0.8"/><rect x="0.0" y="129.6" width="180.0" height="6.3" fill="#18291c" fill-opacity="0.8"/></pattern>
+<pattern id="p16" patternUnits="userSpaceOnUse" width="180.0" height="180.0" patternTransform="translate(704.3 1479.0) rotate(0.0) translate(-45.0 -45.0)"><rect x="0.0" y="0.0" width="180.0" height="180.0" fill="#2b4a33"/><rect x="18.0" y="0.0" width="54.0" height="180.0" fill="#f0ece1" fill-opacity="0.5"/><rect x="0.0" y="18.0" width="180.0" height="54.0" fill="#f0ece1" fill-opacity="0.5"/><rect x="108.0" y="0.0" width="6.3" height="180.0" fill="#18291c" fill-opacity="0.8"/><rect x="0.0" y="108.0" width="180.0" height="6.3" fill="#18291c" fill-opacity="0.8"/><rect x="129.6" y="0.0" width="6.3" height="180.0" fill="#18291c" fill-opacity="0.8"/><rect x="0.0" y="129.6" width="180.0" height="6.3" fill="#18291c" fill-opacity="0.8"/></pattern>
+<pattern id="p17" patternUnits="userSpaceOnUse" width="180.0" height="180.0" patternTransform="translate(1218.1 1479.0) rotate(0.0) translate(-45.0 -45.0)"><rect x="0.0" y="0.0" width="180.0" height="180.0" fill="#2b4a33"/><rect x="18.0" y="0.0" width="54.0" height="180.0" fill="#f0ece1" fill-opacity="0.5"/><rect x="0.0" y="18.0" width="180.0" height="54.0" fill="#f0ece1" fill-opacity="0.5"/><rect x="108.0" y="0.0" width="6.3" height="180.0" fill="#18291c" fill-opacity="0.8"/><rect x="0.0" y="108.0" width="180.0" height="6.3" fill="#18291c" fill-opacity="0.8"/><rect x="129.6" y="0.0" width="6.3" height="180.0" fill="#18291c" fill-opacity="0.8"/><rect x="0.0" y="129.6" width="180.0" height="6.3" fill="#18291c" fill-opacity="0.8"/></pattern>
+</defs>
+<!-- Aras: "simply make a thick plaid shirt in forest green" -->
+<rect x="0" y="0" width="420.0" height="480.3" fill="#ffffff"/>
+<text class="title" x="15.0" y="24.0">Forest Green Plaid Button Shirt</text>
+<text class="sub" x="15.0" y="31.0">ARS-SH-1E68   ·   size M   ·   regular fit   ·   shirting</text>
+<text class="quote" x="15.0" y="37.0">“simply make a thick plaid shirt in forest green”</text>
+<path class="rule" d="M15.0 42.0 L405.0 42.0"/>
+<g transform="translate(79.0 139.1) scale(0.1199)">
+<path class="fl" fill="url(#p0)" d="M228.7 45.0 L533.9 618.9 L419.1 679.9 L109.8 258.0 L285.0 260.0 L279.8 259.8 L274.8 259.0 L269.9 257.8 L265.2 256.2 L260.7 254.1 L256.3 251.7 L252.2 248.9 L248.2 245.7 L244.4 242.1 L240.8 238.3 L237.4 234.2 L234.2 229.8 L231.3 225.1 L228.6 220.2 L226.1 215.1 L223.8 209.8 L221.8 204.4 L220.0 198.8 L218.5 193.0 L217.3 187.2 L216.3 181.3 L215.6 175.3 L215.1 169.3 L215.0 163.2 L215.0 158.3 L215.1 153.3 L215.1 148.3 L215.3 143.4 L215.4 138.4 L215.6 133.4 L215.9 128.4 L216.2 123.4 L216.5 118.5 L216.9 113.5 L217.3 108.5 L217.8 103.6 L218.4 98.6 L219.0 93.7 L219.6 88.7 L220.4 83.8 L221.2 78.9 L222.0 74.0 L223.0 69.1 L224.0 64.3 L225.0 59.4 L226.2 54.6 L227.4 49.8 L228.7 45.0 Z"/>
+<path class="fs" stroke="#223b29" d="M528.3 608.3 L413.5 669.4"/>
+<path class="fl" fill="url(#p1)" d="M-228.7 45.0 L-533.9 618.9 L-419.1 679.9 L-109.8 258.0 L-285.0 260.0 L-279.8 259.8 L-274.8 259.0 L-269.9 257.8 L-265.2 256.2 L-260.7 254.1 L-256.3 251.7 L-252.2 248.9 L-248.2 245.7 L-244.4 242.1 L-240.8 238.3 L-237.4 234.2 L-234.2 229.8 L-231.3 225.1 L-228.6 220.2 L-226.1 215.1 L-223.8 209.8 L-221.8 204.4 L-220.0 198.8 L-218.5 193.0 L-217.3 187.2 L-216.3 181.3 L-215.6 175.3 L-215.1 169.3 L-215.0 163.2 L-215.0 158.3 L-215.1 153.3 L-215.1 148.3 L-215.3 143.4 L-215.4 138.4 L-215.6 133.4 L-215.9 128.4 L-216.2 123.4 L-216.5 118.5 L-216.9 113.5 L-217.3 108.5 L-217.8 103.6 L-218.4 98.6 L-219.0 93.7 L-219.6 88.7 L-220.4 83.8 L-221.2 78.9 L-222.0 74.0 L-223.0 69.1 L-224.0 64.3 L-225.0 59.4 L-226.2 54.6 L-227.4 49.8 L-228.7 45.0 Z"/>
+<path class="fs" stroke="#223b29" d="M-528.3 608.3 L-413.5 669.4"/>
+<path class="fl" fill="url(#p2)" d="M15.0 80.0 L0.0 80.0 L-4.8 79.8 L-9.5 79.3 L-14.1 78.4 L-18.6 77.1 L-23.0 75.6 L-27.2 73.7 L-31.4 71.5 L-35.3 69.1 L-39.1 66.3 L-42.8 63.3 L-46.2 60.1 L-49.5 56.6 L-52.6 52.8 L-55.4 48.9 L-58.0 44.7 L-60.4 40.4 L-62.6 35.8 L-64.5 31.1 L-66.1 26.3 L-67.5 21.3 L-68.6 16.1 L-69.4 10.9 L-69.8 5.5 L-70.0 0.0 L-228.7 45.0 L-227.4 49.8 L-226.2 54.6 L-225.0 59.4 L-224.0 64.3 L-223.0 69.1 L-222.0 74.0 L-221.2 78.9 L-220.4 83.8 L-219.6 88.7 L-219.0 93.7 L-218.4 98.6 L-217.8 103.6 L-217.3 108.5 L-216.9 113.5 L-216.5 118.5 L-216.2 123.4 L-215.9 128.4 L-215.6 133.4 L-215.4 138.4 L-215.3 143.4 L-215.1 148.3 L-215.1 153.3 L-215.0 158.3 L-215.0 163.2 L-215.1 169.3 L-215.6 175.3 L-216.3 181.3 L-217.3 187.2 L-218.5 193.0 L-220.0 198.8 L-221.8 204.4 L-223.8 209.8 L-226.1 215.1 L-228.6 220.2 L-231.3 225.1 L-234.2 229.8 L-237.4 234.2 L-240.8 238.3 L-244.4 242.1 L-248.2 245.7 L-252.2 248.9 L-256.3 251.7 L-260.7 254.1 L-265.2 256.2 L-269.9 257.8 L-274.8 259.0 L-279.8 259.8 L-285.0 260.0 L-285.0 750.0 L15.0 750.0 Z"/>
+<path class="fl" fill="url(#p2)" d="M-15.0 80.0 L0.0 80.0 L4.8 79.8 L9.5 79.3 L14.1 78.4 L18.6 77.1 L23.0 75.6 L27.2 73.7 L31.4 71.5 L35.3 69.1 L39.1 66.3 L42.8 63.3 L46.2 60.1 L49.5 56.6 L52.6 52.8 L55.4 48.9 L58.0 44.7 L60.4 40.4 L62.6 35.8 L64.5 31.1 L66.1 26.3 L67.5 21.3 L68.6 16.1 L69.4 10.9 L69.8 5.5 L70.0 0.0 L228.7 45.0 L227.4 49.8 L226.2 54.6 L225.0 59.4 L224.0 64.3 L223.0 69.1 L222.0 74.0 L221.2 78.9 L220.4 83.8 L219.6 88.7 L219.0 93.7 L218.4 98.6 L217.8 103.6 L217.3 108.5 L216.9 113.5 L216.5 118.5 L216.2 123.4 L215.9 128.4 L215.6 133.4 L215.4 138.4 L215.3 143.4 L215.1 148.3 L215.1 153.3 L215.0 158.3 L215.0 163.2 L215.1 169.3 L215.6 175.3 L216.3 181.3 L217.3 187.2 L218.5 193.0 L220.0 198.8 L221.8 204.4 L223.8 209.8 L226.1 215.1 L228.6 220.2 L231.3 225.1 L234.2 229.8 L237.4 234.2 L240.8 238.3 L244.4 242.1 L248.2 245.7 L252.2 248.9 L256.3 251.7 L260.7 254.1 L265.2 256.2 L269.9 257.8 L274.8 259.0 L279.8 259.8 L285.0 260.0 L285.0 750.0 L-15.0 750.0 Z"/>
+<path class="fs" stroke="#223b29" d="M-285.0 736.0 L285.0 736.0"/>
+<path class="fs" stroke="#223b29" d="M-12.0 84.0 L-12.0 744.0"/>
+<path class="fs" stroke="#223b29" d="M12.0 84.0 L12.0 744.0"/>
+<circle class="fl" cx="0" cy="102.5" r="5.5" fill="#f0ece1"/>
+<circle class="fl" cx="0" cy="195.0" r="5.5" fill="#f0ece1"/>
+<circle class="fl" cx="0" cy="287.5" r="5.5" fill="#f0ece1"/>
+<circle class="fl" cx="0" cy="380.0" r="5.5" fill="#f0ece1"/>
+<circle class="fl" cx="0" cy="472.5" r="5.5" fill="#f0ece1"/>
+<circle class="fl" cx="0" cy="565.0" r="5.5" fill="#f0ece1"/>
+<circle class="fl" cx="0" cy="657.5" r="5.5" fill="#f0ece1"/>
+<path class="fl" fill="url(#p3)" d="M-74.0 -2.0 L74.0 -2.0 L72.0 -26.0 L-72.0 -26.0 Z"/>
+<path class="fl" fill="url(#p3)" d="M-76.0 -6.0 L-86.0 36.0 L-22.0 110.0 L-2.0 86.0 L-38.5 6.0 Z"/>
+<path class="fl" fill="url(#p3)" d="M76.0 -6.0 L86.0 36.0 L22.0 110.0 L2.0 86.0 L38.5 6.0 Z"/>
+</g>
+<text class="cap" x="79.0" y="236.0">FRONT</text>
+<g transform="translate(215.0 139.1) scale(0.1199)">
+<path class="fl" fill="url(#p4)" d="M228.7 45.0 L533.9 618.9 L419.1 679.9 L109.8 258.0 L285.0 260.0 L280.5 259.8 L276.1 259.0 L271.8 257.8 L267.7 256.2 L263.7 254.1 L259.9 251.7 L256.3 248.9 L252.8 245.7 L249.5 242.1 L246.3 238.3 L243.4 234.2 L240.6 229.8 L238.0 225.1 L235.6 220.2 L233.4 215.1 L231.5 209.8 L229.7 204.4 L228.1 198.8 L226.8 193.0 L225.7 187.2 L224.9 181.3 L224.2 175.3 L223.9 169.3 L223.7 163.2 L223.7 158.3 L223.6 153.4 L223.5 148.4 L223.4 143.4 L223.2 138.5 L223.0 133.5 L222.8 128.5 L222.7 123.5 L222.5 118.5 L222.4 113.5 L222.3 108.5 L222.2 103.6 L222.2 98.6 L222.3 93.6 L222.4 88.7 L222.7 83.8 L223.0 78.8 L223.4 73.9 L224.0 69.1 L224.6 64.2 L225.4 59.4 L226.4 54.5 L227.5 49.8 L228.7 45.0 Z"/>
+<path class="fs" stroke="#223b29" d="M528.3 608.3 L413.5 669.4"/>
+<path class="fl" fill="url(#p5)" d="M-228.7 45.0 L-533.9 618.9 L-419.1 679.9 L-109.8 258.0 L-285.0 260.0 L-280.5 259.8 L-276.1 259.0 L-271.8 257.8 L-267.7 256.2 L-263.7 254.1 L-259.9 251.7 L-256.3 248.9 L-252.8 245.7 L-249.5 242.1 L-246.3 238.3 L-243.4 234.2 L-240.6 229.8 L-238.0 225.1 L-235.6 220.2 L-233.4 215.1 L-231.5 209.8 L-229.7 204.4 L-228.1 198.8 L-226.8 193.0 L-225.7 187.2 L-224.9 181.3 L-224.2 175.3 L-223.9 169.3 L-223.7 163.2 L-223.7 158.3 L-223.6 153.4 L-223.5 148.4 L-223.4 143.4 L-223.2 138.5 L-223.0 133.5 L-222.8 128.5 L-222.7 123.5 L-222.5 118.5 L-222.4 113.5 L-222.3 108.5 L-222.2 103.6 L-222.2 98.6 L-222.3 93.6 L-222.4 88.7 L-222.7 83.8 L-223.0 78.8 L-223.4 73.9 L-224.0 69.1 L-224.6 64.2 L-225.4 59.4 L-226.4 54.5 L-227.5 49.8 L-228.7 45.0 Z"/>
+<path class="fs" stroke="#223b29" d="M-528.3 608.3 L-413.5 669.4"/>
+<path class="fl" fill="url(#p6)" d="M0.0 20.0 L4.3 20.0 L8.5 19.9 L12.5 19.8 L16.4 19.6 L20.1 19.4 L23.7 19.1 L27.2 18.8 L30.6 18.4 L33.8 17.9 L37.0 17.3 L40.0 16.7 L42.9 16.0 L45.7 15.2 L48.3 14.3 L50.9 13.4 L53.4 12.3 L55.8 11.1 L58.1 9.9 L60.3 8.5 L62.4 7.0 L64.4 5.5 L66.4 3.8 L68.2 1.9 L70.0 0.0 L228.7 45.0 L227.5 49.8 L226.4 54.5 L225.4 59.4 L224.6 64.2 L224.0 69.1 L223.4 73.9 L223.0 78.8 L222.7 83.8 L222.4 88.7 L222.3 93.6 L222.2 98.6 L222.2 103.6 L222.3 108.5 L222.4 113.5 L222.5 118.5 L222.7 123.5 L222.8 128.5 L223.0 133.5 L223.2 138.5 L223.4 143.4 L223.5 148.4 L223.6 153.4 L223.7 158.3 L223.7 163.2 L223.9 169.3 L224.2 175.3 L224.9 181.3 L225.7 187.2 L226.8 193.0 L228.1 198.8 L229.7 204.4 L231.5 209.8 L233.4 215.1 L235.6 220.2 L238.0 225.1 L240.6 229.8 L243.4 234.2 L246.3 238.3 L249.5 242.1 L252.8 245.7 L256.3 248.9 L259.9 251.7 L263.7 254.1 L267.7 256.2 L271.8 257.8 L276.1 259.0 L280.5 259.8 L285.0 260.0 L285.0 750.0 L0.0 750.0 L-285.0 750.0 L-285.0 260.0 L-280.5 259.8 L-276.1 259.0 L-271.8 257.8 L-267.7 256.2 L-263.7 254.1 L-259.9 251.7 L-256.3 248.9 L-252.8 245.7 L-249.5 242.1 L-246.3 238.3 L-243.4 234.2 L-240.6 229.8 L-238.0 225.1 L-235.6 220.2 L-233.4 215.1 L-231.5 209.8 L-229.7 204.4 L-228.1 198.8 L-226.8 193.0 L-225.7 187.2 L-224.9 181.3 L-224.2 175.3 L-223.9 169.3 L-223.7 163.2 L-223.7 158.3 L-223.6 153.4 L-223.5 148.4 L-223.4 143.4 L-223.2 138.5 L-223.0 133.5 L-222.8 128.5 L-222.7 123.5 L-222.5 118.5 L-222.4 113.5 L-222.3 108.5 L-222.2 103.6 L-222.2 98.6 L-222.3 93.6 L-222.4 88.7 L-222.7 83.8 L-223.0 78.8 L-223.4 73.9 L-224.0 69.1 L-224.6 64.2 L-225.4 59.4 L-226.4 54.5 L-227.5 49.8 L-228.7 45.0 L-70.0 0.0 L-68.2 1.9 L-66.4 3.8 L-64.4 5.5 L-62.4 7.0 L-60.3 8.5 L-58.1 9.9 L-55.8 11.1 L-53.4 12.3 L-50.9 13.4 L-48.3 14.3 L-45.7 15.2 L-42.9 16.0 L-40.0 16.7 L-37.0 17.3 L-33.8 17.9 L-30.6 18.4 L-27.2 18.8 L-23.7 19.1 L-20.1 19.4 L-16.4 19.6 L-12.5 19.8 L-8.5 19.9 L-4.3 20.0 Z"/>
+<path class="fs" stroke="#223b29" d="M0.0 736.0 L-285.0 736.0 L285.0 736.0 L0.0 736.0"/>
+<path class="fl" fill="url(#p7)" d="M-72.0 -24.0 L72.0 -24.0 L76.0 4.0 L70.7 4.7 L65.2 5.4 L59.4 6.0 L53.4 6.5 L47.1 7.0 L40.7 7.4 L34.2 7.7 L27.5 8.0 L20.7 8.2 L13.8 8.4 L6.9 8.5 L0.0 8.5 L-6.9 8.5 L-13.8 8.4 L-20.7 8.2 L-27.5 8.0 L-34.2 7.7 L-40.7 7.4 L-47.1 7.0 L-53.4 6.5 L-59.4 6.0 L-65.2 5.4 L-70.7 4.7 L-76.0 4.0 Z"/>
+</g>
+<text class="cap" x="215.0" y="236.0">BACK</text>
+<text class="h" x="293.0" y="51.0">COLOURWAY</text>
+<g transform="translate(293.0 56.0) scale(0.4)"><rect class="sw" x="0" y="0" width="35.0" height="22.5" rx="2" fill="url(#p8)"/></g>
+<text class="bb" x="310.0" y="59.2">BODY</text>
+<text class="b" x="310.0" y="62.6">Forest Green / Dark Forest Green / Off White plaid</text>
+<text class="s" x="310.0" y="65.6">&quot;simply make a thick plaid shirt in forest green&quot;</text>
+<g transform="translate(293.0 69.0) scale(0.4)"><rect class="sw" x="0" y="0" width="35.0" height="22.5" rx="2" fill="url(#p9)"/></g>
+<text class="bb" x="310.0" y="72.2">SLEEVES</text>
+<text class="b" x="310.0" y="75.6">Forest Green / Dark Forest Green / Off White plaid</text>
+<text class="s" x="310.0" y="78.6">same as the body</text>
+<g transform="translate(293.0 82.0) scale(0.4)"><rect class="sw" x="0" y="0" width="35.0" height="22.5" rx="2" fill="url(#p10)"/></g>
+<text class="bb" x="310.0" y="85.2">COLLAR</text>
+<text class="b" x="310.0" y="88.6">Forest Green / Dark Forest Green / Off White plaid</text>
+<text class="s" x="310.0" y="91.6">same as the body</text>
+<g transform="translate(293.0 95.0) scale(0.4)"><rect class="sw" x="0" y="0" width="35.0" height="22.5" rx="2" fill="#f0ece1"/></g>
+<text class="bb" x="310.0" y="98.2">BUTTONS</text>
+<text class="b" x="310.0" y="101.6">Off White</text>
+<text class="s" x="310.0" y="104.6">tonal buttons</text>
+<g transform="translate(293.0 108.0) scale(0.4)"><rect class="sw" x="0" y="0" width="35.0" height="22.5" rx="2" fill="#223b29"/></g>
+<text class="bb" x="310.0" y="111.2">THREAD</text>
+<text class="b" x="310.0" y="114.6">Dark Forest Green</text>
+<text class="s" x="310.0" y="117.6">tonal thread</text>
+<text class="h" x="293.0" y="125.0">CONSTRUCTION</text>
+<text class="b" x="293.0" y="130.5">body hem: straight</text>
+<text class="s" x="293.0" y="133.7">← “simply make a thick plaid shirt in forest green”</text>
+<text class="b" x="293.0" y="137.9">sleeve finish: hemmed wide</text>
+<text class="s" x="293.0" y="141.1">← “simply make a thick plaid shirt in forest green”</text>
+<text class="b" x="293.0" y="145.3">collar: one piece</text>
+<text class="s" x="293.0" y="148.5">← “simply make a thick plaid shirt in forest green”</text>
+<text class="ok" x="293.0" y="153.7">✓ 8/8 construction checks passed</text>
+<text class="h" x="15.0" y="245.0">BILL OF MATERIALS</text>
+<text class="bb" x="15.0" y="250.5">1.57 m</text>
+<text class="b" x="37.0" y="250.5">shirting · Forest Green / Dark Forest Green / Off White plaid, 150 cm wide</text>
+<text class="bb" x="15.0" y="255.3">9</text>
+<text class="b" x="37.0" y="255.3">buttons, 11 mm, Off White (incl. 2 spare)</text>
+<text class="bb" x="15.0" y="260.1">—</text>
+<text class="b" x="37.0" y="260.1">fusible interfacing for collar</text>
+<text class="bb" x="15.0" y="264.9">1 spool</text>
+<text class="b" x="37.0" y="264.9">polyester thread, Dark Forest Green</text>
+<text class="s" x="15.0" y="270.7">seam allowance 15 mm and hems 10 mm included in every piece</text>
+<path class="rule" d="M15.0 278.7 L405.0 278.7"/>
+<text class="h" x="15.0" y="283.7">CUTTING LAYOUT</text>
+<g class="sheet" transform="translate(15.0 291.7) scale(0.11)">
+<rect class="fabric" x="0.0" y="0.0" width="1500.0" height="1569.0"/>
+<!-- back  [block/button shirt]  "simply make a thick plaid shirt in forest green" -->
+<g>
+<path class="cut" style="fill:url(#p11)" d="M1002.0 21.9 L1006.1 21.9 L1010.1 21.9 L1013.9 21.8 L1017.6 21.6 L1021.1 21.4 L1024.4 21.1 L1027.6 20.8 L1030.6 20.4 L1033.4 20.0 L1036.1 19.6 L1038.7 19.0 L1041.0 18.4 L1043.3 17.8 L1045.4 17.1 L1047.3 16.4 L1049.2 15.6 L1050.9 14.8 L1052.5 13.9 L1054.0 12.9 L1055.5 11.9 L1056.8 10.8 L1058.2 9.7 L1059.5 8.4 L1067.2 0.0 L1249.0 51.5 L1244.0 70.3 L1243.1 74.6 L1242.2 79.0 L1241.5 83.4 L1240.9 87.9 L1240.4 92.4 L1239.9 96.9 L1239.6 101.6 L1239.4 106.2 L1239.3 110.9 L1239.2 115.7 L1239.2 120.4 L1239.3 125.3 L1239.4 130.1 L1239.5 135.0 L1239.6 139.9 L1239.8 144.9 L1240.0 149.9 L1240.2 154.9 L1240.4 159.9 L1240.5 164.9 L1240.6 170.0 L1240.7 175.1 L1240.7 180.0 L1240.9 185.6 L1241.2 191.0 L1241.8 196.4 L1242.5 201.7 L1243.5 206.9 L1244.7 212.0 L1246.1 217.0 L1247.6 221.8 L1249.4 226.5 L1251.3 230.9 L1253.3 235.1 L1255.5 239.1 L1257.8 242.7 L1260.2 246.1 L1262.7 249.2 L1265.3 251.9 L1267.9 254.3 L1270.6 256.4 L1273.3 258.1 L1275.9 259.5 L1278.6 260.5 L1281.3 261.3 L1284.1 261.8 L1302.0 262.7 L1302.0 776.9 L1002.0 776.9 L702.0 776.9 L702.0 262.7 L719.9 261.8 L722.7 261.3 L725.4 260.5 L728.1 259.5 L730.7 258.1 L733.4 256.4 L736.1 254.3 L738.7 251.9 L741.3 249.2 L743.8 246.1 L746.2 242.7 L748.5 239.1 L750.7 235.1 L752.7 230.9 L754.6 226.5 L756.4 221.8 L757.9 217.0 L759.3 212.0 L760.5 206.9 L761.5 201.7 L762.2 196.4 L762.8 191.0 L763.1 185.6 L763.3 180.0 L763.3 175.1 L763.4 170.0 L763.5 164.9 L763.6 159.9 L763.8 154.9 L764.0 149.9 L764.2 144.9 L764.4 139.9 L764.5 135.0 L764.6 130.1 L764.7 125.3 L764.8 120.4 L764.8 115.7 L764.7 110.9 L764.6 106.2 L764.4 101.6 L764.1 96.9 L763.6 92.4 L763.1 87.9 L762.5 83.4 L761.8 79.0 L760.9 74.6 L760.0 70.3 L755.0 51.5 L936.8 0.0 L944.5 8.4 L945.8 9.7 L947.2 10.8 L948.5 11.9 L950.0 12.9 L951.5 13.9 L953.1 14.8 L954.8 15.6 L956.7 16.4 L958.6 17.1 L960.7 17.8 L963.0 18.4 L965.3 19.0 L967.9 19.6 L970.6 20.0 L973.4 20.4 L976.4 20.8 L979.6 21.1 L982.9 21.4 L986.4 21.6 L990.1 21.8 L993.9 21.9 L997.9 21.9 Z"/>
+<path class="stitch" d="M1002.0 36.9 L1006.3 36.9 L1010.5 36.9 L1014.5 36.7 L1018.4 36.6 L1022.1 36.4 L1025.7 36.1 L1029.2 35.7 L1032.6 35.3 L1035.8 34.8 L1039.0 34.3 L1042.0 33.7 L1044.9 32.9 L1047.7 32.2 L1050.3 31.3 L1052.9 30.3 L1055.4 29.2 L1057.8 28.1 L1060.1 26.8 L1062.3 25.5 L1064.4 24.0 L1066.4 22.4 L1068.4 20.7 L1070.2 18.9 L1072.0 16.9 L1230.7 61.9 L1229.5 66.7 L1228.4 71.5 L1227.4 76.3 L1226.6 81.1 L1226.0 86.0 L1225.4 90.9 L1225.0 95.8 L1224.7 100.7 L1224.4 105.6 L1224.3 110.6 L1224.2 115.5 L1224.2 120.5 L1224.3 125.5 L1224.4 130.5 L1224.5 135.5 L1224.7 140.4 L1224.8 145.4 L1225.0 150.4 L1225.2 155.4 L1225.4 160.4 L1225.5 165.3 L1225.6 170.3 L1225.7 175.3 L1225.7 180.2 L1225.9 186.2 L1226.2 192.3 L1226.9 198.2 L1227.7 204.2 L1228.8 210.0 L1230.1 215.7 L1231.7 221.3 L1233.5 226.8 L1235.4 232.1 L1237.6 237.2 L1240.0 242.1 L1242.6 246.7 L1245.4 251.1 L1248.3 255.2 L1251.5 259.1 L1254.8 262.6 L1258.3 265.8 L1261.9 268.6 L1265.7 271.1 L1269.7 273.1 L1273.8 274.8 L1278.1 276.0 L1282.5 276.7 L1287.0 276.9 L1287.0 766.9 L1002.0 766.9 L717.0 766.9 L717.0 276.9 L721.5 276.7 L725.9 276.0 L730.2 274.8 L734.3 273.1 L738.3 271.1 L742.1 268.6 L745.7 265.8 L749.2 262.6 L752.5 259.1 L755.7 255.2 L758.6 251.1 L761.4 246.7 L764.0 242.1 L766.4 237.2 L768.6 232.1 L770.5 226.8 L772.3 221.3 L773.9 215.7 L775.2 210.0 L776.3 204.2 L777.1 198.2 L777.8 192.3 L778.1 186.2 L778.3 180.2 L778.3 175.3 L778.4 170.3 L778.5 165.3 L778.6 160.4 L778.8 155.4 L779.0 150.4 L779.2 145.4 L779.3 140.4 L779.5 135.5 L779.6 130.5 L779.7 125.5 L779.8 120.5 L779.8 115.5 L779.7 110.6 L779.6 105.6 L779.3 100.7 L779.0 95.8 L778.6 90.9 L778.0 86.0 L777.4 81.1 L776.6 76.3 L775.6 71.5 L774.5 66.7 L773.3 61.9 L932.0 16.9 L933.8 18.9 L935.6 20.7 L937.6 22.4 L939.6 24.0 L941.7 25.5 L943.9 26.8 L946.2 28.1 L948.6 29.2 L951.1 30.3 L953.7 31.3 L956.3 32.2 L959.1 32.9 L962.0 33.7 L965.0 34.3 L968.2 34.8 L971.4 35.3 L974.8 35.7 L978.3 36.1 L981.9 36.4 L985.6 36.6 L989.5 36.7 L993.5 36.9 L997.7 36.9 Z"/>
+<path class="mark" d="M1225.7 178.7 L1240.7 178.4"/>
+<path class="mark" d="M1225.8 181.7 L1240.8 181.4"/>
+<path class="mark" d="M778.3 178.7 L763.3 178.4"/>
+<path class="mark" d="M778.2 181.7 L763.2 181.4"/>
+<path class="centre" d="M1002.0 766.9 L1002.0 36.9"/>
+<path class="grain" d="M852.0 116.5 L852.0 660.4 M850.0 120.5 L852.0 116.5 L854.0 120.5 M850.0 656.4 L852.0 660.4 L854.0 656.4"/>
+<rect class="lbg" x="958.4" y="379.5" width="87.2" height="25" rx="2"/>
+<text class="label" x="1002.0" y="388.5">BACK</text>
+<text class="sub" x="1002.0" y="395.5">Cut 1 (unfolded) · shirting</text>
+<text class="sub" x="1002.0" y="401.5">size M · block/button shirt</text>
+</g>
+<!-- front  [block/button shirt]  "simply make a thick plaid shirt in forest green" -->
+<g>
+<path class="cut" style="fill:url(#p12)" d="M0.0 84.7 L44.7 84.7 L48.6 84.5 L52.2 84.1 L55.7 83.4 L59.1 82.5 L62.5 81.3 L65.7 79.9 L68.9 78.2 L72.0 76.3 L75.0 74.1 L77.8 71.8 L80.6 69.2 L83.2 66.4 L85.7 63.4 L88.0 60.2 L90.1 56.8 L92.1 53.2 L93.9 49.5 L95.4 45.6 L96.8 41.6 L97.9 37.4 L98.8 33.2 L99.5 28.8 L99.9 24.3 L100.6 0.0 L292.1 54.3 L286.9 73.3 L285.8 77.9 L284.7 82.5 L283.6 87.1 L282.7 91.7 L281.8 96.4 L281.0 101.1 L280.2 105.8 L279.5 110.5 L278.8 115.3 L278.3 120.0 L277.7 124.8 L277.3 129.6 L276.8 134.4 L276.5 139.2 L276.1 144.1 L275.8 148.9 L275.6 153.7 L275.4 158.6 L275.3 163.5 L275.1 168.3 L275.1 173.2 L275.0 178.1 L275.0 182.8 L275.1 188.3 L275.5 193.6 L276.1 198.9 L277.0 204.1 L278.1 209.2 L279.4 214.3 L281.0 219.2 L282.8 224.0 L284.7 228.6 L286.9 232.9 L289.2 237.1 L291.7 241.0 L294.3 244.7 L297.1 248.1 L300.0 251.2 L303.0 254.0 L306.1 256.5 L309.2 258.6 L312.5 260.4 L315.8 261.9 L319.2 263.1 L322.7 264.0 L326.3 264.5 L345.0 265.4 L345.0 779.7 L0.0 779.7 Z"/>
+<path class="stitch" d="M30.0 99.7 L45.0 99.7 L49.8 99.5 L54.5 99.0 L59.1 98.1 L63.6 96.8 L68.0 95.3 L72.2 93.4 L76.4 91.2 L80.3 88.8 L84.1 86.0 L87.8 83.0 L91.2 79.8 L94.5 76.2 L97.6 72.5 L100.4 68.6 L103.0 64.4 L105.4 60.1 L107.6 55.5 L109.5 50.8 L111.1 46.0 L112.5 40.9 L113.6 35.8 L114.4 30.5 L114.8 25.2 L115.0 19.7 L273.7 64.7 L272.4 69.5 L271.2 74.3 L270.0 79.1 L269.0 83.9 L268.0 88.8 L267.0 93.7 L266.2 98.6 L265.4 103.5 L264.6 108.4 L264.0 113.3 L263.4 118.3 L262.8 123.2 L262.3 128.2 L261.9 133.2 L261.5 138.1 L261.2 143.1 L260.9 148.1 L260.6 153.1 L260.4 158.1 L260.3 163.0 L260.1 168.0 L260.1 173.0 L260.0 178.0 L260.0 182.9 L260.1 189.0 L260.6 195.0 L261.3 201.0 L262.3 206.9 L263.5 212.7 L265.0 218.5 L266.8 224.1 L268.8 229.5 L271.1 234.8 L273.6 239.9 L276.3 244.8 L279.2 249.4 L282.4 253.9 L285.8 258.0 L289.4 261.8 L293.2 265.3 L297.2 268.5 L301.3 271.4 L305.7 273.8 L310.2 275.9 L314.9 277.5 L319.8 278.7 L324.8 279.4 L330.0 279.7 L330.0 769.7 L30.0 769.7 Z"/>
+<path class="mark" d="M260.0 182.9 L275.0 183.0"/>
+<path class="dash" d="M45.0 99.7 L45.0 769.7"/>
+<path class="mark" d="M45.0 114.7 L45.0 129.7"/>
+<path class="mark" d="M45.0 207.2 L45.0 222.2"/>
+<path class="mark" d="M45.0 299.7 L45.0 314.7"/>
+<path class="mark" d="M45.0 392.2 L45.0 407.2"/>
+<path class="mark" d="M45.0 484.7 L45.0 499.7"/>
+<path class="mark" d="M45.0 577.2 L45.0 592.2"/>
+<path class="mark" d="M45.0 669.7 L45.0 684.7"/>
+<path class="grain" d="M172.5 117.0 L172.5 662.7 M170.5 121.0 L172.5 117.0 L174.5 121.0 M170.5 658.7 L172.5 662.7 L174.5 658.7"/>
+<rect class="lbg" x="144.8" y="380.8" width="55.3" height="25" rx="2"/>
+<text class="label" x="172.5" y="389.8">FRONT</text>
+<text class="sub" x="172.5" y="396.8">Cut 2 · shirting</text>
+<text class="sub" x="172.5" y="402.8">size M · block/button shirt</text>
+</g>
+<!-- front  [block/button shirt]  "simply make a thick plaid shirt in forest green" -->
+<g>
+<path class="cut" style="fill:url(#p13)" d="M696.0 84.7 L651.3 84.7 L647.4 84.5 L643.8 84.1 L640.3 83.4 L636.9 82.5 L633.5 81.3 L630.3 79.9 L627.1 78.2 L624.0 76.3 L621.0 74.1 L618.2 71.8 L615.4 69.2 L612.8 66.4 L610.3 63.4 L608.0 60.2 L605.9 56.8 L603.9 53.2 L602.1 49.5 L600.6 45.6 L599.2 41.6 L598.1 37.4 L597.2 33.2 L596.5 28.8 L596.1 24.3 L595.4 0.0 L403.9 54.3 L409.1 73.3 L410.2 77.9 L411.3 82.5 L412.4 87.1 L413.3 91.7 L414.2 96.4 L415.0 101.1 L415.8 105.8 L416.5 110.5 L417.2 115.3 L417.7 120.0 L418.3 124.8 L418.7 129.6 L419.2 134.4 L419.5 139.2 L419.9 144.1 L420.2 148.9 L420.4 153.7 L420.6 158.6 L420.7 163.5 L420.9 168.3 L420.9 173.2 L421.0 178.1 L421.0 182.8 L420.9 188.3 L420.5 193.6 L419.9 198.9 L419.0 204.1 L417.9 209.2 L416.6 214.3 L415.0 219.2 L413.2 224.0 L411.3 228.6 L409.1 232.9 L406.8 237.1 L404.3 241.0 L401.7 244.7 L398.9 248.1 L396.0 251.2 L393.0 254.0 L389.9 256.5 L386.8 258.6 L383.5 260.4 L380.2 261.9 L376.8 263.1 L373.3 264.0 L369.7 264.5 L351.0 265.4 L351.0 779.7 L696.0 779.7 Z"/>
+<path class="stitch" d="M666.0 99.7 L651.0 99.7 L646.2 99.5 L641.5 99.0 L636.9 98.1 L632.4 96.8 L628.0 95.3 L623.8 93.4 L619.6 91.2 L615.7 88.8 L611.9 86.0 L608.2 83.0 L604.8 79.8 L601.5 76.2 L598.4 72.5 L595.6 68.6 L593.0 64.4 L590.6 60.1 L588.4 55.5 L586.5 50.8 L584.9 46.0 L583.5 40.9 L582.4 35.8 L581.6 30.5 L581.2 25.2 L581.0 19.7 L422.3 64.7 L423.6 69.5 L424.8 74.3 L426.0 79.1 L427.0 83.9 L428.0 88.8 L429.0 93.7 L429.8 98.6 L430.6 103.5 L431.4 108.4 L432.0 113.3 L432.6 118.3 L433.2 123.2 L433.7 128.2 L434.1 133.2 L434.5 138.1 L434.8 143.1 L435.1 148.1 L435.4 153.1 L435.6 158.1 L435.7 163.0 L435.9 168.0 L435.9 173.0 L436.0 178.0 L436.0 182.9 L435.9 189.0 L435.4 195.0 L434.7 201.0 L433.7 206.9 L432.5 212.7 L431.0 218.5 L429.2 224.1 L427.2 229.5 L424.9 234.8 L422.4 239.9 L419.7 244.8 L416.8 249.4 L413.6 253.9 L410.2 258.0 L406.6 261.8 L402.8 265.3 L398.8 268.5 L394.7 271.4 L390.3 273.8 L385.8 275.9 L381.1 277.5 L376.2 278.7 L371.2 279.4 L366.0 279.7 L366.0 769.7 L666.0 769.7 Z"/>
+<path class="mark" d="M436.0 182.9 L421.0 183.0"/>
+<path class="dash" d="M651.0 99.7 L651.0 769.7"/>
+<path class="mark" d="M651.0 114.7 L651.0 129.7"/>
+<path class="mark" d="M651.0 207.2 L651.0 222.2"/>
+<path class="mark" d="M651.0 299.7 L651.0 314.7"/>
+<path class="mark" d="M651.0 392.2 L651.0 407.2"/>
+<path class="mark" d="M651.0 484.7 L651.0 499.7"/>
+<path class="mark" d="M651.0 577.2 L651.0 592.2"/>
+<path class="mark" d="M651.0 669.7 L651.0 684.7"/>
+<path class="grain" d="M523.5 117.0 L523.5 662.7 M521.5 121.0 L523.5 117.0 L525.5 121.0 M521.5 658.7 L523.5 662.7 L525.5 658.7"/>
+<rect class="lbg" x="495.9" y="380.8" width="55.3" height="25" rx="2"/>
+<text class="label" x="523.5" y="389.8">FRONT</text>
+<text class="sub" x="523.5" y="396.8">Cut 2 · shirting</text>
+<text class="sub" x="523.5" y="402.8">size M · block/button shirt</text>
+</g>
+<!-- sleeve  [block/button shirt]  "simply make a thick plaid shirt in forest green" -->
+<g>
+<path class="cut" style="fill:url(#p14)" d="M702.0 921.6 L731.0 920.1 L741.5 918.4 L750.7 915.7 L759.0 912.1 L766.5 907.7 L773.5 902.6 L780.0 896.7 L786.2 890.1 L792.1 882.9 L797.9 875.1 L803.6 867.0 L809.3 858.5 L815.1 849.8 L821.2 841.0 L827.7 832.3 L834.8 823.8 L842.5 815.6 L851.0 807.9 L860.4 800.9 L871.0 794.8 L882.6 789.7 L895.3 786.0 L909.2 783.7 L924.3 782.9 L937.3 783.8 L949.8 786.1 L961.5 789.8 L972.6 794.8 L982.9 800.7 L992.7 807.5 L1001.8 814.9 L1010.5 822.8 L1018.8 831.1 L1026.8 839.7 L1034.5 848.4 L1042.0 857.1 L1049.3 865.6 L1056.5 874.0 L1063.7 882.0 L1070.8 889.4 L1077.9 896.3 L1085.0 902.5 L1092.2 907.9 L1099.3 912.4 L1106.5 916.0 L1113.8 918.5 L1121.3 920.1 L1146.4 921.9 L1067.9 1458.0 L780.5 1458.0 Z"/>
+<path class="stitch" d="M719.2 935.7 L732.6 935.0 L744.8 933.0 L755.8 929.8 L765.7 925.5 L774.8 920.3 L783.0 914.2 L790.5 907.4 L797.4 900.0 L803.9 892.1 L810.0 883.9 L815.9 875.4 L821.7 866.8 L827.5 858.3 L833.4 849.8 L839.5 841.6 L846.0 833.7 L853.0 826.3 L860.5 819.5 L868.7 813.4 L877.7 808.2 L887.7 803.9 L898.7 800.7 L910.8 798.7 L924.2 798.0 L935.4 798.7 L946.1 800.7 L956.2 803.9 L965.7 808.2 L974.9 813.4 L983.6 819.5 L992.0 826.3 L1000.2 833.7 L1008.0 841.6 L1015.7 849.8 L1023.2 858.3 L1030.6 866.8 L1037.9 875.4 L1045.3 883.9 L1052.7 892.1 L1060.1 900.0 L1067.8 907.4 L1075.6 914.2 L1083.6 920.3 L1092.0 925.5 L1100.7 929.8 L1109.7 933.0 L1119.2 935.0 L1129.2 935.7 L1054.2 1448.0 L794.2 1448.0 Z"/>
+<path class="mark" d="M818.4 871.8 L806.0 863.4"/>
+<path class="mark" d="M820.1 869.3 L807.6 860.9"/>
+<path class="mark" d="M1025.7 861.2 L1037.1 851.4"/>
+<path class="mark" d="M924.2 798.0 L925.2 783.0"/>
+<path class="grain" d="M924.2 884.2 L924.2 1356.7 M922.2 888.2 L924.2 884.2 L926.2 888.2 M922.2 1352.7 L924.2 1356.7 L926.2 1352.7"/>
+<rect class="lbg" x="896.6" y="1111.5" width="55.3" height="25" rx="2"/>
+<text class="label" x="924.2" y="1120.5">SLEEVE</text>
+<text class="sub" x="924.2" y="1127.5">Cut 2 · shirting</text>
+<text class="sub" x="924.2" y="1133.5">size M · block/button shirt</text>
+</g>
+<!-- sleeve  [block/button shirt]  "simply make a thick plaid shirt in forest green" -->
+<g>
+<path class="cut" style="fill:url(#p15)" d="M444.4 924.3 L415.4 922.8 L405.0 921.1 L395.7 918.4 L387.4 914.8 L379.9 910.5 L373.0 905.3 L366.4 899.4 L360.3 892.8 L354.3 885.6 L348.5 877.9 L342.8 869.7 L337.1 861.2 L331.3 852.5 L325.2 843.7 L318.7 835.0 L311.7 826.5 L304.0 818.3 L295.4 810.6 L286.0 803.6 L275.4 797.5 L263.8 792.5 L251.1 788.8 L237.2 786.5 L222.1 785.7 L209.1 786.5 L196.7 788.8 L184.9 792.6 L173.9 797.5 L163.5 803.5 L153.8 810.2 L144.6 817.6 L135.9 825.6 L127.6 833.9 L119.6 842.4 L111.9 851.1 L104.5 859.8 L97.1 868.4 L89.9 876.7 L82.7 884.7 L75.6 892.2 L68.5 899.1 L61.4 905.3 L54.3 910.6 L47.1 915.1 L39.9 918.7 L32.6 921.3 L25.1 922.9 L0.0 924.6 L78.5 1460.7 L365.9 1460.7 Z"/>
+<path class="stitch" d="M427.2 938.4 L413.8 937.8 L401.6 935.7 L390.6 932.5 L380.7 928.2 L371.7 923.0 L363.4 916.9 L355.9 910.1 L349.0 902.7 L342.5 894.9 L336.4 886.6 L330.5 878.2 L324.7 869.6 L318.9 861.0 L313.0 852.5 L306.9 844.3 L300.4 836.4 L293.4 829.0 L285.9 822.2 L277.7 816.1 L268.7 810.9 L258.7 806.6 L247.8 803.4 L235.6 801.4 L222.2 800.7 L211.0 801.4 L200.3 803.4 L190.3 806.6 L180.7 810.9 L171.5 816.1 L162.8 822.2 L154.4 829.0 L146.3 836.4 L138.4 844.3 L130.7 852.5 L123.2 861.0 L115.8 869.6 L108.5 878.2 L101.1 886.6 L93.8 894.9 L86.3 902.7 L78.7 910.1 L70.8 916.9 L62.8 923.0 L54.4 928.2 L45.8 932.5 L36.7 935.7 L27.2 937.8 L17.2 938.4 L92.2 1450.7 L352.2 1450.7 Z"/>
+<path class="mark" d="M328.0 874.5 L340.4 866.1"/>
+<path class="mark" d="M326.3 872.0 L338.8 863.6"/>
+<path class="mark" d="M120.7 864.0 L109.3 854.2"/>
+<path class="mark" d="M222.2 800.7 L221.3 785.7"/>
+<path class="grain" d="M222.2 886.9 L222.2 1359.5 M220.2 890.9 L222.2 886.9 L224.2 890.9 M220.2 1355.5 L222.2 1359.5 L224.2 1355.5"/>
+<rect class="lbg" x="194.6" y="1114.2" width="55.3" height="25" rx="2"/>
+<text class="label" x="222.2" y="1123.2">SLEEVE</text>
+<text class="sub" x="222.2" y="1130.2">Cut 2 · shirting</text>
+<text class="sub" x="222.2" y="1136.2">size M · block/button shirt</text>
+</g>
+<!-- collar  [collar/one_piece]  "simply make a thick plaid shirt in forest green" -->
+<g>
+<path class="cut" style="fill:url(#p16)" d="M704.3 1464.0 L958.2 1464.0 L923.2 1569.0 L704.3 1569.0 L485.4 1569.0 L450.4 1464.0 Z"/>
+<path class="stitch" d="M704.3 1479.0 L937.4 1479.0 L912.4 1554.0 L704.3 1554.0 L496.2 1554.0 L471.2 1479.0 Z"/>
+<path class="centre" d="M704.3 1554.0 L704.3 1479.0"/>
+<path class="grain" d="M577.4 1479.7 L577.4 1553.2 M575.4 1483.7 L577.4 1479.7 L579.4 1483.7 M575.4 1549.2 L577.4 1553.2 L579.4 1549.2"/>
+<rect class="lbg" x="660.7" y="1507.5" width="87.2" height="25" rx="2"/>
+<text class="label" x="704.3" y="1516.5">COLLAR</text>
+<text class="sub" x="704.3" y="1523.5">Cut 2 (unfolded) · shirting</text>
+<text class="sub" x="704.3" y="1529.5">size M · collar/one_piece</text>
+</g>
+<!-- collar  [collar/one_piece]  "simply make a thick plaid shirt in forest green" -->
+<g>
+<path class="cut" style="fill:url(#p17)" d="M1218.1 1464.0 L1472.1 1464.0 L1437.1 1569.0 L1218.1 1569.0 L999.2 1569.0 L964.2 1464.0 Z"/>
+<path class="stitch" d="M1218.1 1479.0 L1451.2 1479.0 L1426.2 1554.0 L1218.1 1554.0 L1010.0 1554.0 L985.0 1479.0 Z"/>
+<path class="centre" d="M1218.1 1554.0 L1218.1 1479.0"/>
+<path class="grain" d="M1091.2 1479.7 L1091.2 1553.2 M1089.2 1483.7 L1091.2 1479.7 L1093.2 1483.7 M1089.2 1549.2 L1091.2 1553.2 L1093.2 1549.2"/>
+<rect class="lbg" x="1174.5" y="1507.5" width="87.2" height="25" rx="2"/>
+<text class="label" x="1218.1" y="1516.5">COLLAR</text>
+<text class="sub" x="1218.1" y="1523.5">Cut 2 (unfolded) · shirting</text>
+<text class="sub" x="1218.1" y="1529.5">size M · collar/one_piece</text>
+</g>
+</g>
+<text class="s" x="15.0" y="290.3">shirting · Forest Green / Dark Forest Green / Off White plaid · 1.57 m</text>
+<text class="s" x="15.0" y="474.3">Aras · drafted from body measurements by hand-written rules · same sentence, same rules.toml, same sheet</text>
+</svg>
