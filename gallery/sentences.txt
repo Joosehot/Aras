@@ -14,3 +14,4 @@
 14_baby_blue_floral_dress|make a baby blue dress with short sleeves and small yellow flowers
 15_gathered_polka_dot_dress|make a navy and white polka dot midi dress with a gathered skirt and short sleeves
 16_burgundy_a_line_dress|make a sleeveless burgundy a-line dress
+17_red_velvet_dress|make a red velvet dress

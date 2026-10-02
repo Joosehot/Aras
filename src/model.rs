@@ -212,6 +212,8 @@ pub struct Spec {
     pub design: crate::design::DesignSpec,
     /// Dresses: how long ("knee length" when not said).
     pub dress_length: Option<Worded<DressLength>>,
+    /// A fabric the sentence names ("red velvet"); else the garment's and fit's.
+    pub fabric: Option<Worded<&'static str>>,
 }
 
 impl Spec {
@@ -225,6 +227,9 @@ impl Spec {
         &cfg.sizes[self.size.key()]
     }
     pub fn fabric_name<'a>(&self, cfg: &'a Config) -> &'a str {
+        if let Some(f) = &self.fabric {
+            return cfg.fabrics.get_key_value(f.value).map_or(f.value, |(k, _)| k.as_str());
+        }
         let g = self.g();
         let fit = &cfg.fits[g.class()][self.fit().key(g)];
         fit.fabric.as_deref().unwrap_or(&cfg.garments[g.key()].fabric)

@@ -84,6 +84,7 @@ struct State {
     group: usize,
     design: DesignSpec,
     dress_length: Option<Worded<DressLength>>,
+    fabric: Option<Worded<&'static str>>,
 }
 
 pub fn parse(sentence: &str, tokens: Vec<Token>, cfg: &Config, opts: &ParseOptions) -> Result<Spec, Vec<Diag>> {
@@ -167,6 +168,7 @@ pub fn parse(sentence: &str, tokens: Vec<Token>, cfg: &Config, opts: &ParseOptio
         mods: st.mods,
         design: st.design,
         dress_length: st.dress_length,
+        fabric: st.fabric,
     };
     spec.mods.sort();
     spec.mods.dedup();
@@ -286,6 +288,7 @@ impl State {
                 Tok::Size(s) => self.size = Some(s),
                 Tok::Sleeves(k) => sleeve_adj = Some(k),
                 Tok::DressLen(l) => self.dress_length = Some(Worded { value: l, words: text.clone() }),
+                Tok::Fabric(f) => self.fabric = Some(Worded { value: f, words: text.clone() }),
                 Tok::Pin(p) => pins.push(p),
                 Tok::With => with = true,
                 Tok::Without | Tok::No => {

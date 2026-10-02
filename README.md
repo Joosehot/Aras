@@ -19,6 +19,9 @@ The output is a one-page product sheet (a tech pack) with:
 
 The same sentence always produces byte-identical output, and no model runs in the generation path.
 
+To teach Aras new words (synonyms, colours, fabrics, construction words),
+see [docs/VOCABULARY.md](docs/VOCABULARY.md).
+
 ## Gallery
 
 Every garment type, each from the one sentence under it. Every image is the default product sheet; the SVGs next to them in [`gallery/`](gallery) are 1:1 in millimetres. Regenerate them with `bash gallery/render.sh`.
@@ -33,6 +36,7 @@ Every garment type, each from the one sentence under it. Every image is the defa
 | ![Camo pants](gallery/11_blue_camo_pants.png) `make baggy camo pants in dark blue and cream` | ![Olive baggy pants](gallery/12_olive_baggy_pants.png) `make baggy olive pants with an elastic waist` |
 | ![Sweep t-shirt](gallery/13_joose_sweep_tee.png) `make a white t-shirt with long sleeves and wheat, dark blue and forest green stripes from the hem into the sleeves, covering almost the whole shirt` (design: Joose Hotari) | ![Baby blue floral dress](gallery/14_baby_blue_floral_dress.png) `make a baby blue dress with short sleeves and small yellow flowers` |
 | ![Gathered polka dot dress](gallery/15_gathered_polka_dot_dress.png) `make a navy and white polka dot midi dress with a gathered skirt and short sleeves` | ![Burgundy A-line dress](gallery/16_burgundy_a_line_dress.png) `make a sleeveless burgundy a-line dress` |
+| ![Red velvet dress](gallery/17_red_velvet_dress.png) `make a red velvet dress` (velvet: a nap, so every piece is cut one way up) | |
 
 Dresses carry the top block down through the waist and hip. Each one makes these decisions:
 

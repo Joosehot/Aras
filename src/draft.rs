@@ -269,9 +269,14 @@ pub fn draft(spec: &Spec, cfg: &Config, choices: &Choices) -> Result<Pattern, St
         }
     }
     outline_checks(&mut d);
+    if d.fabric.nap {
+        d.notes.push(format!("{} has a nap: every piece is cut the same way up (the layout only mirrors pairs, it never turns a piece)", d.fabric_name));
+    }
     let fit = spec.fit.as_ref().map(|f| format!("{} ", f.words)).unwrap_or_default();
+    // a fabric the sentence named belongs in the name: "red velvet dress"
+    let named = spec.fabric.as_ref().map(|f| format!("{} ", f.value)).unwrap_or_default();
     Ok(Pattern {
-        title: format!("{fit}{}", spec.g().name()),
+        title: format!("{fit}{named}{}", spec.g().name()),
         size: spec.size.key().to_string(),
         fabric: d.fabric_name.to_string(),
         seam: d.fabric.seam,

@@ -211,9 +211,33 @@ fn top(o: &Outcome, look: &Look, spec: &Spec, cfg: &Config, painter: &mut Painte
             pen.stitch(&[pt(x0, waist_y + 4.0), pt(x0 + (x1 - x0) * 0.35, waist_y + (length - waist_y) * 0.35)]);
         }
     }
+    // Pile fabric (velvet): light and shadow running down the body, the
+    // way the nap catches the light.
+    let nap = cfg.fabrics.get(&pat.fabric).is_some_and(|fc| fc.nap);
+    let sheen = |pen: &mut Pen, outline: &[Pt]| {
+        if !nap {
+            return;
+        }
+        let clip = pen.paint.clip(outline);
+        let b = geom::bbox(outline);
+        let id = format!("{clip}-sheen");
+        let _ = writeln!(
+            pen.out,
+            "<defs><linearGradient id=\"{id}\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"0\"><stop offset=\"0\" stop-color=\"#000\" stop-opacity=\"0.28\"/><stop offset=\"0.3\" stop-color=\"#fff\" stop-opacity=\"0.16\"/><stop offset=\"0.5\" stop-color=\"#fff\" stop-opacity=\"0\"/><stop offset=\"0.72\" stop-color=\"#000\" stop-opacity=\"0.22\"/><stop offset=\"0.88\" stop-color=\"#fff\" stop-opacity=\"0.1\"/><stop offset=\"1\" stop-color=\"#000\" stop-opacity=\"0.3\"/></linearGradient></defs>"
+        );
+        let _ = writeln!(
+            pen.out,
+            "<rect clip-path=\"url(#{clip})\" x=\"{}\" y=\"{}\" width=\"{}\" height=\"{}\" fill=\"url(#{id})\"/>",
+            f(b.min.x),
+            f(b.min.y),
+            f(b.width()),
+            f(b.height())
+        );
+    };
     if body.cut.fold {
         let (stitch, _) = body.outlines(0.0, 0.0, true);
         pen.shape(&stitch, &paint);
+        sheen(&mut pen, &stitch);
         if let Some(s) = &look.sweep {
             let clip = pen.paint.clip(&stitch);
             for (line, c) in super::sweep::bands(body, s, cfg) {
@@ -238,6 +262,10 @@ fn top(o: &Outcome, look: &Look, spec: &Spec, cfg: &Config, painter: &mut Painte
         if !back || spec.g() == Garment::Dress {
             pen.shape(&stitch, &paint);
         }
+        let mut whole = mirror(&stitch);
+        whole.reverse();
+        whole.extend(stitch.iter().copied());
+        sheen(&mut pen, &whole);
         if back && spec.g() == Garment::Dress {
             let neck_y = body.edge("cb").pts.last().expect("cb").y;
             let zip_end = body

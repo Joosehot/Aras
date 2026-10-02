@@ -72,6 +72,9 @@ pub struct FabricConfig {
     pub cap_ease_min: f64,
     pub cap_ease_max: f64,
     pub width: f64,
+    /// Pile with a direction (velvet): every piece is cut the same way up.
+    #[serde(default)]
+    pub nap: bool,
 }
 
 #[derive(Clone, Debug, Deserialize)]

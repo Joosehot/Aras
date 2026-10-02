@@ -111,6 +111,8 @@ pub enum Tok {
     Size(Size),
     Sleeves(SleeveKind),
     DressLen(DressLength),
+    /// A fabric by its rules.toml name.
+    Fabric(&'static str),
     Pin(PinDef),
     /// A palette colour, by name.
     Color(&'static str),
@@ -177,6 +179,14 @@ pub const PHRASES: &[(&str, Tok)] = &[
     ("dress", Tok::Garment(Garment::Dress)),
     ("frock", Tok::Garment(Garment::Dress)),
     ("sleeveless", Tok::Sleeves(SleeveKind::None)),
+    ("velvet", Tok::Fabric("velvet")),
+    ("velour", Tok::Fabric("velvet")),
+    ("crepe", Tok::Fabric("crepe")),
+    ("jersey", Tok::Fabric("jersey")),
+    ("knit", Tok::Fabric("jersey")),
+    ("fleece", Tok::Fabric("fleece")),
+    ("twill", Tok::Fabric("twill")),
+    ("cotton shirting", Tok::Fabric("shirting")),
     ("mini", Tok::DressLen(DressLength::Mini)),
     ("above the knee", Tok::DressLen(DressLength::Mini)),
     ("knee length", Tok::DressLen(DressLength::Knee)),
@@ -676,6 +686,13 @@ mod tests {
         assert_eq!(toks("dark heather grey"), vec![Tok::Shade(-1.0), Tok::Color("heather grey")]);
         assert_eq!(toks("thin navy stripes"), vec![Tok::Scale(-1.0), Tok::Color("navy"), Tok::Print(PrintKind::Stripes)]);
         assert_eq!(toks("polka dot"), vec![Tok::Print(PrintKind::Dots)]);
+    }
+
+    #[test]
+    fn dress_words() {
+        assert_eq!(toks("red velvet dress"), vec![Tok::Color("red"), Tok::Fabric("velvet"), Tok::Garment(Garment::Dress)]);
+        assert_eq!(toks("sleeveless a-line midi"), vec![Tok::Sleeves(SleeveKind::None), pin("skirt", &["a_line"], None), Tok::DressLen(DressLength::Midi)]);
+        assert_eq!(toks("baby blue with yellow flowers")[3], Tok::Print(PrintKind::Florals));
     }
 
     #[test]
