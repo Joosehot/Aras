@@ -20,6 +20,7 @@
 pub mod color;
 pub mod print;
 pub mod sketch;
+pub mod sweep;
 
 use crate::config::Config;
 use crate::model::{Garment, Spec, Worded};
@@ -39,6 +40,13 @@ pub struct Painter {
 impl Painter {
     pub fn new(prefix: &str) -> Painter {
         Painter { defs: String::new(), prefix: prefix.to_string(), n: 0 }
+    }
+    /// A `<clipPath>` for a closed outline; returns its id.
+    pub fn clip(&mut self, pts: &[crate::geom::Pt]) -> String {
+        let id = format!("{}c{}", self.prefix, self.n);
+        self.n += 1;
+        self.defs.push_str(&format!("<clipPath id=\"{id}\"><path d=\"{}\"/></clipPath>\n", crate::svg::path(pts, true)));
+        id
     }
     /// A colour, or a `url(#..)` to a print anchored at `anchor`, turned `angle` degrees.
     pub fn paint(&mut self, fill: &Fill, anchor: crate::geom::Pt, angle: f64) -> String {
@@ -70,6 +78,8 @@ pub enum Zone {
     Drawstring,
     Buttons,
     Stitching,
+    /// A placement print (the sweep), for the swatch list.
+    Graphic,
 }
 
 impl Zone {
@@ -87,6 +97,7 @@ impl Zone {
             Zone::Drawstring => "drawstrings",
             Zone::Buttons => "buttons",
             Zone::Stitching => "thread",
+            Zone::Graphic => "sweep stripes",
         }
     }
 }
@@ -106,6 +117,8 @@ pub struct DesignSpec {
     pub base: Option<Worded<Color>>,
     pub zones: Vec<(crate::design::Zone, Worded<Color>)>,
     pub print: Option<PrintReq>,
+    /// "covering almost the whole shirt": how much of the body a sweep covers.
+    pub coverage: Option<f64>,
 }
 
 impl DesignSpec {
@@ -162,6 +175,8 @@ pub struct Look {
     pub pieces: Vec<Fill>,
     pub notes: Vec<String>,
     pub name: String,
+    /// Bands from the hem into the sleeves, drawn over front and back.
+    pub sweep: Option<sweep::Sweep>,
 }
 
 impl Look {
@@ -185,7 +200,9 @@ pub fn contrast_neutral(on: &Color) -> Color {
 
 /// A darker (or, on very dark cloth, lighter) shade of the same colour.
 pub fn tonal(on: &Color, amount: f64) -> Color {
-    if on.rgb.luminance() < 0.05 {
+    if on.rgb.luminance() > 0.8 {
+        Color::new("light grey", on.rgb.darker(amount))
+    } else if on.rgb.luminance() < 0.05 {
         Color::new(format!("light {}", on.name), on.rgb.lighter(amount))
     } else {
         Color::new(format!("dark {}", on.name), on.rgb.darker(amount))
@@ -221,10 +238,24 @@ pub fn resolve(spec: &Spec, pattern: &Pattern, cfg: &Config) -> Look {
         .map(|c| (c.value.clone(), format!("\"{}\"", c.words)))
         .or_else(|| d.print.as_ref().and_then(|p| p.colors.first().map(|c| (c.clone(), format!("\"{}\"", p.words)))))
         .unwrap_or_else(|| (default.clone(), format!("default for a {}", g.name())));
+    // A sweep is placed, not all-over: the body stays its own colour.
+    let sweep_req = d.print.as_ref().filter(|p| p.kind == PrintKind::Sweep && g.is_top());
+    let base = match (sweep_req, &d.base) {
+        (Some(_), None) => (default.clone(), format!("default for a {}", g.name())),
+        _ => base,
+    };
     let body = match &d.print {
+        Some(p) if p.kind == PrintKind::Sweep => (Fill::Solid(base.0.clone()), base.1.clone()),
         Some(p) => (Fill::Print(print::resolve(p.kind, &p.colors, p.scale, &base.0, cfg)), format!("\"{}\"", p.words)),
         None => (Fill::Solid(base.0.clone()), base.1.clone()),
     };
+    let sweep = sweep_req.map(|p| {
+        let mut colors = p.colors.clone();
+        if colors.is_empty() {
+            colors.push(contrast_neutral(&base.0));
+        }
+        sweep::Sweep { colors, band: cfg.design["sweep_band"] * p.scale, coverage: d.coverage, ground: base.0.clone() }
+    });
     if let Fill::Print(p) = &body.0 {
         let c = p.colors[0].rgb.contrast(p.colors[1].rgb);
         if c < cfg.design["min_print_contrast"] {
@@ -237,6 +268,19 @@ pub fn resolve(spec: &Spec, pattern: &Pattern, cfg: &Config) -> Look {
     zones.insert(Zone::Body, body.clone());
     for z in [Zone::Sleeves, Zone::Hood, Zone::Pocket, Zone::Collar, Zone::Waistband] {
         zones.insert(z, explicit(z).unwrap_or_else(|| (body.0.clone(), "same as the body".into())));
+    }
+    if let (Some(s), Some(p)) = (&sweep, sweep_req) {
+        // The bands turn into the sleeves: lengthwise stripes of the body
+        // colour and every band colour, each as wide as one band.
+        let mut colors = vec![base.0.clone()];
+        colors.extend(s.colors.iter().cloned());
+        let n = colors.len() as f64;
+        let stripes = Print { kind: PrintKind::VerticalStripes, colors, repeat: s.band * n };
+        if d.zone(Zone::Sleeves).is_none() {
+            zones.insert(Zone::Sleeves, (Fill::Print(stripes.clone()), "the sweep turns into the sleeves".into()));
+        }
+        let graphic = Print { kind: PrintKind::Stripes, colors: s.colors.clone(), repeat: s.band * s.colors.len() as f64 };
+        zones.insert(Zone::Graphic, (Fill::Print(graphic), format!("\"{}\"", p.words)));
     }
     let rib = explicit(Zone::Rib).unwrap_or_else(|| match &body.0 {
         Fill::Solid(_) => (body.0.clone(), "tonal: same as the body".into()),
@@ -294,6 +338,7 @@ pub fn resolve(spec: &Spec, pattern: &Pattern, cfg: &Config) -> Look {
         Zone::Cuffs => has("cuff"),
         Zone::Waistband => has("waistband"),
         Zone::Buttons => g == Garment::Shirt || has("waistband"),
+        Zone::Graphic => sweep.is_some(),
     };
     for (z, _) in &d.zones {
         if !present(*z) {
@@ -304,6 +349,15 @@ pub fn resolve(spec: &Spec, pattern: &Pattern, cfg: &Config) -> Look {
     let zones: Vec<ZoneLook> =
         zones.into_iter().filter(|(z, _)| present(*z)).map(|(zone, (fill, why))| ZoneLook { zone, fill, why }).collect();
     let name = match &zones[0].fill {
+        Fill::Solid(c) if sweep.is_some() => {
+            let s = sweep.as_ref().expect("sweep");
+            let names: Vec<String> = s.colors.iter().map(|c| c.title()).collect();
+            let list = match names.len() {
+                1 => names[0].clone(),
+                n => format!("{} & {}", names[..n - 1].join(", "), names[n - 1]),
+            };
+            format!("{} {} with {list} Sweep", c.title(), title_case(&pattern.title))
+        }
         Fill::Solid(c) => format!("{} {}", c.title(), title_case(&pattern.title)),
         // Camo and plaid: the derived shades would only make the name longer.
         Fill::Print(p) if matches!(p.kind, PrintKind::Camo | PrintKind::Plaid) && d.print.as_ref().is_some_and(|r| r.colors.len() < 2) => {
@@ -311,11 +365,22 @@ pub fn resolve(spec: &Spec, pattern: &Pattern, cfg: &Config) -> Look {
         }
         Fill::Print(p) => format!("{} & {} {} {}", p.colors[0].title(), p.colors[1].title(), p.kind.adjective(), title_case(&pattern.title)),
     };
-    Look { zones, all, pieces, notes, name }
+    Look { zones, all, pieces, notes, name, sweep }
 }
 
 fn title_case(s: &str) -> String {
     Color::new(s, color::Rgb(0, 0, 0)).title()
+}
+
+impl Look {
+    /// Fabric label for piece `i`: its fill, plus the sweep if it is printed on it.
+    pub fn piece_label(&self, i: usize, p: &Piece) -> String {
+        let base = self.pieces[i].label();
+        match &self.sweep {
+            Some(_) if p.name == "front" || p.name == "back" => format!("{base} + sweep print"),
+            _ => base,
+        }
+    }
 }
 
 /// Where a piece's print starts, in its own coordinates: the underarm or

@@ -31,6 +31,7 @@ Every garment type, each from the one sentence under it. Every image is the defa
 | ![Pinstripe shirt](gallery/07_pinstripe_shirt.png) `simply make a short sleeve shirt in thin sky blue pinstripes` | ![Plaid shirt](gallery/08_plaid_shirt.png) `make a loose forest green plaid shirt` |
 | ![Tight black pants](gallery/09_tight_black_pants.png) `make tight black pants` | ![Pinstripe pants](gallery/10_charcoal_pinstripe_pants.png) `make dark grey pinstriped pants` |
 | ![Camo pants](gallery/11_blue_camo_pants.png) `make baggy camo pants in dark blue and cream` | ![Olive baggy pants](gallery/12_olive_baggy_pants.png) `make baggy olive pants with an elastic waist` |
+| ![Sweep t-shirt](gallery/13_joose_sweep_tee.png) `make a white t-shirt with long sleeves and wheat, dark blue and forest green stripes from the hem into the sleeves, covering almost the whole shirt` (design: Joose Hotari) | |
 
 The same engine also writes the 1:1 cutting layout (`--marker`, left: the colour-blocked hoodie, one fabric per colour) and the printable paper pattern (`--pieces`, right: the gingham shirt, halves on the fold with notches, grainlines and a 10 cm test square):
 

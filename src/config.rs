@@ -152,7 +152,7 @@ const LAYOUT_KEYS: &[&str] = &["gap", "sheet_width", "margin"];
 const DESIGN_KEYS: &[&str] = &[
     "stripe_repeat", "pinstripe_repeat", "gingham_repeat", "plaid_repeat", "dot_repeat", "camo_repeat",
     "thin", "thick", "shade", "button_shade", "thread_shade", "min_print_contrast", "drawstring_tail",
-    "flat_long_sleeve", "flat_short_sleeve",
+    "flat_long_sleeve", "flat_short_sleeve", "sweep_band", "sweep_start", "sweep_clear", "sweep_radius",
 ];
 pub const TOP_KEYS: &[&str] = &[
     "chest_ease", "below_waist", "neck_width_add", "back_neck_depth", "front_neck_depth",

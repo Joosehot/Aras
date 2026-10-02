@@ -66,7 +66,7 @@ pub fn compile(sentence: &str, cfg: &Config, opts: &Options) -> Result<Compiled,
     let spec = parser::parse(sentence, tokens, cfg, &popts)?;
     let outcome = search::search(&spec, cfg)?;
     let look = design::resolve(&spec, &outcome.pattern, cfg);
-    let marker = layout::marker_by(&outcome.pattern, cfg, |i, _| look.pieces[i].label());
+    let marker = layout::marker_by(&outcome.pattern, cfg, |i, p| look.piece_label(i, p));
     let svg = match opts.sheet {
         SheetKind::Product => product::sheet(&spec, &outcome, &look, &marker, cfg),
         SheetKind::Marker => svg::marker(&outcome.pattern, &outcome, &marker, Some(&look), &spec.sentence, cfg),

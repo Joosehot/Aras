@@ -10,3 +10,4 @@
 10_charcoal_pinstripe_pants|make dark grey pinstriped pants
 11_blue_camo_pants|make baggy camo pants in dark blue and cream
 12_olive_baggy_pants|make baggy olive pants with an elastic waist
+13_joose_sweep_tee|make a white t-shirt with long sleeves and wheat, dark blue and forest green stripes from the hem into the sleeves, covering almost the whole shirt

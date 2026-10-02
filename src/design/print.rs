@@ -18,6 +18,8 @@ pub enum PrintKind {
     Plaid,
     Dots,
     Camo,
+    /// Placement bands from the hem into the sleeves (see `sweep.rs`).
+    Sweep,
 }
 
 impl PrintKind {
@@ -30,6 +32,7 @@ impl PrintKind {
             PrintKind::Plaid => "plaid",
             PrintKind::Dots => "polka dots",
             PrintKind::Camo => "camo",
+            PrintKind::Sweep => "sweep stripes",
         }
     }
     /// "Striped T-shirt", "Gingham Shirt".
@@ -42,6 +45,7 @@ impl PrintKind {
             PrintKind::Plaid => "Plaid",
             PrintKind::Dots => "Polka Dot",
             PrintKind::Camo => "Camo",
+            PrintKind::Sweep => "Sweep",
         }
     }
     fn repeat_key(self) -> &'static str {
@@ -52,6 +56,7 @@ impl PrintKind {
             PrintKind::Plaid => "plaid_repeat",
             PrintKind::Dots => "dot_repeat",
             PrintKind::Camo => "camo_repeat",
+            PrintKind::Sweep => "sweep_band",
         }
     }
     /// Prints with a horizontal bar must be matched at side seams and
@@ -104,7 +109,7 @@ pub fn resolve(kind: PrintKind, given: &[Color], scale: f64, base: &Color, cfg: 
             let c = colors[0].clone();
             colors.push(Color::new(format!("dark {}", c.name), c.rgb.darker(0.45)));
         }
-        _ if colors.len() == 1 => {
+        _ if colors.len() == 1 && kind != PrintKind::Sweep => {
             let c = colors[0].clone();
             colors.push(partner(&c));
         }
@@ -137,15 +142,22 @@ pub fn pattern_def(id: &str, print: &Print, anchor: Pt, angle: f64) -> String {
     let mut s = String::new();
     // (offset x, offset y): where the tile's origin sits relative to the anchor.
     let (ox, oy) = match print.kind {
-        PrintKind::Stripes => {
+        // Stripes take any number of colours, one equal band each.
+        PrintKind::Stripes | PrintKind::Sweep => {
+            let n = c.len() as f64;
             rect(&mut s, 0.0, 0.0, r, r, c[0], 1.0);
-            rect(&mut s, 0.0, 0.0, r, r / 2.0, c[1], 1.0);
+            for (i, col) in c.iter().enumerate().skip(1) {
+                rect(&mut s, 0.0, r * i as f64 / n, r, r / n, *col, 1.0);
+            }
             (0.0, 0.0)
         }
         PrintKind::VerticalStripes => {
+            let n = c.len() as f64;
             rect(&mut s, 0.0, 0.0, r, r, c[0], 1.0);
-            rect(&mut s, 0.0, 0.0, r / 2.0, r, c[1], 1.0);
-            (-r / 4.0, 0.0)
+            for (i, col) in c.iter().enumerate().skip(1) {
+                rect(&mut s, r * i as f64 / n, 0.0, r / n, r, *col, 1.0);
+            }
+            (-r / (2.0 * n), 0.0)
         }
         PrintKind::Pinstripes => {
             rect(&mut s, 0.0, 0.0, r, r, c[0], 1.0);

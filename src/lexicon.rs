@@ -118,6 +118,8 @@ pub enum Tok {
     Print(PrintKind),
     /// "thin" (-1) or "thick" (+1) print.
     Scale(f64),
+    /// How much of the garment a placed print covers, 0..1.
+    Coverage(f64),
     Half,
     Article,
     With,
@@ -353,6 +355,21 @@ pub const PHRASES: &[(&str, Tok)] = &[
     ("dotted", Tok::Print(PrintKind::Dots)),
     ("spotted", Tok::Print(PrintKind::Dots)),
     ("dots", Tok::Print(PrintKind::Dots)),
+    ("from the hem into the sleeves", Tok::Print(PrintKind::Sweep)),
+    ("from the hem to the sleeves", Tok::Print(PrintKind::Sweep)),
+    ("from the hem into the arms", Tok::Print(PrintKind::Sweep)),
+    ("sweeping", Tok::Print(PrintKind::Sweep)),
+    ("covering almost the whole shirt", Tok::Coverage(0.85)),
+    ("covering almost the whole t shirt", Tok::Coverage(0.85)),
+    ("covering the whole shirt", Tok::Coverage(0.95)),
+    ("covering the whole t shirt", Tok::Coverage(0.95)),
+    ("almost the whole shirt", Tok::Coverage(0.85)),
+    ("almost the whole t shirt", Tok::Coverage(0.85)),
+    ("the whole shirt", Tok::Coverage(0.95)),
+    ("the whole t shirt", Tok::Coverage(0.95)),
+    ("almost all over", Tok::Coverage(0.85)),
+    ("swoosh", Tok::Print(PrintKind::Sweep)),
+    ("bands", Tok::Print(PrintKind::Stripes)),
     ("camouflage", Tok::Print(PrintKind::Camo)),
     ("camo", Tok::Print(PrintKind::Camo)),
     ("thin", Tok::Scale(-1.0)),
@@ -382,7 +399,7 @@ pub const PHRASES: &[(&str, Tok)] = &[
     ("print", Tok::Filler),
     ("printed", Tok::Filler),
     ("pattern", Tok::Filler),
-    ("all over", Tok::Filler),
+    ("all over", Tok::Coverage(0.95)),
     // units
     ("inches", Tok::Unit(INCH)),
     ("inch", Tok::Unit(INCH)),
@@ -516,8 +533,8 @@ pub fn tokenize(sentence: &str) -> Vec<Token> {
     let mut out = Vec::new();
     let mut i = 0;
     'outer: while i < words.len() {
-        // Longest phrase first (up to four words).
-        for n in (1..=4).rev() {
+        // Longest phrase first (up to six words).
+        for n in (1..=6).rev() {
             if i + n > words.len() {
                 continue;
             }

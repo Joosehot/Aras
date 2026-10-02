@@ -117,6 +117,7 @@ pub const COLORS: &[(&str, u32)] = &[
     ("orange", 0xe0782f),
     ("burnt orange", 0xc1571f),
     ("mustard", 0xd4a93a),
+    ("wheat", 0xd9b66f),
     ("yellow", 0xf2d24b),
     ("red", 0xc1272d),
     ("burgundy", 0x6d1f2e),

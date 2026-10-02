@@ -192,6 +192,22 @@ fn top(o: &Outcome, look: &Look, spec: &Spec, cfg: &Config, painter: &mut Painte
     if body.cut.fold {
         let (stitch, _) = body.outlines(0.0, 0.0, true);
         pen.shape(&stitch, &paint);
+        if let Some(s) = &look.sweep {
+            let clip = pen.paint.clip(&stitch);
+            for (line, c) in super::sweep::bands(body, s, cfg) {
+                for m in [false, true] {
+                    let w: Vec<Pt> = if m { mirror(&line) } else { line.clone() };
+                    let _ = writeln!(
+                        pen.out,
+                        "<path clip-path=\"url(#{clip})\" fill=\"none\" stroke=\"{}\" stroke-width=\"{}\" d=\"{}\"/>",
+                        c.rgb.css(),
+                        f(s.band),
+                        path(&w, false)
+                    );
+                }
+            }
+            let _ = writeln!(pen.out, "<path class=\"fl\" fill=\"none\" d=\"{}\"/>", path(&stitch, true));
+        }
     } else {
         // Shirt fronts: the left front overlaps the right at the placket.
         let (stitch, _) = body.outlines(0.0, 0.0, false);

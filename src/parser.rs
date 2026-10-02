@@ -15,6 +15,7 @@
 
 use crate::config::Config;
 use crate::design::color::Color;
+use crate::design::print::PrintKind;
 use crate::design::{DesignSpec, PrintReq, Zone};
 use crate::lexicon::{Modifier, Part, PinDef, Tok, Token, Verb};
 use crate::model::{Edit, EditKind, Fit, Garment, Pin, Size, SleeveKind, Spec, Worded};
@@ -106,10 +107,11 @@ pub fn parse(sentence: &str, tokens: Vec<Token>, cfg: &Config, opts: &ParseOptio
         return Err(diags);
     }
 
-    // "black and white striped": an "and" between two colours joins them.
+    // "black and white striped", "wheat, navy and green": an "and" or a
+    // comma between two colours joins them.
     let is_color = |t: Option<&Token>| matches!(t.map(|t| t.tok), Some(Tok::Color(_) | Tok::Shade(_)));
     let toks: Vec<Token> = (0..toks.len())
-        .filter(|&i| !(toks[i].tok == Tok::And && i > 0 && is_color(toks.get(i - 1)) && is_color(toks.get(i + 1))))
+        .filter(|&i| !(matches!(toks[i].tok, Tok::And | Tok::Comma) && i > 0 && is_color(toks.get(i - 1)) && is_color(toks.get(i + 1))))
         .map(|i| toks[i].clone())
         .collect();
 
@@ -343,10 +345,14 @@ impl State {
                 // A print or garment word takes the colours before it:
                 // "black and white striped", "a navy hoodie".
                 Tok::Print(k) => {
-                    print = Some(k);
+                    // "stripes from the hem into the sleeves": the sweep wins.
+                    if print != Some(PrintKind::Sweep) {
+                        print = Some(k);
+                    }
                     free.extend(pending.take());
                 }
                 Tok::Garment(_) => free.extend(pending.take()),
+                Tok::Coverage(c) => self.design.coverage = Some(c),
                 Tok::Scale(s) => scale = if s > 0.0 { cfg.design["thick"] } else { cfg.design["thin"] },
                 _ => {}
             }
@@ -615,6 +621,22 @@ mod tests {
         assert!(s.design.zones.is_empty());
         let s = spec("make a navy hoodie with a grey hood");
         assert_eq!(s.design.base.unwrap().value.name, "navy");
+    }
+
+    #[test]
+    fn sweep_with_a_colour_list() {
+        let s = spec("make a white t-shirt with long sleeves and wheat, dark blue and forest green stripes from the hem into the sleeves");
+        assert_eq!(s.design.base.unwrap().value.name, "white");
+        let p = s.design.print.unwrap();
+        assert_eq!(p.kind, PrintKind::Sweep);
+        assert_eq!(p.colors.iter().map(|c| c.name.as_str()).collect::<Vec<_>>(), vec!["wheat", "dark blue", "forest green"]);
+    }
+
+    #[test]
+    fn coverage_does_not_name_a_garment() {
+        let s = spec("make a white t-shirt with wheat and navy stripes from the hem into the sleeves, covering almost the whole shirt");
+        assert_eq!(s.g(), Garment::Tshirt);
+        assert_eq!(s.design.coverage, Some(0.85));
     }
 
     #[test]

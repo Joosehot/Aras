@@ -508,6 +508,10 @@ min_print_contrast = 1.3   # below this a print's colours barely read
 drawstring_tail = 250      # each end hangs this far past the hood
 flat_long_sleeve = 62      # flats: long sleeves hang this many degrees below horizontal
 flat_short_sleeve = 30
+sweep_band = 24            # one band of a hem-to-sleeve sweep, mm
+sweep_start = 0.18         # the stack rises this share of the hem out from centre front
+sweep_clear = 12           # the stack enters the armhole this far above the underarm
+sweep_radius = 0.6         # quarter-circle radius, share of the way to the underarm
 
 [design_defaults]          # colour when the sentence names none
 tshirt = "white"

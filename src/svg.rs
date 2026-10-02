@@ -55,7 +55,7 @@ const STYLE: &str = "<style>
 ";
 
 /// Draws one placed piece, filled with `paint` (a colour or print) if given.
-pub fn piece(out: &mut String, pat: &Pattern, pl: &Placement, show_fold: bool, paint: Option<&str>) {
+pub fn piece(out: &mut String, pat: &Pattern, pl: &Placement, show_fold: bool, paint: Option<&str>, overlay: &str) {
     let pc: &Piece = &pat.pieces[pl.piece];
     let (seam, hem) = pat.allowances(pc);
     let (stitch, cut) = pc.outlines(seam, hem, pl.unfold);
@@ -64,6 +64,7 @@ pub fn piece(out: &mut String, pat: &Pattern, pl: &Placement, show_fold: bool, p
     let _ = writeln!(out, "<g>");
     let fill = paint.map(|p| format!(" style=\"fill:{p}\"")).unwrap_or_default();
     let _ = writeln!(out, "<path class=\"cut\"{fill} d=\"{}\"/>", path(&cut.iter().map(|p| place(*p)).collect::<Vec<_>>(), true));
+    out.push_str(overlay);
     let _ = writeln!(out, "<path class=\"stitch\" d=\"{}\"/>", path(&stitch.iter().map(|p| place(*p)).collect::<Vec<_>>(), true));
 
     // Marks, repeated on the mirrored half of an unfolded piece.
@@ -189,13 +190,36 @@ fn summary(pat: &Pattern, o: &Outcome) -> Vec<String> {
 }
 
 /// One fabric sheet with its pieces at `shift`, filled from `look` if given.
-pub fn fabric_sheet(out: &mut String, pat: &Pattern, s: &Sheet, shift: Pt, look: Option<&Look>, painter: &mut Painter) {
+pub fn fabric_sheet(out: &mut String, pat: &Pattern, s: &Sheet, shift: Pt, look: Option<&Look>, painter: &mut Painter, cfg: &Config) {
     let class = if s.rib { "fabric rib" } else { "fabric" };
     let _ = writeln!(out, "<rect class=\"{class}\" x=\"{}\" y=\"{}\" width=\"{}\" height=\"{}\"/>", f(shift.x), f(shift.y), f(s.width), f(s.length));
     for p in &s.placed {
         let moved = Placement { shift: p.shift + shift, rect: geom::Rect { min: p.rect.min + shift, max: p.rect.max + shift }, ..p.clone() };
-        let paint = look.map(|l| painter.paint(&l.pieces[p.piece], moved.place(anchor(&pat.pieces[p.piece])), 0.0));
-        piece(out, pat, &moved, false, paint.as_deref());
+        let pc = &pat.pieces[p.piece];
+        let paint = look.map(|l| painter.paint(&l.pieces[p.piece], moved.place(anchor(pc)), 0.0));
+        let mut overlay = String::new();
+        if let Some(s) = look.and_then(|l| l.sweep.as_ref()) {
+            let bands = crate::design::sweep::bands(pc, s, cfg);
+            if !bands.is_empty() {
+                let (seam, hem) = pat.allowances(pc);
+                let (_, cut) = pc.outlines(seam, hem, moved.unfold);
+                let clip = painter.clip(&cut.iter().map(|q| moved.place(*q)).collect::<Vec<_>>());
+                let halves: &[bool] = if moved.unfold { &[false, true] } else { &[false] };
+                for &m in halves {
+                    for (line, c) in &bands {
+                        let w: Vec<Pt> = line.iter().map(|q| moved.place(if m { q.mirror_x() } else { *q })).collect();
+                        let _ = writeln!(
+                            overlay,
+                            "<path clip-path=\"url(#{clip})\" fill=\"none\" stroke=\"{}\" stroke-width=\"{}\" d=\"{}\"/>",
+                            c.rgb.css(),
+                            f(s.band),
+                            path(&w, false)
+                        );
+                    }
+                }
+            }
+        }
+        piece(out, pat, &moved, false, paint.as_deref(), &overlay);
     }
 }
 
@@ -224,7 +248,7 @@ pub fn marker(pat: &Pattern, o: &Outcome, m: &Marker, look: Option<&Look>, sente
             s.length / 1000.0
         );
         y += 14.0;
-        fabric_sheet(&mut body, pat, s, pt(margin, y), look, &mut painter);
+        fabric_sheet(&mut body, pat, s, pt(margin, y), look, &mut painter, cfg);
         y += s.length + 16.0;
     }
     let mut out = String::new();
@@ -255,7 +279,7 @@ pub fn pattern_sheet(pat: &Pattern, o: &Outcome, sheet: &Sheet, sentence: &str, 
     let shift = pt(margin, y + square + 20.0);
     for p in &sheet.placed {
         let moved = Placement { shift: p.shift + shift, rect: geom::Rect { min: p.rect.min + shift, max: p.rect.max + shift }, ..p.clone() };
-        piece(&mut out, pat, &moved, true, None);
+        piece(&mut out, pat, &moved, true, None, "");
     }
     out.push_str("</svg>\n");
     out

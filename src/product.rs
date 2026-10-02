@@ -169,7 +169,7 @@ pub fn sheet(spec: &Spec, o: &Outcome, look: &Look, marker: &Marker, cfg: &Confi
             row_h = 0.0;
         }
         let _ = writeln!(body, "<g class=\"sheet\" transform=\"translate({} {}) scale({ks})\">", f(lx), f(ly + 4.0));
-        fabric_sheet(&mut body, pat, s, pt(0.0, 0.0), Some(look), &mut paint);
+        fabric_sheet(&mut body, pat, s, pt(0.0, 0.0), Some(look), &mut paint, cfg);
         let _ = writeln!(body, "</g>");
         let label = if s.label.is_empty() { s.fabric.clone() } else { format!("{} \u{00b7} {}", s.fabric, s.label) };
         text(&mut body, "s", lx, ly + 2.6, &format!("{label} \u{00b7} {:.2} m", s.length / 1000.0));
