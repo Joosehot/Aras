@@ -364,6 +364,23 @@ bow_height = 110
 bow_tail = 420
 bow_knot = 90
 
+# ---- Oras: the garment on a mannequin (position-based cloth) ---------------------
+
+[oras]
+spacing = 18               # cloth particles this far apart, mm
+gap = 25                   # panels start this far off the body
+steps = 1400               # time steps
+iterations = 12            # constraint passes per step
+dt = 0.004                 # seconds per step
+damping = 0.985            # velocity kept per step
+stretch = 1.0              # stiffness along the cloth (0..1)
+bend = 0.04                # stiffness against folding: low drapes, high stands
+seam = 0.6                 # how hard a seam pulls shut
+ramp = 300                 # steps over which seams are pulled shut
+thickness = 4              # the cloth keeps this far off the body, mm
+friction = 0.4             # share of a slide lost on the body
+sdf_cell = 8               # body distance field grid, mm
+
 # ---- Drafting proportions -----------------------------------------------------
 
 [drafting]

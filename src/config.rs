@@ -134,6 +134,9 @@ pub struct Config {
     pub design_defaults: BTreeMap<String, String>,
     /// Dress lengths, skirt shapes, facings and zips.
     pub dress: BTreeMap<String, f64>,
+    /// Oras: the cloth simulation.
+    #[serde(default)]
+    pub oras: BTreeMap<String, f64>,
 }
 
 /// Keys the code reads from the flat tables. A missing one fails at load.

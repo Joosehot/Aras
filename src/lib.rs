@@ -15,6 +15,7 @@ pub mod geom;
 pub mod layout;
 pub mod lexicon;
 pub mod model;
+pub mod oras;
 pub mod parser;
 pub mod pattern;
 pub mod product;

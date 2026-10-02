@@ -151,6 +151,22 @@ aras --rules my_rules.toml      # different numbers
 aras --vocabulary               # every known word and phrase
 ```
 
+## Oras: the garment on a dress form
+
+`oras` puts what Aras drafts on a tailor's dress form and lets it hang:
+
+```
+oras "make a black satin dress with a cowl neck, an open back and a bow at the back" --out out/oras
+```
+
+- **The form** is built from the size, not downloaded. Its waist, chest and seat are fitted so that a tape on the form reads the size's girths exactly (the report prints both). It has round bust domes at the bust points, a wider back at the shoulder blades, a neck and a stand.
+- **The cloth:**
+  - The body pieces (front, back, a gathered skirt) are meshed from the flat pattern and hung in front of and behind the form.
+  - Their seams are pulled shut while gravity is off. The shoulder seams are pinned to the form, as a dressmaker does, so a cowl's wider front shoulder is gathered in and its top drapes.
+  - Then gravity is turned on. Position-based dynamics handles stretch, bending, seams, contact with the form (a signed distance field) and friction, with no randomness.
+- **Out** come `view.html` (three.js; drag to turn, `g` hides the garment, `#front`, `#three`, `#side`, `#left`, `#back` with an optional `-bare`), `garment.obj` and `report.txt`. The report gives seam gaps, the largest stretch, contact and penetration.
+- **v0 limits:** only the body pieces are simulated. Sleeves, collars, facings and bows are listed in the report as not simulated. The numbers live in `[oras]` in `rules.toml`.
+
 ## The proof
 
 `cargo test` runs:
