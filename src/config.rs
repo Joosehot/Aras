@@ -161,7 +161,8 @@ const DESIGN_KEYS: &[&str] = &[
 ];
 const DRESS_KEYS: &[&str] = &[
     "mini", "knee", "midi", "maxi", "a_line_flare", "gather", "gather_min", "gather_max", "sleeveless_raise",
-    "sleeveless_narrow", "armhole_ease", "facing_width", "zip_sizes", "zip_max",
+    "sleeveless_narrow", "armhole_ease", "facing_width", "zip_sizes", "zip_max", "cowl_drape", "cowl_facing",
+    "open_back", "strap_min", "bow_width", "bow_height", "bow_tail", "bow_knot",
 ];
 pub const TOP_KEYS: &[&str] = &[
     "chest_ease", "below_waist", "neck_width_add", "back_neck_depth", "front_neck_depth",

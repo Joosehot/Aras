@@ -92,11 +92,15 @@
 <text class="s" x="293.0" y="120.1">← “make a baby blue dress with short sleeves”</text>
 <text class="b" x="293.0" y="124.3">skirt: shift</text>
 <text class="s" x="293.0" y="127.5">← “make a baby blue dress with short sleeves”</text>
-<text class="b" x="293.0" y="131.7">closure: back zip</text>
+<text class="b" x="293.0" y="131.7">neckline: round</text>
 <text class="s" x="293.0" y="134.9">← “make a baby blue dress with short sleeves”</text>
-<text class="b" x="293.0" y="139.1">neck finish: facing</text>
+<text class="b" x="293.0" y="139.1">back: closed</text>
 <text class="s" x="293.0" y="142.3">← “make a baby blue dress with short sleeves”</text>
-<text class="ok" x="293.0" y="147.5">✓ 11/11 construction checks passed</text>
+<text class="b" x="293.0" y="146.5">closure: back zip</text>
+<text class="s" x="293.0" y="149.7">← “make a baby blue dress with short sleeves”</text>
+<text class="b" x="293.0" y="153.9">neck finish: facing</text>
+<text class="s" x="293.0" y="157.1">← “make a baby blue dress with short sleeves”</text>
+<text class="ok" x="293.0" y="162.3">✓ 11/11 construction checks passed</text>
 <text class="h" x="15.0" y="245.0">BILL OF MATERIALS</text>
 <text class="bb" x="15.0" y="250.5">1.39 m</text>
 <text class="b" x="37.0" y="250.5">crepe · Baby Blue / Yellow / White florals, 140 cm wide</text>

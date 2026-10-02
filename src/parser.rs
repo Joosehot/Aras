@@ -205,7 +205,7 @@ pub fn parse(sentence: &str, tokens: Vec<Token>, cfg: &Config, opts: &ParseOptio
         if let Some(s) = spec.sleeves.as_ref().filter(|s| s.value == SleeveKind::None) {
             diags.push(Diag::new(format!("\"{}\": in v0 only dresses can be sleeveless", s.words)));
         }
-        for p in spec.pins.iter().filter(|p| matches!(p.rule, "skirt" | "closure" | "armhole_finish") || (p.rule == "neck_finish" && p.variants == ["facing"])) {
+        for p in spec.pins.iter().filter(|p| matches!(p.rule, "skirt" | "closure" | "armhole_finish" | "neckline" | "back" | "bow") || (p.rule == "neck_finish" && p.variants == ["facing"])) {
             diags.push(Diag::new(format!("\"{}\" is for dresses", p.words)));
         }
     }

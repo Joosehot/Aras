@@ -175,6 +175,15 @@ cap_ease_max = 20
 width = 1400
 nap = true
 
+[fabrics.satin]            # slippery woven with a shine that changes with direction
+stretch = 1.0
+seam = 15
+hem = 15
+cap_ease_min = 5
+cap_ease_max = 15
+width = 1400
+nap = true
+
 [fabrics.rib]
 stretch = 1.8
 seam = 10
@@ -346,6 +355,14 @@ armhole_ease = 60          # a sleeveless armhole is at least the upper arm plus
 facing_width = 60          # neck and armhole facings
 zip_sizes = 400            # invisible zips come in 5 cm steps from this length
 zip_max = 650
+cowl_drape = 130           # a cowl hangs this far below the neck points when worn
+cowl_facing = 80           # its facing, sewn along the cowl's top edge
+open_back = 120            # an open back stops this far above the waist
+strap_min = 30             # shoulder left between an open back and the armhole
+bow_width = 150            # each bow loop, finished
+bow_height = 110
+bow_tail = 420
+bow_knot = 90
 
 # ---- Drafting proportions -----------------------------------------------------
 
@@ -504,6 +521,20 @@ variants.gathered = { finish = 0.8, simplicity = 0.5, economy = 0.4 }
 weight = 1.0
 variants.back_zip = { finish = 1.0, simplicity = 0.4, economy = 0.7 }
 variants.pull_on = { finish = 0.6, simplicity = 1.0, economy = 1.0 }
+
+[rules.neckline]          # dresses: round, or a cowl that drapes
+weight = 1.0
+variants.round = { finish = 0.8, simplicity = 1.0, economy = 0.9 }
+variants.cowl = { finish = 0.9, simplicity = 0.5, economy = 0.5 }
+
+[rules.back]               # dresses: closed, or open to above the waist
+weight = 1.0
+variants.closed = { finish = 0.8, simplicity = 1.0, economy = 0.9 }
+variants.open = { finish = 0.9, simplicity = 0.6, economy = 0.9 }
+
+[rules.bow]                # dresses: a tied bow at centre back
+weight = 1.0
+variants.at_back = { finish = 0.9, simplicity = 0.6, economy = 0.7 }
 
 [rules.armhole_finish]     # sleeveless armholes
 weight = 1.0

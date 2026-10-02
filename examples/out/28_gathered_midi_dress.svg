@@ -118,11 +118,15 @@
 <text class="s" x="293.0" y="115.1">← “make a navy white polka dot midi dress with a gathered skirt”</text>
 <text class="b" x="293.0" y="119.3">skirt: gathered</text>
 <text class="s" x="293.0" y="122.5">← “make a navy white polka dot midi dress with a gathered skirt”</text>
-<text class="b" x="293.0" y="126.7">closure: back zip</text>
+<text class="b" x="293.0" y="126.7">neckline: round</text>
 <text class="s" x="293.0" y="129.9">← “make a navy white polka dot midi dress with a gathered skirt”</text>
-<text class="b" x="293.0" y="134.1">neck finish: facing</text>
+<text class="b" x="293.0" y="134.1">back: closed</text>
 <text class="s" x="293.0" y="137.3">← “make a navy white polka dot midi dress with a gathered skirt”</text>
-<text class="ok" x="293.0" y="142.5">✓ 13/13 construction checks passed</text>
+<text class="b" x="293.0" y="141.5">closure: back zip</text>
+<text class="s" x="293.0" y="144.7">← “make a navy white polka dot midi dress with a gathered skirt”</text>
+<text class="b" x="293.0" y="148.9">neck finish: facing</text>
+<text class="s" x="293.0" y="152.1">← “make a navy white polka dot midi dress with a gathered skirt”</text>
+<text class="ok" x="293.0" y="157.3">✓ 13/13 construction checks passed</text>
 <text class="h" x="15.0" y="245.0">BILL OF MATERIALS</text>
 <text class="bb" x="15.0" y="250.5">1.91 m</text>
 <text class="b" x="37.0" y="250.5">crepe · Navy / White polka dots, 140 cm wide</text>

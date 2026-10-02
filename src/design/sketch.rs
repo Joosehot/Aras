@@ -150,9 +150,18 @@ fn top(o: &Outcome, look: &Look, spec: &Spec, cfg: &Config, painter: &mut Painte
     let other = pat.piece(if back { "front" } else { "back" });
     let thread = look.get(Zone::Stitching).dominant().rgb.css();
     let mut pen = Pen { out: String::new(), pts: Vec::new(), paint: painter, thread };
-    let neck_pts = body.edge("neck").pts.clone();
-    let hps = neck_pts.last().copied().expect("neck");
+    let mut neck_pts = body.edge("neck").pts.clone();
+    // A cowl's pattern edge stands above the neck with the shoulder swung
+    // up; worn, the shoulder is where the back's is and the edge hangs in a
+    // deep curve. An open back's neckline is a deep U.
+    let cowl = !back && pat.pieces.iter().any(|p| p.name == "cowl facing");
+    let hps = if cowl { *other.edge("neck").pts.last().expect("neck") } else { neck_pts.last().copied().expect("neck") };
     let nw = hps.x;
+    let drape = cfg.dress("cowl_drape");
+    if cowl {
+        neck_pts = cubic(pt(0.0, drape), pt(nw * 0.55, drape), pt(nw * 0.95, drape * 0.45), hps);
+    }
+    let open_back = back && neck_pts[0].y > 150.0;
     let hood = pat.pieces.iter().find(|p| p.name == "hood side");
     let body_fill = look.get(Zone::Body).clone();
     let chest_y = body.edge("armhole").pts.last().expect("armhole").y;
@@ -179,11 +188,21 @@ fn top(o: &Outcome, look: &Look, spec: &Spec, cfg: &Config, painter: &mut Painte
     // Inside of the back neck seen through the front neckline.
     if !back && hood.is_none() && spec.g() != Garment::Shirt {
         let inner = super::tonal(body_fill.dominant(), 0.3).rgb.css();
-        let bn = &other.edge("neck").pts;
+        // behind an open back's deep U the view goes through: draw a shallow back neck
+        let ob = other.edge("neck").pts.clone();
+        let bn = &if ob[0].y > 150.0 { let h = *ob.last().expect("neck"); cubic(pt(0.0, 20.0), pt(0.5 * h.x, 20.0), pt(0.8 * h.x, 16.0), h) } else { ob };
         let mut poly = mirror(bn).into_iter().rev().collect::<Vec<_>>();
         poly.extend(bn.iter().copied());
         poly.extend(neck_pts.iter().rev().copied());
         poly.extend(mirror(&neck_pts));
+        pen.shape(&poly, &inner);
+    }
+
+    // An open back: the inside of the front shows through it.
+    if open_back {
+        let inner = super::tonal(body_fill.dominant(), 0.3).rgb.css();
+        let mut poly: Vec<Pt> = mirror(&neck_pts).into_iter().rev().collect();
+        poly.extend(neck_pts.iter().copied());
         pen.shape(&poly, &inner);
     }
 
@@ -235,9 +254,34 @@ fn top(o: &Outcome, look: &Look, spec: &Spec, cfg: &Config, painter: &mut Painte
         );
     };
     if body.cut.fold {
-        let (stitch, _) = body.outlines(0.0, 0.0, true);
+        let (mut stitch, _) = body.outlines(0.0, 0.0, true);
+        if cowl {
+            // the worn outline: the drape in place of the raised top edge
+            let mut half: Vec<Pt> = neck_pts.clone();
+            for e in other.edges.iter().filter(|e| !matches!(e.name, "neck" | "cb" | "cf") && e.kind != crate::pattern::EdgeKind::Fold) {
+                half.extend(e.pts.iter().skip(1).copied());
+            }
+            stitch = mirror(&half).into_iter().rev().chain(half.into_iter().skip(1)).collect();
+        }
         pen.shape(&stitch, &paint);
         sheen(&mut pen, &stitch);
+        if cowl {
+            // The drape: soft folds hanging one under another from the
+            // shoulders, each band lit on top and shaded underneath.
+            let clip = pen.paint.clip(&stitch);
+            let fold = |k: f64| {
+                let (x, y) = (nw * (1.0 + 0.35 * k), drape * (1.0 + 0.85 * k));
+                cubic(pt(-x, 6.0 + 30.0 * k), pt(-x * 0.45, y), pt(x * 0.45, y), pt(x, 6.0 + 30.0 * k))
+            };
+            let n = 4;
+            for i in 0..n {
+                let (a, b) = (fold(i as f64 / n as f64), fold((i as f64 + 0.6) / n as f64));
+                let mut band = a.clone();
+                band.extend(b.into_iter().rev());
+                let _ = writeln!(pen.out, "<path clip-path=\"url(#{clip})\" fill=\"#000\" fill-opacity=\"0.28\" d=\"{}\"/>", path(&band, true));
+                let _ = writeln!(pen.out, "<path clip-path=\"url(#{clip})\" fill=\"none\" stroke=\"#fff\" stroke-opacity=\"0.22\" stroke-width=\"3\" d=\"{}\"/>", path(&a, false));
+            }
+        }
         if let Some(s) = &look.sweep {
             let clip = pen.paint.clip(&stitch);
             for (line, c) in super::sweep::bands(body, s, cfg) {
@@ -292,6 +336,80 @@ fn top(o: &Outcome, look: &Look, spec: &Spec, cfg: &Config, painter: &mut Painte
         // the waist seam over the skirt's gathers
         let wx = body.edge(bottom).pts[0].x;
         pen.stitch(&[pt(-wx, waist_y + 3.0), pt(wx, waist_y + 3.0)]);
+    }
+    // A bow at centre back, where the back piece marks it.
+    if back && pat.pieces.iter().any(|p| p.name == "bow") {
+        let y = body
+            .marks
+            .iter()
+            .find_map(|m| match m {
+                Mark::Line { pts, dashed: false } if pts.len() == 2 && pts[0].x.abs() < 1e-9 && (pts[0].y - pts[1].y).abs() < 1e-9 => Some(pts[0].y),
+                _ => None,
+            })
+            .unwrap_or(waist_y);
+        // A tied bow as worn: each loop pinched into the knot and opening
+        // out to a wide, slightly drooping end, its inside showing in shadow;
+        // a knot wrapped tight; two long tails cut on the slant.
+        let (w, h, tail) = (cfg.dress("bow_width"), cfg.dress("bow_height"), cfg.dress("bow_tail") * 0.8);
+        let paint = pen.fill(&body_fill, pt(0.0, y), 0.0);
+        let shade = super::tonal(body_fill.dominant(), 0.35).rgb.css();
+        let line = |pen: &mut Pen, pts: &[Pt], op: f64| {
+            let _ = writeln!(pen.out, "<path class=\"fl\" fill=\"none\" stroke-opacity=\"{op}\" d=\"{}\"/>", path(pts, false));
+        };
+        let k = h * 0.2; // half the knot's width
+        // tails first, under the loops: they widen as they hang down and
+        // out, and end in a V notch
+        let (tw, tx) = (w * 0.34, w * 0.5);
+        let left_tail = geom::chain(&[
+            cubic(pt(-k * 0.7, y + k * 0.7), pt(-k * 1.6, y + tail * 0.3), pt(-tx * 0.8, y + tail * 0.7), pt(-tx - tw * 0.5, y + tail)),
+            vec![pt(-tx - tw * 0.05, y + tail * 0.9), pt(-tx + tw * 0.45, y + tail * 0.97)],
+            cubic(pt(-tx + tw * 0.45, y + tail * 0.97), pt(-tx * 0.45, y + tail * 0.65), pt(-k * 0.1, y + tail * 0.3), pt(k * 0.5, y + k * 0.8)),
+        ]);
+        let mut right_tail = mirror(&left_tail);
+        // the right tail hangs a little shorter, as a tied bow does
+        for p in right_tail.iter_mut() {
+            p.y = y + (p.y - y) * 0.88;
+        }
+        for t in [&left_tail, &right_tail] {
+            pen.shape(t, &paint);
+        }
+        line(&mut pen, &cubic(pt(-k * 0.2, y + k), pt(-k * 0.9, y + tail * 0.35), pt(-tx * 0.6, y + tail * 0.7), pt(-tx - tw * 0.05, y + tail * 0.9)), 0.35);
+        // Wings: pinched into the knot, the top edge sweeping up and out to a
+        // wide, nearly straight outer edge, the bottom edge running back in.
+        let loop_half = |s: f64| -> Vec<Pt> {
+            let p = |x: f64, yy: f64| pt(s * x, y + yy);
+            geom::chain(&[
+                cubic(p(k, -k * 0.7), p(w * 0.3, -h * 0.45), p(w * 0.7, -h * 0.85), p(w, -h * 0.8)),
+                cubic(p(w, -h * 0.8), p(w * 1.04, -h * 0.25), p(w * 0.94, h * 0.1), p(w * 0.98, h * 0.5)),
+                cubic(p(w * 0.98, h * 0.5), p(w * 0.65, h * 0.55), p(w * 0.3, h * 0.3), p(k, k * 0.7)),
+            ])
+        };
+        for s in [-1.0, 1.0] {
+            let lp = loop_half(s);
+            pen.shape(&lp, &paint);
+            let p = |x: f64, yy: f64| pt(s * x, y + yy);
+            // the loop's turned-back inside, a shaded wedge along the outer edge
+            let inner = vec![p(w * 0.99, -h * 0.72), p(w * 0.8, -h * 0.05), p(w * 0.96, h * 0.42), p(w * 0.97, -h * 0.2)];
+            let _ = writeln!(pen.out, "<path fill=\"{shade}\" d=\"{}\"/>", path(&inner, true));
+            // pleats fanning from the knot to the wing's edge
+            for (yy, op) in [(-0.55, 0.5), (-0.1, 0.45), (0.3, 0.4)] {
+                line(&mut pen, &cubic(p(k * 1.1, k * yy), p(w * 0.35, h * yy * 0.6), p(w * 0.6, h * yy * 0.9), p(w * 0.82, h * yy)), op);
+            }
+        }
+        // the knot, wrapped tight with creases
+        let knot = geom::chain(&[
+            cubic(pt(-k, -k * 1.1), pt(-k * 0.3, -k * 1.3), pt(k * 0.3, -k * 1.3), pt(k, -k * 1.1)),
+            cubic(pt(k, -k * 1.1), pt(k * 1.25, -k * 0.3), pt(k * 1.25, k * 0.3), pt(k, k * 1.1)),
+            cubic(pt(k, k * 1.1), pt(k * 0.3, k * 1.3), pt(-k * 0.3, k * 1.3), pt(-k, k * 1.1)),
+            cubic(pt(-k, k * 1.1), pt(-k * 1.25, k * 0.3), pt(-k * 1.25, -k * 0.3), pt(-k, -k * 1.1)),
+        ])
+        .into_iter()
+        .map(|p| pt(p.x, p.y + y))
+        .collect::<Vec<_>>();
+        pen.shape(&knot, &paint);
+        for dx in [-0.35, 0.3] {
+            line(&mut pen, &cubic(pt(k * dx, y - k), pt(k * (dx + 0.15), y - k * 0.3), pt(k * (dx - 0.1), y + k * 0.3), pt(k * dx, y + k)), 0.5);
+        }
     }
 
     // Hem band or hem stitching.

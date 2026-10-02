@@ -67,14 +67,18 @@
 <text class="s" x="293.0" y="94.7">← “make a red velvet dress”</text>
 <text class="b" x="293.0" y="98.9">skirt: shift</text>
 <text class="s" x="293.0" y="102.1">← “make a red velvet dress”</text>
-<text class="b" x="293.0" y="106.3">closure: back zip</text>
+<text class="b" x="293.0" y="106.3">neckline: round</text>
 <text class="s" x="293.0" y="109.5">← “make a red velvet dress”</text>
-<text class="b" x="293.0" y="113.7">armhole finish: facing</text>
+<text class="b" x="293.0" y="113.7">back: closed</text>
 <text class="s" x="293.0" y="116.9">← “make a red velvet dress”</text>
-<text class="b" x="293.0" y="121.1">neck finish: facing</text>
+<text class="b" x="293.0" y="121.1">closure: back zip</text>
 <text class="s" x="293.0" y="124.3">← “make a red velvet dress”</text>
-<text class="ok" x="293.0" y="129.5">✓ 9/9 construction checks passed</text>
-<text class="s" x="293.0" y="134.0">note: velvet has a nap: every piece is cut the same way up (the layout only mirrors pairs, it never turns a piece)</text>
+<text class="b" x="293.0" y="128.5">armhole finish: facing</text>
+<text class="s" x="293.0" y="131.7">← “make a red velvet dress”</text>
+<text class="b" x="293.0" y="135.9">neck finish: facing</text>
+<text class="s" x="293.0" y="139.1">← “make a red velvet dress”</text>
+<text class="ok" x="293.0" y="144.3">✓ 9/9 construction checks passed</text>
+<text class="s" x="293.0" y="148.8">note: velvet has a nap: every piece is cut the same way up (the layout only mirrors pairs, it never turns a piece)</text>
 <text class="h" x="15.0" y="245.0">BILL OF MATERIALS</text>
 <text class="bb" x="15.0" y="250.5">1.29 m</text>
 <text class="b" x="37.0" y="250.5">velvet · Red, 140 cm wide</text>

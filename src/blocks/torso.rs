@@ -112,8 +112,17 @@ fn half(d: &Draft, front: bool) -> Result<Piece, String> {
     if side_len < chest_y + 50.0 {
         return Err(format!("the body ({:.1} cm) is too short to reach below the armhole", t.length / 10.0));
     }
-    let depth = if front { t.front_neck_depth } else { t.back_neck_depth };
-    if depth <= 0.0 {
+    // Dresses: an open back drops the back neckline; a cowl starts from a
+    // straight top edge half the usual neck depth down, and dress_half
+    // spreads it (slash and spread) until it drapes.
+    let open = if front { None } else { t.dress.and_then(|dp| dp.open_back) };
+    let cowl = front && t.dress.is_some_and(|dp| dp.cowl);
+    let depth = match (open, cowl) {
+        (Some(od), _) => od,
+        (_, true) => t.front_neck_depth * 0.5,
+        _ => if front { t.front_neck_depth } else { t.back_neck_depth },
+    };
+    if depth <= 0.0 && !cowl {
         return Err("the neckline is raised above the neck point".into());
     }
     let ext = if front { t.button_ext } else { 0.0 };
@@ -121,7 +130,13 @@ fn half(d: &Draft, front: bool) -> Result<Piece, String> {
 
     // Front: a quarter ellipse. Back: shallow, so it rises to the neck point
     // at an angle instead of turning sharply there.
-    let curve = if front {
+    let curve = if cowl {
+        // the cowl's top edge: straight from the raised centre front to the neck point
+        vec![pt(0.0, depth), hps]
+    } else if open.is_some() {
+        // a wide U down the back, leaving a strap at the shoulder
+        cubic(pt(0.0, depth), pt(0.55 * q, depth), pt(t.nw, 0.3 * depth), hps)
+    } else if front {
         cubic(pt(0.0, depth), pt(KAPPA * t.nw, depth), pt(t.nw, KAPPA * depth), hps)
     } else {
         cubic(pt(0.0, depth), pt(0.5 * t.nw, depth), pt(0.8 * t.nw, 0.8 * depth), hps)
@@ -175,6 +190,32 @@ fn half(d: &Draft, front: bool) -> Result<Piece, String> {
 fn dress_half(d: &Draft, front: bool, q: f64, chest_y: f64, neck: Vec<Pt>, hps: Pt, sp: Pt, upper: Vec<Pt>, lower: Vec<Pt>, notch_at: f64, depth: f64, dp: crate::draft::DressParams) -> Piece {
     let t = &d.top;
     let c = pt(q, chest_y);
+    // A cowl, by slash and spread: cut from the top edge to the armhole's
+    // across point and swing the shoulder part up about that point. The
+    // shoulder and the armhole keep their lengths; the top edge grows. Worn,
+    // that edge hangs between the neck points like a chain, and a length L
+    // over a half span w sags s = sqrt(3 w (L - w) / 2): the swing is solved
+    // so s is [dress] cowl_drape.
+    // The top edge runs straight across from centre front to the swung neck
+    // point, as a classic cowl's does, so centre front rises to that level.
+    let (neck, hps, sp, upper, depth) = if front && dp.cowl {
+        let pivot = *upper.last().expect("armhole");
+        let rot = |p: Pt, ang: f64| {
+            let v = p - pivot;
+            pivot + pt(v.x * ang.cos() - v.y * ang.sin(), v.x * ang.sin() + v.y * ang.cos())
+        };
+        let w = hps.x;
+        let s = d.cfg.dress("cowl_drape");
+        let want = w + 2.0 * s * s / (3.0 * w);
+        let sign = if rot(hps, 0.05).x > rot(hps, -0.05).x { 1.0 } else { -1.0 };
+        // the swing that puts the neck point `want` from centre front, or the widest there is
+        let ang = geom::solve(0.0, 1.5, |x| rot(hps, sign * x).x - want).unwrap_or(1.5) * sign;
+        let hps2 = rot(hps, ang);
+        let a = pt(0.0, hps2.y);
+        (vec![a, hps2], hps2, rot(sp, ang), upper.iter().map(|p| rot(*p, ang)).collect::<Vec<_>>(), hps2.y)
+    } else {
+        (neck, hps, sp, upper, depth)
+    };
     let (waist_x, hip_x, hem_x) = dress_side(d, q);
     let w = pt(waist_x, dp.waist_y);
     let k = (dp.waist_y - chest_y) * 0.45;

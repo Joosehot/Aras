@@ -77,6 +77,10 @@ pub struct DressParams {
     pub gather: f64,
     /// Opens down centre back with a zip (the back is cut in two).
     pub zip: bool,
+    /// The front neckline is a cowl: centre front raised so it drapes.
+    pub cowl: bool,
+    /// The back neckline drops to this depth (an open back).
+    pub open_back: Option<f64>,
 }
 
 /// Numbers for pants. Knee and hem are full leg girths.
@@ -161,6 +165,8 @@ impl<'a> Draft<'a> {
                     flare: 0.0,
                     gather: cfg.dress("gather"),
                     zip: false,
+                    cowl: false,
+                    open_back: None,
                 });
             }
         } else {

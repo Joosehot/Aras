@@ -37,15 +37,20 @@ impl Rule for NeckFinish {
         let cfg = d.cfg;
         let words = garment_words(d.spec, self.name());
         let dress = d.spec.g() == Garment::Dress;
+        // a cowl front has its own facing: only the back neckline is finished here
+        let cowl = d.top.dress.is_some_and(|dp| dp.cowl);
         if variant == "facing" {
             let w = cfg.dress("facing_width");
-            let front = parts::neck_facing("front neck facing", d.piece("front"), w)?;
+            if !cowl {
+                let front = parts::neck_facing("front neck facing", d.piece("front"), w)?;
+                d.add(front.by("neck_finish/facing", &words));
+            }
             let back = parts::neck_facing("back neck facing", d.piece("back"), w)?;
-            d.add(front.by("neck_finish/facing", &words));
             d.add(back.by("neck_finish/facing", &words));
             return Ok(());
         }
-        let girth = 2.0 * (d.piece("front").len("neck") + d.piece("back").len("neck"));
+        let front_neck = if cowl { 0.0 } else { d.piece("front").len("neck") };
+        let girth = 2.0 * (front_neck + d.piece("back").len("neck"));
         let (ratio, finished, rib, name) = match variant {
             "rib_band" => (cfg.band("neck_rib"), cfg.part("neckband_width"), true, "neckband"),
             "self_band" => (cfg.band("neck_self"), cfg.part("neckband_width"), false, "neckband"),
