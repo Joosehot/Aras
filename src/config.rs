@@ -129,6 +129,8 @@ pub struct Config {
     pub design: BTreeMap<String, f64>,
     /// Colour of each garment when the sentence names none.
     pub design_defaults: BTreeMap<String, String>,
+    /// Dress lengths, skirt shapes, facings and zips.
+    pub dress: BTreeMap<String, f64>,
 }
 
 /// Keys the code reads from the flat tables. A missing one fails at load.
@@ -150,9 +152,13 @@ const BAND_KEYS: &[&str] = &["neck_rib", "neck_self", "binding", "cuff_rib", "he
 const CHECK_KEYS: &[&str] = &["seam_tolerance", "min_shoulder", "inseam_ease", "max_extend"];
 const LAYOUT_KEYS: &[&str] = &["gap", "sheet_width", "margin"];
 const DESIGN_KEYS: &[&str] = &[
-    "stripe_repeat", "pinstripe_repeat", "gingham_repeat", "plaid_repeat", "dot_repeat", "camo_repeat",
+    "stripe_repeat", "pinstripe_repeat", "gingham_repeat", "plaid_repeat", "dot_repeat", "camo_repeat", "floral_repeat",
     "thin", "thick", "shade", "button_shade", "thread_shade", "min_print_contrast", "drawstring_tail",
     "flat_long_sleeve", "flat_short_sleeve", "sweep_band", "sweep_start", "sweep_clear", "sweep_radius",
+];
+const DRESS_KEYS: &[&str] = &[
+    "mini", "knee", "midi", "maxi", "a_line_flare", "gather", "gather_min", "gather_max", "sleeveless_raise",
+    "sleeveless_narrow", "armhole_ease", "facing_width", "zip_sizes", "zip_max",
 ];
 pub const TOP_KEYS: &[&str] = &[
     "chest_ease", "below_waist", "neck_width_add", "back_neck_depth", "front_neck_depth",
@@ -212,6 +218,7 @@ impl Config {
             ("checks", &self.checks, CHECK_KEYS),
             ("layout", &self.layout, LAYOUT_KEYS),
             ("design", &self.design, DESIGN_KEYS),
+            ("dress", &self.dress, DRESS_KEYS),
             ("edits", &self.edits, crate::model::EditKind::KEYS),
         ] {
             for k in keys {
@@ -277,6 +284,9 @@ impl Config {
     }
     pub fn layout(&self, key: &str) -> f64 {
         self.layout[key]
+    }
+    pub fn dress(&self, key: &str) -> f64 {
+        self.dress[key]
     }
     pub fn fabric(&self, name: &str) -> &FabricConfig {
         &self.fabrics[name]

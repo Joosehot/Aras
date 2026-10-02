@@ -11,10 +11,11 @@ pub enum Garment {
     Sweatshirt,
     Shirt,
     Pants,
+    Dress,
 }
 
 impl Garment {
-    pub const ALL: [Garment; 5] = [Garment::Tshirt, Garment::Hoodie, Garment::Sweatshirt, Garment::Shirt, Garment::Pants];
+    pub const ALL: [Garment; 6] = [Garment::Tshirt, Garment::Hoodie, Garment::Sweatshirt, Garment::Shirt, Garment::Pants, Garment::Dress];
 
     pub fn key(self) -> &'static str {
         match self {
@@ -23,6 +24,7 @@ impl Garment {
             Garment::Sweatshirt => "sweatshirt",
             Garment::Shirt => "shirt",
             Garment::Pants => "pants",
+            Garment::Dress => "dress",
         }
     }
     pub fn name(self) -> &'static str {
@@ -32,6 +34,7 @@ impl Garment {
             Garment::Sweatshirt => "sweatshirt",
             Garment::Shirt => "button shirt",
             Garment::Pants => "pants",
+            Garment::Dress => "dress",
         }
     }
     pub fn is_top(self) -> bool {
@@ -103,6 +106,28 @@ impl Size {
 pub enum SleeveKind {
     Short,
     Long,
+    /// No sleeves: the armhole is finished instead (dresses).
+    None,
+}
+
+/// How far a dress reaches, as a share of waist-to-floor (`[dress]` in rules.toml).
+#[derive(Clone, Copy, Debug, PartialEq, Eq, PartialOrd, Ord, Hash)]
+pub enum DressLength {
+    Mini,
+    Knee,
+    Midi,
+    Maxi,
+}
+
+impl DressLength {
+    pub fn key(self) -> &'static str {
+        match self {
+            DressLength::Mini => "mini",
+            DressLength::Knee => "knee",
+            DressLength::Midi => "midi",
+            DressLength::Maxi => "maxi",
+        }
+    }
 }
 
 /// Something the sentence changed by an amount.
@@ -185,6 +210,8 @@ pub struct Spec {
     pub edits: Vec<Edit>,
     pub mods: Vec<Modifier>,
     pub design: crate::design::DesignSpec,
+    /// Dresses: how long ("knee length" when not said).
+    pub dress_length: Option<Worded<DressLength>>,
 }
 
 impl Spec {
@@ -210,9 +237,13 @@ impl Spec {
             Some(s) => s.value,
             None => match cfg.garments[self.g().key()].sleeves.as_deref() {
                 Some("short") => SleeveKind::Short,
+                Some("none") => SleeveKind::None,
                 _ => SleeveKind::Long,
             },
         }
+    }
+    pub fn dress_length(&self) -> DressLength {
+        self.dress_length.as_ref().map_or(DressLength::Knee, |l| l.value)
     }
     pub fn has_hood(&self, cfg: &Config) -> bool {
         self.g().is_top() && self.hood.as_ref().map_or(cfg.garments[self.g().key()].hood, |h| h.value)

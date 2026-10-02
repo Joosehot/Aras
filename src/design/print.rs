@@ -18,6 +18,8 @@ pub enum PrintKind {
     Plaid,
     Dots,
     Camo,
+    /// Small five-petal flowers scattered on the ground colour.
+    Florals,
     /// Placement bands from the hem into the sleeves (see `sweep.rs`).
     Sweep,
 }
@@ -32,6 +34,7 @@ impl PrintKind {
             PrintKind::Plaid => "plaid",
             PrintKind::Dots => "polka dots",
             PrintKind::Camo => "camo",
+            PrintKind::Florals => "florals",
             PrintKind::Sweep => "sweep stripes",
         }
     }
@@ -45,6 +48,7 @@ impl PrintKind {
             PrintKind::Plaid => "Plaid",
             PrintKind::Dots => "Polka Dot",
             PrintKind::Camo => "Camo",
+            PrintKind::Florals => "Floral",
             PrintKind::Sweep => "Sweep",
         }
     }
@@ -56,6 +60,7 @@ impl PrintKind {
             PrintKind::Plaid => "plaid_repeat",
             PrintKind::Dots => "dot_repeat",
             PrintKind::Camo => "camo_repeat",
+            PrintKind::Florals => "floral_repeat",
             PrintKind::Sweep => "sweep_band",
         }
     }
@@ -108,6 +113,23 @@ pub fn resolve(kind: PrintKind, given: &[Color], scale: f64, base: &Color, cfg: 
         PrintKind::Plaid if colors.len() == 2 => {
             let c = colors[0].clone();
             colors.push(Color::new(format!("dark {}", c.name), c.rgb.darker(0.45)));
+        }
+        // Florals: ground, petals, and a centre a shade deeper than the petals.
+        PrintKind::Florals => {
+            // "a light blue dress with yellow flowers": one flower colour is
+            // the petals; the ground is the garment's colour
+            if given.len() == 1 && base.rgb != given[0].rgb {
+                colors = vec![base.clone(), given[0].clone()];
+            }
+            if colors.len() == 1 {
+                colors.push(if colors[0].rgb.luminance() < 0.4 { named("off white") } else { named("white") });
+            }
+            if colors.len() == 2 {
+                let p = colors[1].clone();
+                // a white eye, unless the petals are white themselves
+                let centre = if p.rgb.luminance() > 0.8 { Color::new(format!("deep {}", p.name), p.rgb.darker(0.4)) } else { named("white") };
+                colors.push(centre);
+            }
         }
         _ if colors.len() == 1 && kind != PrintKind::Sweep => {
             let c = colors[0].clone();
@@ -210,6 +232,50 @@ pub fn pattern_def(id: &str, print: &Print, anchor: Pt, angle: f64) -> String {
                             f(cy + dy),
                             col.css()
                         );
+                    }
+                }
+            }
+            (0.0, 0.0)
+        }
+        PrintKind::Florals => {
+            rect(&mut s, 0.0, 0.0, r, r, c[0], 1.0);
+            let mut rng = Lcg(11);
+            // six flowers per tile, placed apart so they never touch
+            // flowers are small against the tile: the tile sets how sparse they are
+            let size = r * 0.045;
+            // Even but irregular, like a ditsy print: each flower goes to the
+            // farthest of 20 random spots (Mitchell's best candidate), measured
+            // on the repeating tile so the tile edges don't show.
+            let dist = |a: (f64, f64), b: (f64, f64)| {
+                let dx = (a.0 - b.0).abs().min(r - (a.0 - b.0).abs());
+                let dy = (a.1 - b.1).abs().min(r - (a.1 - b.1).abs());
+                (dx * dx + dy * dy).sqrt()
+            };
+            let mut placed: Vec<(f64, f64)> = vec![(rng.next() * r, rng.next() * r)];
+            while placed.len() < 24 {
+                let best = (0..20)
+                    .map(|_| (rng.next() * r, rng.next() * r))
+                    .map(|p| (placed.iter().map(|q| dist(p, *q)).fold(f64::INFINITY, f64::min), p))
+                    .fold((-1.0, (0.0, 0.0)), |a, b| if b.0 > a.0 { b } else { a });
+                placed.push(best.1);
+            }
+            for (cx, cy) in placed {
+                let turn = rng.next() * 72.0;
+                let size = size * (0.85 + rng.next() * 0.3);
+                // the wrapped copies, so the tile repeats seamlessly
+                for dx in [-r, 0.0, r] {
+                    for dy in [-r, 0.0, r] {
+                        let (x, y) = (cx + dx, cy + dy);
+                        // only the copies that reach into the tile
+                        let reach = size * 1.2;
+                        if x < -reach || x > r + reach || y < -reach || y > r + reach {
+                            continue;
+                        }
+                        for k in 0..5 {
+                            let a = (turn + 72.0 * k as f64).to_radians();
+                            let _ = write!(s, "<circle cx=\"{}\" cy=\"{}\" r=\"{}\" fill=\"{}\"/>", f(x + size * 0.62 * a.cos()), f(y + size * 0.62 * a.sin()), f(size * 0.5), c[1].css());
+                        }
+                        let _ = write!(s, "<circle cx=\"{}\" cy=\"{}\" r=\"{}\" fill=\"{}\"/>", f(x), f(y), f(size * 0.34), c[2].css());
                     }
                 }
             }

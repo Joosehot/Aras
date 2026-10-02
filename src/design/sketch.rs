@@ -156,7 +156,11 @@ fn top(o: &Outcome, look: &Look, spec: &Spec, cfg: &Config, painter: &mut Painte
     let hood = pat.pieces.iter().find(|p| p.name == "hood side");
     let body_fill = look.get(Zone::Body).clone();
     let chest_y = body.edge("armhole").pts.last().expect("armhole").y;
-    let length = body.edge("hem").pts.last().expect("hem").y;
+    // a gathered dress: the bodice ends at a waist seam and the skirt hangs below
+    let skirt = pat.pieces.iter().find(|p| p.name == if back { "skirt back" } else { "skirt front" });
+    let bottom = if body.has_edge("hem") { "hem" } else { "waist" };
+    let waist_y = body.edge(bottom).pts.last().expect("bottom").y;
+    let length = waist_y + skirt.map_or(0.0, |s| s.len("side"));
 
     // Hood behind the body (front view: up, face opening; back view: lying down).
     if let Some(h) = hood {
@@ -184,11 +188,29 @@ fn top(o: &Outcome, look: &Look, spec: &Spec, cfg: &Config, painter: &mut Painte
     }
 
     // Sleeves, then the body over their armhole edge.
-    let drop = if pat.piece("sleeve").edge("hem").pts[0].y > 400.0 { cfg.design["flat_long_sleeve"] } else { cfg.design["flat_short_sleeve"] };
-    sleeve(&mut pen, pat, body, look, 1.0, drop);
-    sleeve(&mut pen, pat, body, look, -1.0, drop);
+    if pat.pieces.iter().any(|p| p.name == "sleeve") {
+        let drop = if pat.piece("sleeve").edge("hem").pts[0].y > 400.0 { cfg.design["flat_long_sleeve"] } else { cfg.design["flat_short_sleeve"] };
+        sleeve(&mut pen, pat, body, look, 1.0, drop);
+        sleeve(&mut pen, pat, body, look, -1.0, drop);
+    }
     let anchor = pt(0.0, chest_y);
     let paint = pen.fill(&body_fill, anchor, 0.0);
+    // The skirt first, under the bodice's waist seam: it hangs from the
+    // bodice waist and spreads to a fuller hem, with gathering lines.
+    if let Some(s) = skirt {
+        let wx = body.edge(bottom).pts[0].x;
+        let hx = (wx * 1.45).min(s.len("waist"));
+        let poly = vec![pt(-wx, waist_y), pt(wx, waist_y), pt(hx, length), pt(-hx, length)];
+        let paint = pen.fill(&body_fill, anchor, 0.0);
+        pen.shape(&poly, &paint);
+        let n = 9;
+        for i in 0..n {
+            let t = (i as f64 + 0.5) / n as f64;
+            let x0 = -wx + 2.0 * wx * t;
+            let x1 = -hx + 2.0 * hx * t;
+            pen.stitch(&[pt(x0, waist_y + 4.0), pt(x0 + (x1 - x0) * 0.35, waist_y + (length - waist_y) * 0.35)]);
+        }
+    }
     if body.cut.fold {
         let (stitch, _) = body.outlines(0.0, 0.0, true);
         pen.shape(&stitch, &paint);
@@ -210,11 +232,38 @@ fn top(o: &Outcome, look: &Look, spec: &Spec, cfg: &Config, painter: &mut Painte
         }
     } else {
         // Shirt fronts: the left front overlaps the right at the placket.
+        // A dress back with a zip: both halves meet at the zip.
         let (stitch, _) = body.outlines(0.0, 0.0, false);
         pen.shape(&mirror(&stitch), &paint);
-        if !back {
+        if !back || spec.g() == Garment::Dress {
             pen.shape(&stitch, &paint);
         }
+        if back && spec.g() == Garment::Dress {
+            let neck_y = body.edge("cb").pts.last().expect("cb").y;
+            let zip_end = body
+                .marks
+                .iter()
+                .find_map(|m| match m {
+                    Mark::Line { pts, dashed: true } if pts.len() == 2 && pts[0].x.abs() < 1e-9 => Some(pts[1].y),
+                    _ => None,
+                })
+                .unwrap_or(waist_y);
+            let zip_end = if skirt.is_some() {
+                skirt.and_then(|s| s.marks.iter().find_map(|m| match m {
+                    Mark::Line { pts, dashed: true } if pts.len() == 2 && pts[0].x.abs() < 1e-9 && pts[1].x.abs() < 1e-9 => Some(waist_y + pts[1].y),
+                    _ => None,
+                })).unwrap_or(zip_end)
+            } else {
+                zip_end
+            };
+            let _ = writeln!(pen.out, "<path class=\"fl\" fill=\"none\" stroke-width=\"2\" d=\"{}\"/>", path(&[pt(0.0, neck_y), pt(0.0, zip_end)], false));
+            let _ = writeln!(pen.out, "<circle class=\"fl\" cx=\"0\" cy=\"{}\" r=\"3\" fill=\"#9a9b9d\"/>", f(neck_y + 6.0));
+        }
+    }
+    if skirt.is_some() {
+        // the waist seam over the skirt's gathers
+        let wx = body.edge(bottom).pts[0].x;
+        pen.stitch(&[pt(-wx, waist_y + 3.0), pt(wx, waist_y + 3.0)]);
     }
 
     // Hem band or hem stitching.
@@ -224,6 +273,10 @@ fn top(o: &Outcome, look: &Look, spec: &Spec, cfg: &Config, painter: &mut Painte
         let paint = pen.fill(&rib, pt(0.0, length), 0.0);
         pen.shape(&[pt(-w, length), pt(w, length), pt(w, length + h), pt(-w, length + h)], &paint);
         pen.rib(-w, w, length, length + h, &ribcolor(look));
+    } else if let Some(s) = skirt {
+        let wx = body.edge(bottom).pts[0].x;
+        let hx = (wx * 1.45).min(s.len("waist"));
+        pen.stitch(&[pt(-hx + 2.0, length - 14.0), pt(hx - 2.0, length - 14.0)]);
     } else {
         let hem = &body.edge("hem").pts;
         let up = shift(hem, -14.0);

@@ -13,7 +13,10 @@ use crate::config::Config;
 use crate::draft::Draft;
 use crate::model::{EditKind, Spec};
 
+pub mod armhole_finish;
 pub mod body_hem;
+pub mod closure;
+pub mod skirt;
 pub mod body_length;
 pub mod chest_width;
 pub mod collar;
@@ -80,6 +83,9 @@ pub fn registry() -> Vec<&'static dyn Rule> {
         &body_hem::BodyHem,
         &sleeve_finish::SleeveFinish,
         &waist::Waist,
+        &skirt::Skirt,
+        &closure::Closure,
+        &armhole_finish::ArmholeFinish,
         &neck_finish::NeckFinish,
         &collar::Collar,
         &hood::Hood,

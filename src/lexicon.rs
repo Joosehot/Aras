@@ -4,7 +4,7 @@
 
 use crate::design::color::COLORS;
 use crate::design::print::PrintKind;
-use crate::model::{Fit, Garment, Size, SleeveKind};
+use crate::model::{DressLength, Fit, Garment, Size, SleeveKind};
 
 #[derive(Clone, Copy, Debug, PartialEq, Eq, PartialOrd, Ord, Hash)]
 pub enum Part {
@@ -110,6 +110,7 @@ pub enum Tok {
     Unit(f64),
     Size(Size),
     Sleeves(SleeveKind),
+    DressLen(DressLength),
     Pin(PinDef),
     /// A palette colour, by name.
     Color(&'static str),
@@ -171,6 +172,42 @@ pub const PHRASES: &[(&str, Tok)] = &[
     ("trousers", Tok::Garment(Garment::Pants)),
     ("slacks", Tok::Garment(Garment::Pants)),
     ("chinos", Tok::Garment(Garment::Pants)),
+    ("sundress", Tok::Garment(Garment::Dress)),
+    ("dresses", Tok::Garment(Garment::Dress)),
+    ("dress", Tok::Garment(Garment::Dress)),
+    ("frock", Tok::Garment(Garment::Dress)),
+    ("sleeveless", Tok::Sleeves(SleeveKind::None)),
+    ("mini", Tok::DressLen(DressLength::Mini)),
+    ("above the knee", Tok::DressLen(DressLength::Mini)),
+    ("knee length", Tok::DressLen(DressLength::Knee)),
+    ("knee", Tok::DressLen(DressLength::Knee)),
+    ("midi", Tok::DressLen(DressLength::Midi)),
+    ("calf length", Tok::DressLen(DressLength::Midi)),
+    ("maxi", Tok::DressLen(DressLength::Maxi)),
+    ("floor length", Tok::DressLen(DressLength::Maxi)),
+    ("ankle length", Tok::DressLen(DressLength::Maxi)),
+    // dress silhouettes, closures and finishes
+    ("a line", pin("skirt", &["a_line"], None)),
+    ("aline", pin("skirt", &["a_line"], None)),
+    ("flared", pin("skirt", &["a_line"], None)),
+    ("shift", pin("skirt", &["shift"], None)),
+    ("sheath", pin("skirt", &["shift"], None)),
+    ("fit and flare", pin("skirt", &["gathered"], None)),
+    ("skater", pin("skirt", &["gathered"], None)),
+    ("gathered skirt", pin("skirt", &["gathered"], None)),
+    ("gathered", pin("skirt", &["gathered"], None)),
+    ("back zip", pin("closure", &["back_zip"], None)),
+    ("invisible zip", pin("closure", &["back_zip"], None)),
+    ("zip", pin("closure", &["back_zip"], None)),
+    ("pull on", pin("closure", &["pull_on"], None)),
+    ("no zip", pin("closure", &["pull_on"], None)),
+    ("neck facing", pin("neck_finish", &["facing"], None)),
+    ("faced neckline", pin("neck_finish", &["facing"], None)),
+    ("bias binding", pin("neck_finish", &["binding"], None)),
+    ("armhole facings", pin("armhole_finish", &["facing"], None)),
+    ("armhole facing", pin("armhole_finish", &["facing"], None)),
+    ("armhole binding", pin("armhole_finish", &["binding"], None)),
+    ("bound armholes", pin("armhole_finish", &["binding"], None)),
     // fits
     ("skinny", Tok::Fit(Fit::Fitted)),
     ("tight", Tok::Fit(Fit::Fitted)),
@@ -370,6 +407,16 @@ pub const PHRASES: &[(&str, Tok)] = &[
     ("almost all over", Tok::Coverage(0.85)),
     ("swoosh", Tok::Print(PrintKind::Sweep)),
     ("bands", Tok::Print(PrintKind::Stripes)),
+    ("flowers", Tok::Print(PrintKind::Florals)),
+    ("flower", Tok::Print(PrintKind::Florals)),
+    ("floral", Tok::Print(PrintKind::Florals)),
+    ("florals", Tok::Print(PrintKind::Florals)),
+    ("flowered", Tok::Print(PrintKind::Florals)),
+    ("flowery", Tok::Print(PrintKind::Florals)),
+    ("daisies", Tok::Print(PrintKind::Florals)),
+    ("tiny", Tok::Scale(-1.0)),
+    ("ditsy", Tok::Scale(-1.0)),
+    ("little", Tok::Scale(-1.0)),
     ("camouflage", Tok::Print(PrintKind::Camo)),
     ("camo", Tok::Print(PrintKind::Camo)),
     ("thin", Tok::Scale(-1.0)),

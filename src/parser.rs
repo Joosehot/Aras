@@ -18,7 +18,7 @@ use crate::design::color::Color;
 use crate::design::print::PrintKind;
 use crate::design::{DesignSpec, PrintReq, Zone};
 use crate::lexicon::{Modifier, Part, PinDef, Tok, Token, Verb};
-use crate::model::{Edit, EditKind, Fit, Garment, Pin, Size, SleeveKind, Spec, Worded};
+use crate::model::{DressLength, Edit, EditKind, Fit, Garment, Pin, Size, SleeveKind, Spec, Worded};
 use std::fmt;
 
 #[derive(Clone, Debug, PartialEq)]
@@ -83,6 +83,7 @@ struct State {
     last: Option<Verb>,
     group: usize,
     design: DesignSpec,
+    dress_length: Option<Worded<DressLength>>,
 }
 
 pub fn parse(sentence: &str, tokens: Vec<Token>, cfg: &Config, opts: &ParseOptions) -> Result<Spec, Vec<Diag>> {
@@ -115,6 +116,19 @@ pub fn parse(sentence: &str, tokens: Vec<Token>, cfg: &Config, opts: &ParseOptio
         .map(|i| toks[i].clone())
         .collect();
 
+    // "small yellow flowers": "small" before a colour or a print sizes the
+    // print, not the garment.
+    let toks: Vec<Token> = (0..toks.len())
+        .map(|i| {
+            let t = toks[i].clone();
+            let before_print = matches!(toks.get(i + 1).map(|n| n.tok), Some(Tok::Color(_) | Tok::Shade(_) | Tok::Print(_)));
+            if t.text == "small" && before_print {
+                Token { tok: Tok::Scale(-1.0), text: t.text }
+            } else {
+                t
+            }
+        })
+        .collect();
     let mut st = State::default();
     for clause in toks.split(|t| matches!(t.tok, Tok::And | Tok::Comma | Tok::Then | Tok::Stop)) {
         if clause.iter().all(|t| matches!(t.tok, Tok::Filler | Tok::Article)) {
@@ -152,9 +166,47 @@ pub fn parse(sentence: &str, tokens: Vec<Token>, cfg: &Config, opts: &ParseOptio
         edits: Vec::new(),
         mods: st.mods,
         design: st.design,
+        dress_length: st.dress_length,
     };
     spec.mods.sort();
     spec.mods.dedup();
+
+    // Dress words on other garments, and what v0 dresses don't have.
+    if g == Garment::Dress {
+        for (what, set) in [("a hood", spec.hood.as_ref()), ("a pocket", spec.pocket.as_ref())] {
+            if let Some(w) = set.filter(|w| w.value) {
+                diags.push(Diag::new(format!("\"{}\": v0 dresses have no {what}", w.words)));
+            }
+        }
+        // "with a zipper": on a dress that is the back zip, not a fly
+        for p in spec.pins.iter_mut() {
+            if p.rule == "waist" {
+                if p.variants.contains(&"zip_fly") {
+                    *p = Pin { rule: "closure", variants: &["back_zip"], words: p.words.clone() };
+                } else {
+                    diags.push(Diag::new(format!("\"{}\": a dress has no waistband in v0", p.words)));
+                }
+            }
+        }
+        if spec.design.print.as_ref().is_some_and(|p| p.kind == PrintKind::Sweep) {
+            diags.push(Diag::new("a sweep is drawn for tops in v0, not dresses").hint("try an all-over print: stripes, gingham, dots or flowers"));
+        }
+        if spec.sleeves.as_ref().is_some_and(|s| s.value == SleeveKind::None) {
+            for e in st.edits.iter().filter(|e| e.part == Some(Part::Sleeves)) {
+                diags.push(Diag::new(format!("\"{}\": the dress is sleeveless", e.words)));
+            }
+        }
+    } else {
+        if let Some(l) = &spec.dress_length {
+            diags.push(Diag::new(format!("\"{}\": only dresses have a dress length", l.words)));
+        }
+        if let Some(s) = spec.sleeves.as_ref().filter(|s| s.value == SleeveKind::None) {
+            diags.push(Diag::new(format!("\"{}\": in v0 only dresses can be sleeveless", s.words)));
+        }
+        for p in spec.pins.iter().filter(|p| matches!(p.rule, "skirt" | "closure" | "armhole_finish") || (p.rule == "neck_finish" && p.variants == ["facing"])) {
+            diags.push(Diag::new(format!("\"{}\" is for dresses", p.words)));
+        }
+    }
 
     if !g.is_top() {
         for (what, set) in [("sleeves", spec.sleeves.as_ref().map(|w| &w.words)), ("a hood", spec.hood.as_ref().map(|w| &w.words)), ("a pocket", spec.pocket.as_ref().map(|w| &w.words))] {
@@ -233,6 +285,7 @@ impl State {
                 Tok::Mod(m) => self.mods.push(m),
                 Tok::Size(s) => self.size = Some(s),
                 Tok::Sleeves(k) => sleeve_adj = Some(k),
+                Tok::DressLen(l) => self.dress_length = Some(Worded { value: l, words: text.clone() }),
                 Tok::Pin(p) => pins.push(p),
                 Tok::With => with = true,
                 Tok::Without | Tok::No => {
@@ -258,9 +311,15 @@ impl State {
             parts.retain(|p| *p != Part::Sleeves);
         }
         for p in &pins {
-            self.pins.push(Pin { rule: p.rule, variants: p.variants, words: text.clone() });
+            // "without a zip", "no zip": the dress pulls on
+            let variants: &'static [&'static str] = if neg && p.rule == "closure" { &["pull_on"] } else { p.variants };
+            self.pins.push(Pin { rule: p.rule, variants, words: text.clone() });
             if p.implies == Some(Part::Hood) {
                 self.hood = Some(Worded { value: true, words: text.clone() });
+            }
+            // finishing the armholes means there are no sleeves
+            if p.rule == "armhole_finish" {
+                self.sleeves = Some(Worded { value: SleeveKind::None, words: text.clone() });
             }
         }
 
@@ -411,7 +470,8 @@ impl State {
                 let variants: &'static [&'static str] = if neg { &["hemmed", "hemmed_wide"] } else { &["rib_cuff", "barrel_cuff"] };
                 self.pins.push(Pin { rule: "sleeve_finish", variants, words: text.to_string() });
             }
-            Part::Sleeves if neg => return Err(Diag::new(format!("\"{text}\": sleeveless tops are not in v0"))),
+            // checked against the garment once it is known: only dresses
+            Part::Sleeves if neg => self.sleeves = Some(Worded { value: SleeveKind::None, words: text.to_string() }),
             Part::Lining if !neg => {
                 self.pins.push(Pin { rule: "hood_lining", variants: &["lined"], words: text.to_string() });
                 self.hood = w(true);

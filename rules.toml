@@ -158,6 +158,14 @@ cap_ease_min = 5
 cap_ease_max = 20
 width = 1500
 
+[fabrics.crepe]            # woven dress fabric with drape
+stretch = 1.0
+seam = 15
+hem = 30
+cap_ease_min = 10
+cap_ease_max = 25
+width = 1400
+
 [fabrics.rib]
 stretch = 1.8
 seam = 10
@@ -244,6 +252,28 @@ wrist_ease = 60
 hem_flare = 0
 button_ext = 15
 
+# Dress: the top block carried down past the waist and hip ([dress] has the
+# skirt numbers). below_waist is not used: [dress] lengths set the hem.
+[garments.dress]
+fabric = "crepe"
+sleeves = "none"
+chest_ease = 80
+below_waist = 0
+neck_width_add = 10
+back_neck_depth = 20
+front_neck_depth = 90
+shoulder_add = 0
+shoulder_drop = 45
+armhole_drop = 20
+bicep_ease = 60
+short_sleeve = 240
+long_sleeve_add = 20
+wrist_ease = 60
+hem_flare = 0
+button_ext = 0
+waist_ease = 60
+seat_ease = 60
+
 # Pants: knee and hem are full leg girths. hem = knee + knee_ease + hem_vs_knee.
 [garments.pants]
 fabric = "twill"
@@ -288,6 +318,25 @@ seat_ease = 140
 knee_ease = 200
 hem_vs_knee = 40
 rise_ease = 15
+
+# ---- Dresses -------------------------------------------------------------------
+# Lengths are shares of waist-to-floor (body_rise + inside_leg) below the waist.
+
+[dress]
+mini = 0.38
+knee = 0.55
+midi = 0.72
+maxi = 0.92
+a_line_flare = 0.12        # A-line: each side seam steps out this far per mm below the hip
+gather = 1.6               # gathered skirt: skirt waist / bodice waist
+gather_min = 1.3           # gathering range a waist seam takes
+gather_max = 2.2
+sleeveless_raise = 15      # a sleeveless armhole sits this much higher
+sleeveless_narrow = 15     # and the shoulder is this much shorter
+armhole_ease = 60          # a sleeveless armhole is at least the upper arm plus this
+facing_width = 60          # neck and armhole facings
+zip_sizes = 400            # invisible zips come in 5 cm steps from this length
+zip_max = 650
 
 # ---- Drafting proportions -----------------------------------------------------
 
@@ -434,6 +483,23 @@ weight = 1.0
 variants.rib_band = { finish = 1.0, simplicity = 0.6, economy = 0.6 }
 variants.self_band = { finish = 0.8, simplicity = 0.7, economy = 0.9 }
 variants.binding = { finish = 0.6, simplicity = 0.5, economy = 1.0 }
+variants.facing = { finish = 1.0, simplicity = 0.6, economy = 0.7 }   # woven necklines
+
+[rules.skirt]              # dresses: the silhouette below the waist
+weight = 1.0
+variants.shift = { finish = 0.6, simplicity = 1.0, economy = 0.9 }
+variants.a_line = { finish = 0.9, simplicity = 0.9, economy = 0.6 }
+variants.gathered = { finish = 0.8, simplicity = 0.5, economy = 0.4 }
+
+[rules.closure]            # dresses: how it goes on
+weight = 1.0
+variants.back_zip = { finish = 1.0, simplicity = 0.4, economy = 0.7 }
+variants.pull_on = { finish = 0.6, simplicity = 1.0, economy = 1.0 }
+
+[rules.armhole_finish]     # sleeveless armholes
+weight = 1.0
+variants.facing = { finish = 1.0, simplicity = 0.6, economy = 0.7 }
+variants.binding = { finish = 0.6, simplicity = 0.6, economy = 1.0 }
 
 [rules.collar]             # shirts
 weight = 1.0
@@ -499,6 +565,7 @@ gingham_repeat = 12
 plaid_repeat = 90
 dot_repeat = 26
 camo_repeat = 180
+floral_repeat = 240        # one tile of 24 scattered flowers; "small/tiny/ditsy" halves it
 thin = 0.5                 # "thin/fine" scales the repeat
 thick = 2.0                # "thick/bold/wide"
 shade = 0.35               # "light"/"dark" mixes toward white/black
@@ -519,3 +586,4 @@ hoodie = "heather grey"
 sweatshirt = "heather grey"
 shirt = "sky blue"
 pants = "khaki"
+dress = "navy"

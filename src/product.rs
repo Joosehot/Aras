@@ -59,6 +59,7 @@ fn garment_code(g: Garment) -> &'static str {
         Garment::Sweatshirt => "SW",
         Garment::Shirt => "SH",
         Garment::Pants => "PT",
+        Garment::Dress => "DR",
     }
 }
 

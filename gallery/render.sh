@@ -30,13 +30,13 @@ png() { # svg png scale
 while IFS='|' read -r name sentence; do
   [ -z "$name" ] && continue
   "$ARAS" "$sentence" -o "$OUT/$name.svg"
-  png "$OUT/$name.svg" "$OUT/$name.png" 2.2
+  png "$OUT/$name.svg" "$OUT/$name.png" 4
   echo "$name"
 done < "$OUT/sentences.txt"
 
 s="make an oversized black hoodie with white sleeves, a grey hood and rib cuffs"
 "$ARAS" "$s" --marker -o "$OUT/cutting_layout.svg"
-png "$OUT/cutting_layout.svg" "$OUT/cutting_layout.png" 0.45
+png "$OUT/cutting_layout.svg" "$OUT/cutting_layout.png" 1.0
 "$ARAS" "make a red gingham shirt" --pieces -o "$OUT/paper_pattern.svg"
-png "$OUT/paper_pattern.svg" "$OUT/paper_pattern.png" 0.8
+png "$OUT/paper_pattern.svg" "$OUT/paper_pattern.png" 1.6
 echo done

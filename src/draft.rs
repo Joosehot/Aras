@@ -45,6 +45,38 @@ pub struct TopParams {
     /// How far a curved hem rises at the side seam (0 = straight).
     pub shirttail: f64,
     pub long: bool,
+    /// No sleeve: the armhole is finished instead.
+    pub sleeveless: bool,
+    /// Set for dresses: the body carries on past the waist and hip.
+    pub dress: Option<DressParams>,
+}
+
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Silhouette {
+    /// Straight from the hip.
+    Shift,
+    /// Flaring out from the hip.
+    ALine,
+    /// A fitted bodice with a gathered skirt sewn on at the waist.
+    Gathered,
+}
+
+/// The dress below the armhole. y is measured like the rest of the top
+/// block (down from the neck point level); widths are quarter girths.
+#[derive(Clone, Copy, Debug)]
+pub struct DressParams {
+    pub waist_y: f64,
+    pub hip_y: f64,
+    /// Quarter of waist + ease, and of seat + ease.
+    pub waist_q: f64,
+    pub hip_q: f64,
+    pub silhouette: Silhouette,
+    /// How far each side seam steps out per mm below the hip (A-line).
+    pub flare: f64,
+    /// Skirt waist / bodice waist (gathered).
+    pub gather: f64,
+    /// Opens down centre back with a zip (the back is cut in two).
+    pub zip: bool,
 }
 
 /// Numbers for pants. Knee and hem are full leg girths.
@@ -89,6 +121,7 @@ impl<'a> Draft<'a> {
         let mut pants = PantsParams::default();
         if g.is_top() {
             let long = spec.sleeves(cfg) == SleeveKind::Long;
+            let sleeveless = spec.sleeves(cfg) == SleeveKind::None;
             let shoulder_add = num("shoulder_add");
             let bicep = m.upper_arm + num("bicep_ease");
             top = TopParams {
@@ -108,7 +141,28 @@ impl<'a> Draft<'a> {
                 button_ext: num("button_ext"),
                 shirttail: 0.0,
                 long,
+                sleeveless,
+                dress: None,
             };
+            if sleeveless {
+                top.armhole_drop -= cfg.dress("sleeveless_raise");
+                top.shoulder_len -= cfg.dress("sleeveless_narrow");
+            }
+            if g == crate::model::Garment::Dress {
+                // the hem: a share of waist-to-floor below the waist
+                let below = cfg.dress(spec.dress_length().key()) * (m.body_rise + m.inside_leg);
+                top.length = m.nape_to_waist + below;
+                top.dress = Some(DressParams {
+                    waist_y: m.nape_to_waist,
+                    hip_y: m.nape_to_waist + m.hip_depth,
+                    waist_q: (m.waist + num("waist_ease")) / 4.0,
+                    hip_q: (m.seat + num("seat_ease")) / 4.0,
+                    silhouette: Silhouette::Shift,
+                    flare: 0.0,
+                    gather: cfg.dress("gather"),
+                    zip: false,
+                });
+            }
         } else {
             let knee = m.knee + num("knee_ease");
             pants = PantsParams {

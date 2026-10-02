@@ -15,6 +15,19 @@ pub fn draft(d: &mut Draft) -> Result<(), String> {
     let step = d.cfg.draft("armhole_step");
     let tries = d.cfg.draft("armhole_tries") as usize;
     let start = d.top.armhole_drop;
+    if d.top.sleeveless {
+        let back = half(d, false)?;
+        let front = half(d, true)?;
+        let (ab, af) = (back.len("armhole"), front.len("armhole"));
+        let need = d.m.upper_arm + d.cfg.dress("armhole_ease");
+        d.check(
+            "arm goes through the armhole",
+            ab + af >= need,
+            format!("armhole {:.1} cm, upper arm {:.1} cm + {:.1} cm ease", (ab + af) / 10.0, d.m.upper_arm / 10.0, d.cfg.dress("armhole_ease") / 10.0),
+        );
+        finish_body(d, back, front);
+        return Ok(());
+    }
     for _ in 0..=tries {
         let back = half(d, false)?;
         let front = half(d, true)?;
@@ -41,17 +54,33 @@ fn finish(d: &mut Draft, back: Piece, front: Piece, sleeve: Piece) {
     let (ab, af) = (back.len("armhole"), front.len("armhole"));
     let cap = sleeve.len("cap_back") + sleeve.len("cap_front");
     let (lo, hi) = (d.fabric.cap_ease_min, d.fabric.cap_ease_max);
-    d.seam("shoulder: front / back", front.len("shoulder"), back.len("shoulder"), 0.0, 0.0);
-    d.seam("side seam: front / back", front.len("side"), back.len("side"), 0.0, 0.0);
     d.seam("sleeve cap / armhole (cap ease)", ab + af, cap, lo, hi);
     d.seam("underarm seam: front / back", sleeve.len("underarm_front"), sleeve.len("underarm_back"), 0.0, 0.0);
+    finish_body(d, back, front);
+    let (spec, words) = (d.spec.g().name(), d.spec.garment.words.clone());
+    d.add(sleeve.by(&format!("block/{spec}"), &words));
+}
+
+fn finish_body(d: &mut Draft, back: Piece, front: Piece) {
+    d.seam("shoulder: front / back", front.len("shoulder"), back.len("shoulder"), 0.0, 0.0);
+    d.seam("side seam: front / back", front.len("side"), back.len("side"), 0.0, 0.0);
     let min = d.cfg.check("min_shoulder");
     let sl = d.top.shoulder_len;
     d.check("shoulder length", sl >= min, format!("{:.1} cm (at least {:.1} cm)", sl / 10.0, min / 10.0));
     let (spec, words) = (d.spec.g().name(), d.spec.garment.words.clone());
-    for p in [back, front, sleeve] {
+    for p in [back, front] {
         d.add(p.by(&format!("block/{spec}"), &words));
     }
+}
+
+/// Where the dress side seam passes the waist and hip, and the hem corner.
+pub fn dress_side(d: &Draft, q: f64) -> (f64, f64, f64) {
+    let dp = d.top.dress.expect("a dress");
+    let shape = d.cfg.draft("max_side_shape");
+    let waist_x = dp.waist_q.max(q - shape).min(q);
+    let hip_x = dp.hip_q.max(waist_x);
+    let hem_x = hip_x + if dp.silhouette == crate::draft::Silhouette::ALine { dp.flare * (d.top.length - dp.hip_y) } else { 0.0 };
+    (waist_x, hip_x, hem_x)
 }
 
 /// Shoulder-to-underarm armhole as two Béziers, and the across-back/front point.
@@ -100,6 +129,9 @@ fn half(d: &Draft, front: bool) -> Result<Piece, String> {
     let neck = if ext > 0.0 { geom::chain(&[vec![pt(-ext, depth)], curve]) } else { curve };
     let (upper, lower) = armhole(sp, hps, b, c);
     let notch_at = geom::length(&upper);
+    if let Some(dp) = t.dress {
+        return Ok(dress_half(d, front, q, chest_y, neck, hps, sp, upper, lower, notch_at, depth, dp));
+    }
     let h = pt(q + t.hem_flare, side_len);
     let hem = if t.shirttail > 0.0 {
         let curve = cubic(h, pt(h.x, h.y + t.shirttail * 0.6), pt(h.x * 0.55, t.length), pt(0.0, t.length));
@@ -133,6 +165,58 @@ fn half(d: &Draft, front: bool) -> Result<Piece, String> {
         }
     }
     Ok(p)
+}
+
+/// A dress half: the top block's neck, shoulder and armhole, then the side
+/// seam through the waist and hip to the hem (one piece), or to the waist
+/// seam (a gathered dress, whose skirt is its own piece). With a zip the back
+/// is cut in two and the zip runs down centre back to the hip.
+#[allow(clippy::too_many_arguments)]
+fn dress_half(d: &Draft, front: bool, q: f64, chest_y: f64, neck: Vec<Pt>, hps: Pt, sp: Pt, upper: Vec<Pt>, lower: Vec<Pt>, notch_at: f64, depth: f64, dp: crate::draft::DressParams) -> Piece {
+    let t = &d.top;
+    let c = pt(q, chest_y);
+    let (waist_x, hip_x, hem_x) = dress_side(d, q);
+    let w = pt(waist_x, dp.waist_y);
+    let k = (dp.waist_y - chest_y) * 0.45;
+    let to_waist = cubic(c, c + pt(0.0, k), w - pt(0.0, k), w);
+    let gathered = dp.silhouette == crate::draft::Silhouette::Gathered;
+    let (side, bottom_y) = if gathered {
+        (to_waist, dp.waist_y)
+    } else {
+        let hip = pt(hip_x, dp.hip_y);
+        let k2 = (dp.hip_y - dp.waist_y) * 0.45;
+        let to_hip = cubic(w, w + pt(0.0, k2), hip - pt(0.0, k2), hip);
+        (geom::chain(&[to_waist, to_hip, vec![pt(hem_x, t.length)]]), t.length)
+    };
+    let corner = *side.last().expect("side");
+    let (bottom_name, bottom_kind) = if gathered { ("waist", EdgeKind::Seam) } else { ("hem", EdgeKind::Hem) };
+    let mut edges = vec![
+        Edge::new("neck", EdgeKind::Seam, neck),
+        Edge::new("shoulder", EdgeKind::Seam, vec![hps, sp]),
+        Edge::new("armhole", EdgeKind::Seam, geom::chain(&[upper, lower])),
+        Edge::new("side", EdgeKind::Seam, side),
+        Edge::new(bottom_name, bottom_kind, vec![corner, pt(0.0, bottom_y)]),
+    ];
+    let name = if front { "front" } else { "back" };
+    let zip = !front && dp.zip;
+    let cut = if zip {
+        edges.push(Edge::new("cb", EdgeKind::Seam, vec![pt(0.0, bottom_y), pt(0.0, depth)]));
+        Cut::PAIR
+    } else {
+        edges.push(Edge::new(if front { "cf" } else { "cb" }, EdgeKind::Fold, vec![pt(0.0, bottom_y), pt(0.0, depth)]));
+        Cut::FOLD
+    };
+    let mut p = Piece::new(name, cut, edges).anchored(pt(0.0, chest_y));
+    if !t.sleeveless {
+        p = p.mark(Mark::Notch { edge: "armhole", at: notch_at, count: if front { 1 } else { 2 } });
+    }
+    // waist and hip level notches on the side seam
+    p = p.mark(Mark::Notch { edge: "side", at: geom::length(&cubic(c, c + pt(0.0, k), w - pt(0.0, k), w)), count: 1 });
+    if zip {
+        // the zip, neck to hip (to the waist seam on a gathered bodice)
+        p = p.mark(Mark::Line { pts: vec![pt(0.0, depth), pt(0.0, dp.hip_y.min(bottom_y))], dashed: true });
+    }
+    p
 }
 
 enum SleeveErr {

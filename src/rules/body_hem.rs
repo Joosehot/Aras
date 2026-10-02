@@ -26,6 +26,7 @@ impl Rule for BodyHem {
             Garment::Tshirt => vec!["hemmed"],
             Garment::Hoodie | Garment::Sweatshirt => vec!["rib_band", "hemmed"],
             Garment::Shirt => vec!["shirttail", "straight"],
+            Garment::Dress => vec!["hemmed"],
             Garment::Pants => vec![],
         }
     }

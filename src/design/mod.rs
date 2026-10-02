@@ -329,7 +329,7 @@ pub fn resolve(spec: &Spec, pattern: &Pattern, cfg: &Config) -> Look {
     let has = |n: &str| pattern.pieces.iter().any(|p| p.name.starts_with(n));
     let present = |z: Zone| match z {
         Zone::Body | Zone::Stitching => true,
-        Zone::Sleeves => g.is_top(),
+        Zone::Sleeves => has("sleeve"),
         Zone::Hood | Zone::Drawstring => has("hood side"),
         Zone::HoodLining => has("hood lining"),
         Zone::Pocket => has("pocket"),
@@ -419,6 +419,25 @@ pub fn notions(spec: &Spec, o: &Outcome, look: &Look, cfg: &Config) -> Vec<(Stri
         out.push(("1".into(), format!("trouser zip, {zip:.0} cm, {}", col(Zone::Body))));
         out.push(("1".into(), format!("waistband button, 17 mm, {}", col(Zone::Buttons))));
     }
+    if win.get("closure") == Some(&"back_zip") {
+        // the zip line on the back (and on into the skirt back)
+        let line = |name: &str| {
+            p.pieces.iter().find(|x| x.name == name).and_then(|x| {
+                x.marks.iter().find_map(|m| match m {
+                    Mark::Line { pts, dashed: true } if pts.len() == 2 && pts[0].x.abs() < 1e-9 && pts[1].x.abs() < 1e-9 => Some(pts[1].y - pts[0].y),
+                    _ => None,
+                })
+            })
+        };
+        let need = (line("back").unwrap_or(0.0) + line("skirt back").unwrap_or(0.0)) / 10.0;
+        let (from, max) = (cfg.dress("zip_sizes") / 10.0, cfg.dress("zip_max") / 10.0);
+        let mut zip = from;
+        while zip < need && zip < max {
+            zip += 5.0;
+        }
+        out.push(("1".into(), format!("invisible zip, {zip:.0} cm, {}", col(Zone::Body))));
+        out.push(("1".into(), format!("hook and eye at the neck, {}", col(Zone::Body))));
+    }
     if win.get("waist") == Some(&"elastic") {
         let m = spec.measurements(cfg);
         out.push((format!("{:.0} cm", (m.waist * cfg.band("elastic") / 10.0).ceil()), format!("elastic, {:.0} mm", cfg.part("elastic_width"))));
@@ -427,7 +446,7 @@ pub fn notions(spec: &Spec, o: &Outcome, look: &Look, cfg: &Config) -> Vec<(Stri
         .pieces
         .iter()
         .map(|x| x.name.as_str())
-        .filter(|n| matches!(*n, "collar" | "collar stand" | "waistband" | "fly shield") || (*n == "cuff" && spec.g() == Garment::Shirt))
+        .filter(|n| matches!(*n, "collar" | "collar stand" | "waistband" | "fly shield") || n.ends_with("facing") || (*n == "cuff" && spec.g() == Garment::Shirt))
         .collect();
     if !interfaced.is_empty() {
         let mut v = interfaced.clone();

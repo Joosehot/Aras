@@ -11,3 +11,6 @@
 11_blue_camo_pants|make baggy camo pants in dark blue and cream
 12_olive_baggy_pants|make baggy olive pants with an elastic waist
 13_joose_sweep_tee|make a white t-shirt with long sleeves and wheat, dark blue and forest green stripes from the hem into the sleeves, covering almost the whole shirt
+14_baby_blue_floral_dress|make a baby blue dress with short sleeves and small yellow flowers
+15_gathered_polka_dot_dress|make a navy and white polka dot midi dress with a gathered skirt and short sleeves
+16_burgundy_a_line_dress|make a sleeveless burgundy a-line dress

@@ -31,7 +31,17 @@ Every garment type, each from the one sentence under it. Every image is the defa
 | ![Pinstripe shirt](gallery/07_pinstripe_shirt.png) `simply make a short sleeve shirt in thin sky blue pinstripes` | ![Plaid shirt](gallery/08_plaid_shirt.png) `make a loose forest green plaid shirt` |
 | ![Tight black pants](gallery/09_tight_black_pants.png) `make tight black pants` | ![Pinstripe pants](gallery/10_charcoal_pinstripe_pants.png) `make dark grey pinstriped pants` |
 | ![Camo pants](gallery/11_blue_camo_pants.png) `make baggy camo pants in dark blue and cream` | ![Olive baggy pants](gallery/12_olive_baggy_pants.png) `make baggy olive pants with an elastic waist` |
-| ![Sweep t-shirt](gallery/13_joose_sweep_tee.png) `make a white t-shirt with long sleeves and wheat, dark blue and forest green stripes from the hem into the sleeves, covering almost the whole shirt` (design: Joose Hotari) | |
+| ![Sweep t-shirt](gallery/13_joose_sweep_tee.png) `make a white t-shirt with long sleeves and wheat, dark blue and forest green stripes from the hem into the sleeves, covering almost the whole shirt` (design: Joose Hotari) | ![Baby blue floral dress](gallery/14_baby_blue_floral_dress.png) `make a baby blue dress with short sleeves and small yellow flowers` |
+| ![Gathered polka dot dress](gallery/15_gathered_polka_dot_dress.png) `make a navy and white polka dot midi dress with a gathered skirt and short sleeves` | ![Burgundy A-line dress](gallery/16_burgundy_a_line_dress.png) `make a sleeveless burgundy a-line dress` |
+
+Dresses carry the top block down through the waist and hip. Each one makes these decisions:
+
+- **Silhouette:** `shift`, `a_line`, or a `gathered` skirt on a waist seam.
+- **Length:** mini, knee, midi or maxi, as a share of waist-to-floor.
+- **Closure:** a back zip, or pull-on. Pull-on is chosen only if the checks show the head goes through the neckline and the dress goes over the chest and seat at its waist.
+- **Sleeves:** short, long, or none. Sleeveless armholes get facings or bias binding.
+
+Necklines get a facing or binding.
 
 The same engine also writes the 1:1 cutting layout (`--marker`, left: the colour-blocked hoodie, one fabric per colour) and the printable paper pattern (`--pieces`, right: the gingham shirt, halves on the fold with notches, grainlines and a 10 cm test square):
 

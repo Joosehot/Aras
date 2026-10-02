@@ -98,6 +98,8 @@ pub const COLORS: &[(&str, u32)] = &[
     ("cobalt", 0x1f4fbf),
     ("sky blue", 0x8ec5e8),
     ("baby blue", 0xbcd7ef),
+    // what people mean by "light blue": the pale blue, not blue lightened
+    ("light blue", 0xbcd7ef),
     ("denim", 0x4a6a8f),
     ("teal", 0x1f6f73),
     ("turquoise", 0x3fb8b0),

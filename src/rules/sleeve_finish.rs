@@ -20,14 +20,16 @@ impl Rule for SleeveFinish {
     fn all_variants(&self) -> &'static [&'static str] {
         &["hemmed", "rib_cuff", "barrel_cuff", "hemmed_wide"]
     }
-    fn asked(&self, spec: &Spec, _cfg: &Config) -> Option<String> {
-        spec.g().is_top().then(|| garment_words(spec, self.name()))
+    fn asked(&self, spec: &Spec, cfg: &Config) -> Option<String> {
+        (spec.g().is_top() && spec.sleeves(cfg) != SleeveKind::None).then(|| garment_words(spec, self.name()))
     }
     fn variants(&self, spec: &Spec, cfg: &Config) -> Vec<&'static str> {
         match (spec.g(), spec.sleeves(cfg)) {
             (_, SleeveKind::Short) => vec!["hemmed"],
             (Garment::Shirt, SleeveKind::Long) => vec!["barrel_cuff", "hemmed_wide"],
+            (Garment::Dress, SleeveKind::Long) => vec!["hemmed_wide"],
             (_, SleeveKind::Long) => vec!["rib_cuff", "hemmed"],
+            (_, SleeveKind::None) => vec![],
         }
     }
     fn finish(&self, variant: &str) -> Option<Finish> {
